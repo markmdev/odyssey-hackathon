@@ -49,6 +49,7 @@ export default function MemoryPalace() {
       // Phase 2: Gemini paints all rooms IN PARALLEL
       // Enter palace as soon as FIRST image arrives
       setGenPhase('painting');
+      setVideosLoading(true);
       let enteredPalace = false;
 
       const imageDataUrls = await generateAllImages(newRooms, (i, dataUrl) => {
@@ -64,20 +65,28 @@ export default function MemoryPalace() {
         }
       });
 
+      // If no images succeeded at all, bail
+      if (!enteredPalace) {
+        setVideosLoading(false);
+        setScreen('home');
+        return;
+      }
+
       // Phase 3: Odyssey — fire individual simulate per room, poll independently
       const { Odyssey } = await import('@odysseyml/odyssey');
       const apiKey = process.env.NEXT_PUBLIC_ODYSSEY_API_KEY;
 
       if (apiKey) {
-        setVideosLoading(true);
         const client = new Odyssey({ apiKey });
 
-        // Fire all simulate calls in parallel (one per room)
+        // Fire simulate calls in parallel — only for rooms that have images
         const simulatePromises = newRooms.map(async (room, i) => {
+          if (!imageDataUrls[i]) return; // skip rooms with failed images
+
           try {
             const script = room.odysseyKeyframes.map((kf, ki) => {
               if (ki === 0) {
-                return { timestamp_ms: kf.timestamp_ms, start: { prompt: kf.prompt!, image: imageDataUrls[i] } };
+                return { timestamp_ms: kf.timestamp_ms, start: { prompt: kf.prompt!, image: imageDataUrls[i]! } };
               }
               if (kf.end) {
                 return { timestamp_ms: kf.timestamp_ms, end: {} };
@@ -100,12 +109,13 @@ export default function MemoryPalace() {
             }
           } catch (err) {
             console.error(`Simulate failed for room ${i}:`, err);
-            // Room stays as static image — graceful degradation
           }
         });
 
         // Wait for all to finish, then clear loading
         Promise.all(simulatePromises).then(() => setVideosLoading(false));
+      } else {
+        setVideosLoading(false);
       }
     } catch (err) {
       console.error('Palace generation failed:', err);

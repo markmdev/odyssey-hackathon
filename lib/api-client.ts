@@ -39,11 +39,16 @@ export async function generateRoomImage(sceneDescription: string): Promise<strin
 export async function generateAllImages(
   rooms: Room[],
   onImageReady: (index: number, dataUrl: string) => void,
-): Promise<string[]> {
+): Promise<(string | null)[]> {
   const promises = rooms.map(async (room, i) => {
-    const dataUrl = await generateRoomImage(room.sceneDescription);
-    onImageReady(i, dataUrl);
-    return dataUrl;
+    try {
+      const dataUrl = await generateRoomImage(room.sceneDescription);
+      onImageReady(i, dataUrl);
+      return dataUrl;
+    } catch (err) {
+      console.error(`Image generation failed for room ${i}:`, err);
+      return null;
+    }
   });
   return Promise.all(promises);
 }
