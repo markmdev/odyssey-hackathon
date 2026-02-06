@@ -16,6 +16,7 @@ function parseArgs(argv: string[]): {
   displayName?: string;
   manifest?: string;
   geminiModel: string;
+  skipImages: boolean;
 } {
   const args = argv.slice(2);
   let name: string | undefined;
@@ -24,6 +25,7 @@ function parseArgs(argv: string[]): {
   let displayName: string | undefined;
   let manifest: string | undefined;
   let geminiModel = 'gemini-2.5-flash-image';
+  let skipImages = false;
 
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
@@ -45,6 +47,9 @@ function parseArgs(argv: string[]): {
       case '--gemini-model':
         geminiModel = args[++i];
         break;
+      case '--skip-images':
+        skipImages = true;
+        break;
       case '--help':
         console.log(`Usage: npx tsx scripts/generate-scenario.ts --name <name> [options]
 
@@ -55,6 +60,7 @@ Options:
   --display-name <string>  Human-readable name. Defaults to titleCase of name.
   --manifest <path>        Pre-written room data JSON. Skips GPT step.
   --gemini-model <string>  Gemini model ID (default: gemini-2.5-flash-image)
+  --skip-images            Skip image generation, reuse existing images. For retrying videos only.
   --help                   Show this help message`);
         process.exit(0);
     }
@@ -65,7 +71,7 @@ Options:
     process.exit(1);
   }
 
-  return { name, grade, input, displayName, manifest, geminiModel };
+  return { name, grade, input, displayName, manifest, geminiModel, skipImages };
 }
 
 // ---------------------------------------------------------------------------
@@ -196,7 +202,12 @@ async function simulateRoom(
       (kf: OdysseyKeyframe, ki: number) => {
         if (ki === 0) {
           const imageBuffer = fs.readFileSync(imagePath);
-          const dataUrl = `data:image/png;base64,${imageBuffer.toString('base64')}`;
+          // Detect mime type from magic bytes
+          const mime = imageBuffer[0] === 0xFF ? 'image/jpeg'
+            : imageBuffer[0] === 0x89 ? 'image/png'
+            : imageBuffer.toString('ascii', 0, 4) === 'RIFF' ? 'image/webp'
+            : 'image/png';
+          const dataUrl = `data:${mime};base64,${imageBuffer.toString('base64')}`;
           return {
             timestamp_ms: kf.timestamp_ms,
             start: { prompt: kf.prompt ?? '', image: dataUrl },
@@ -269,7 +280,7 @@ interface Manifest {
 }
 
 async function main() {
-  const { name, grade, input, displayName, manifest: manifestPath, geminiModel } = parseArgs(process.argv);
+  const { name, grade, input, displayName, manifest: manifestPath, geminiModel, skipImages } = parseArgs(process.argv);
   const display = displayName ?? toTitleCase(name);
 
   log(`Creating scenario: ${name} (grade ${grade})`);
@@ -325,15 +336,22 @@ async function main() {
   }
 
   // ---- Step 2: Gemini generates images (parallel) ----
-  log(`Gemini: Generating ${rooms.length} images in parallel...`);
-  const imageResults = await Promise.all(
-    rooms.map(async (room, i) => {
-      const imgPath = path.join(outDir, `room-${i}.png`);
-      const ok = await generateRoomImage(room.sceneDescription, imgPath, geminiModel);
-      log(`Gemini: Room ${i + 1}/${rooms.length} ${ok ? 'done \u2713' : 'FAILED'}`);
-      return ok;
-    }),
-  );
+  let imageResults: boolean[];
+  if (skipImages) {
+    log('Skipping image generation (--skip-images)');
+    imageResults = rooms.map((_, i) => fs.existsSync(path.join(outDir, `room-${i}.png`)));
+    log(`Found ${imageResults.filter(Boolean).length}/${rooms.length} existing images`);
+  } else {
+    log(`Gemini: Generating ${rooms.length} images in parallel...`);
+    imageResults = await Promise.all(
+      rooms.map(async (room, i) => {
+        const imgPath = path.join(outDir, `room-${i}.png`);
+        const ok = await generateRoomImage(room.sceneDescription, imgPath, geminiModel);
+        log(`Gemini: Room ${i + 1}/${rooms.length} ${ok ? 'done \u2713' : 'FAILED'}`);
+        return ok;
+      }),
+    );
+  }
 
   // ---- Step 3: Odyssey simulate (parallel, one job per room) ----
   const videoPromises: Promise<boolean>[] = [];
