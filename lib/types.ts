@@ -1,12 +1,18 @@
 export type GradeLevel = 'K-3' | '4-6' | '7-9' | '10-12';
 
+export interface OdysseyKeyframe {
+  timestamp_ms: number;
+  prompt?: string;
+  end?: boolean;
+}
+
 export interface Room {
   index: number;
   name: string;
   itemToRemember: string;
   mnemonic: string;
   sceneDescription: string;
-  odysseyPrompt: string;
+  odysseyKeyframes: OdysseyKeyframe[];
   imageDataUrl?: string;
   videoUrl?: string;
 }

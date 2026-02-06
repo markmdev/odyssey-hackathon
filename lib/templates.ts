@@ -57,7 +57,12 @@ Return ONLY valid JSON with this structure:
       "itemToRemember": "The key fact or item extracted from the input",
       "mnemonic": "A vivid 1-2 sentence memory hook connecting the room to the item. Bizarre, exaggerated, or humorous imagery works best.",
       "sceneDescription": "A detailed 3-4 sentence visual scene for AI image generation. Include specific colors, lighting, objects, textures, and atmosphere.",
-      "odysseyPrompt": "A cinematic description of the same scene with gentle ambient motion — floating particles, flickering light, drifting mist, swaying elements. First-person POV standing in the room. Photorealistic, cinematic, wide-angle lens."
+      "odysseyKeyframes": [
+        { "timestamp_ms": 0, "prompt": "Opening scene description — first-person POV, photorealistic, cinematic, wide-angle. Describe the full scene as it first appears." },
+        { "timestamp_ms": 3000, "prompt": "First action — something dramatic changes in the scene related to the mnemonic." },
+        { "timestamp_ms": 6000, "prompt": "Second action — the scene transforms further, building on the mnemonic imagery." },
+        { "timestamp_ms": 10000, "end": true }
+      ]
     }
   ]
 }
@@ -67,8 +72,12 @@ Rules:
 - Each room must be dramatically different (different colors, environments, moods)
 - Mnemonics should create strong visual/emotional associations
 - Scene descriptions should be painterly and rich
-- Odyssey prompts should emphasize ambient animation and first-person perspective
-- IMPORTANT: Keep all imagery family-friendly. No violence, gore, weapons, nudity, or dark/disturbing content. Use whimsical, fantastical, colorful, and playful imagery. Think Pixar, not horror.`;
+- odysseyKeyframes should tell a 10-second mini-story with 3 action beats
+- First keyframe (t=0) establishes the scene with the image — first-person POV, photorealistic, cinematic, wide-angle lens
+- Middle keyframes (t=3s, t=6s) introduce dramatic changes that reinforce the mnemonic
+- Last keyframe (t=10s) is always { "timestamp_ms": 10000, "end": true }
+- Actions should be visually dramatic and directly tied to the memory association
+- Keep all imagery family-friendly (Pixar, not horror). No violence, gore, weapons, nudity, or dark/disturbing content. Use whimsical, fantastical, colorful, and playful imagery.`;
 
 const GRADE_GUIDANCE: Record<GradeLevel, string> = {
   'K-3': 'Target audience: young children (ages 5-8). Use very simple language. Bright, colorful, cartoon-like scenes in a Pixar/Disney style. Mnemonics should use rhymes, silly comparisons, funny animals, or familiar objects like toys and candy.',

@@ -62,13 +62,17 @@ export default function MemoryPalace() {
         const client = new Odyssey({ apiKey });
 
         const job = await client.simulate({
-          scripts: newRooms.map((room, i) => [
-            {
-              timestamp_ms: 0,
-              start: { prompt: room.odysseyPrompt, image: imageDataUrls[i] },
-            },
-            { timestamp_ms: 10000, end: {} },
-          ]),
+          scripts: newRooms.map((room, i) =>
+            room.odysseyKeyframes.map((kf, ki) => {
+              if (ki === 0) {
+                return { timestamp_ms: kf.timestamp_ms, start: { prompt: kf.prompt!, image: imageDataUrls[i] } };
+              }
+              if (kf.end) {
+                return { timestamp_ms: kf.timestamp_ms, end: {} };
+              }
+              return { timestamp_ms: kf.timestamp_ms, interact: { prompt: kf.prompt! } };
+            })
+          ),
           portrait: false,
         });
 
