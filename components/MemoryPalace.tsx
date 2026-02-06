@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { Room, QuizQuestion, GradeLevel } from '@/lib/types';
 import { templates } from '@/lib/templates';
 import { generatePalace, generateAllImages } from '@/lib/api-client';
 import { generateQuizQuestions } from '@/lib/quiz';
+import { listScenarios, loadScenario } from '@/lib/scenarios';
 import HomeScreen from './HomeScreen';
 import GeneratingScreen, { type GenPhase } from './GeneratingScreen';
 import PalaceViewer from './PalaceViewer';
@@ -29,11 +30,20 @@ export default function MemoryPalace() {
   const [imagesReady, setImagesReady] = useState(0);
   const [videosLoading, setVideosLoading] = useState(false);
 
+  // Scenario state
+  const [scenarios, setScenarios] = useState<{ name: string; displayName: string }[]>([]);
+
   // Quiz state
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
   const [quizIndex, setQuizIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
+
+  const isLiveMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('live');
+
+  useEffect(() => {
+    listScenarios().then(setScenarios);
+  }, []);
 
   // Build palace pipeline
   const buildPalace = useCallback(async () => {
@@ -130,6 +140,50 @@ export default function MemoryPalace() {
     }
   }, [inputText, gradeLevel, rooms]);
 
+  // Load a pre-generated scenario with fake loading simulation
+  const loadPreparedScenario = useCallback(async (scenarioName: string) => {
+    setScreen('generating');
+    setImagesReady(0);
+
+    try {
+      // Fake Phase 1: "Designing rooms..." (1.5s)
+      setGenPhase('designing');
+      await new Promise((r) => setTimeout(r, 1500));
+
+      // Load the actual data
+      const { rooms: loadedRooms, quizQuestions: loadedQuiz } = await loadScenario(scenarioName);
+      setRooms(loadedRooms);
+
+      // Fake Phase 2: "Painting rooms..." — reveal images one by one (300ms each)
+      setGenPhase('painting');
+      for (let i = 0; i < loadedRooms.length; i++) {
+        await new Promise((r) => setTimeout(r, 300));
+        setImagesReady(i + 1);
+      }
+
+      // Brief pause before entering palace
+      await new Promise((r) => setTimeout(r, 500));
+
+      // Store quiz questions from manifest
+      setQuizQuestions(loadedQuiz);
+
+      // Enter palace with images only (no videos yet)
+      const roomsWithoutVideo = loadedRooms.map((r) => ({ ...r, videoUrl: undefined }));
+      setRooms(roomsWithoutVideo);
+      setCurrentRoom(0);
+      setVideosLoading(true);
+      setScreen('palace');
+
+      // After delay, reveal videos
+      await new Promise((r) => setTimeout(r, 2000));
+      setRooms(loadedRooms);
+      setVideosLoading(false);
+    } catch (err) {
+      console.error('Failed to load scenario:', err);
+      setScreen('home');
+    }
+  }, []);
+
   // Navigate between rooms
   const navigateRoom = useCallback(
     (direction: 1 | -1) => {
@@ -137,8 +191,8 @@ export default function MemoryPalace() {
       if (nextIndex < 0) return;
 
       if (nextIndex >= rooms.length) {
-        // Start quiz
-        const questions = generateQuizQuestions(rooms);
+        // Use pre-stored quiz questions if available (prepared mode), otherwise generate
+        const questions = quizQuestions.length > 0 ? quizQuestions : generateQuizQuestions(rooms);
         setQuizQuestions(questions);
         setQuizIndex(0);
         setScore(0);
@@ -149,7 +203,7 @@ export default function MemoryPalace() {
 
       setCurrentRoom(nextIndex);
     },
-    [currentRoom, rooms],
+    [currentRoom, rooms, quizQuestions],
   );
 
   // Handle quiz answer
@@ -178,11 +232,14 @@ export default function MemoryPalace() {
       {screen === 'home' && (
         <HomeScreen
           templates={templates}
+          scenarios={scenarios}
+          isLiveMode={isLiveMode}
           inputText={inputText}
           gradeLevel={gradeLevel}
           onInputChange={setInputText}
           onGradeChange={setGradeLevel}
           onBuild={buildPalace}
+          onSelectScenario={loadPreparedScenario}
         />
       )}
 

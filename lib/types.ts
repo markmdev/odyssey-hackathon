@@ -30,3 +30,23 @@ export interface QuizQuestion {
   options: string[];
   correctIndex: number;
 }
+
+export interface PreparedRoom {
+  index: number;
+  name: string;
+  itemToRemember: string;
+  mnemonic: string;
+  sceneDescription: string;
+  odysseyKeyframes: OdysseyKeyframe[];
+  imageFile: string | null;
+  videoFile: string | null;
+}
+
+export interface PreparedScenario {
+  name: string;
+  displayName: string;
+  gradeLevel: GradeLevel;
+  inputText: string;
+  rooms: PreparedRoom[];
+  quizQuestions: QuizQuestion[];
+}
