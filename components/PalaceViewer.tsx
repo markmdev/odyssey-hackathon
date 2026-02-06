@@ -157,14 +157,12 @@ export default function PalaceViewer({
             </p>
           </div>
 
-          {/* Mnemonic description — hidden when streaming to make room for buttons */}
-          {!isStreaming && (
-            <div className="w-full rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-base leading-relaxed text-white/90 backdrop-blur-md">
-              {room.mnemonic}
-            </div>
-          )}
+          {/* Mnemonic description */}
+          <div className="w-full rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-base leading-relaxed text-white/90 backdrop-blur-md">
+            {room.mnemonic}
+          </div>
 
-          {/* Interaction buttons — shown when streaming, replaces mnemonic */}
+          {/* Interaction buttons — shown below mnemonic when streaming */}
           {isStreaming && room.interactionButtons && (
             <div className="flex flex-wrap justify-center gap-2">
               {room.interactionButtons.map((btn, i) => (
