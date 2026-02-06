@@ -1,0 +1,158 @@
+{
+  "name": "human-body",
+  "displayName": "Human Body",
+  "gradeLevel": "4-6",
+  "inputText": "Heart — pumps blood through the entire body, beats about 100,000 times per day, has four chambers, is the size of your fist\nLungs — two spongy organs that take in oxygen and release carbon dioxide, contain 300 million tiny air sacs called alveoli\nBrain — control center of the body, has 86 billion neurons, uses 20% of your energy, wrinkly surface increases area\nSkeleton — 206 bones in an adult, protects organs, allows movement, makes blood cells in bone marrow\nDigestive System — food's journey from mouth to stomach to intestines takes 24-72 hours, small intestine is 20 feet long\nMuscles — over 600 muscles in the body, strongest is the masseter (jaw), heart is a muscle that never stops",
+  "rooms": [
+    {
+      "index": 0,
+      "name": "Beating Engine Room",
+      "itemToRemember": "Heart — pumps blood through the entire body, beats about 100,000 times per day, has four chambers, is the size of your fist",
+      "mnemonic": "A fist-sized red engine with four rooms that squeezes 100,000 times every single day without ever taking a break — pumping blood through a highway of tubes to every corner of your body.",
+      "sceneDescription": "A giant anatomical human heart fills the center of the frame — a detailed, realistic cross-section showing all four chambers clearly (left atrium, right atrium, left ventricle, right ventricle). The heart is vivid red and glistening, with detailed muscle fibers visible. Blue veins carry blood into the right side while red arteries carry oxygenated blood out from the left. The heart appears mid-beat, with the muscle visibly contracted. Blood flows are shown with vibrant red and blue colors through the vessels. The background is a soft dark environment with arteries and veins branching outward in all directions like a tree of life. Warm dramatic lighting highlights the heart's muscular texture. Medical illustration quality but photorealistic and dramatic, cinematic composition.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Giant anatomical human heart cross-section showing four chambers clearly. Vivid red glistening muscle, detailed fibers. Blue veins entering right side, red arteries leaving left. Mid-beat contraction. Blood flowing. Arteries branching outward. Dark background. Photorealistic, dramatic lighting, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The giant heart contracts powerfully — the four chambers squeeze in sequence, sending a visible pulse of bright red blood surging through the arteries. The muscle fibers ripple with the contraction. The pulse wave travels outward through branching blood vessels."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The heart relaxes and fills with blood — blue deoxygenated blood flows into the right chambers while bright red oxygenated blood fills the left chambers. The four chambers are clearly distinct. The rhythmic cycle continues. Vessel walls pulse with each heartbeat. Life-giving and powerful."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "Oxygen Bubble Forest",
+      "itemToRemember": "Lungs — two spongy organs that take in oxygen and release carbon dioxide, contain 300 million tiny air sacs called alveoli",
+      "mnemonic": "Two giant pink sponges filled with 300 million tiny bubbles called alveoli — oxygen flows in and gets absorbed through the bubble walls, while carbon dioxide escapes out like fizz from a soda.",
+      "sceneDescription": "A pair of human lungs shown from the front in vivid anatomical detail — two large, soft pink spongy organs with the branching bronchial tree visible inside, splitting into smaller and smaller airways like an inverted tree. The lung tissue is translucent enough to see the bronchial branches inside. A dramatically magnified section shows the tiny alveoli — clusters of grape-like air sacs where gas exchange happens, with tiny blood capillaries wrapped around each sac. Oxygen molecules (shown as blue spheres) flow in while carbon dioxide (red spheres) flow out. The trachea connects at the top. Soft ethereal blue-pink lighting gives a dreamlike quality. The background suggests being inside the chest cavity. Photorealistic medical illustration style, detailed, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Pair of human lungs in vivid anatomical detail — pink spongy organs with bronchial tree visible inside. Magnified alveoli clusters like grapes with capillaries. Oxygen blue spheres flowing in, CO2 red spheres out. Trachea at top. Ethereal blue-pink light. Photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The lungs expand with a deep breath — the pink tissue stretches and inflates, the bronchial branches open wider. Blue oxygen molecules rush down through the branching airways into the alveoli. The lung tissue glows brighter pink as it fills with air."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The lungs contract as they exhale — the pink tissue compresses and red carbon dioxide molecules stream upward through the bronchial tree and out the trachea. The alveoli deflate slightly. The exchange is visible — blue oxygen absorbed into blood, red CO2 released. Rhythmic breathing cycle."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Neural Lightning Dome",
+      "itemToRemember": "Brain — control center of the body, has 86 billion neurons, uses 20% of your energy, wrinkly surface increases area",
+      "mnemonic": "A wrinkly pink supercomputer with 86 billion tiny lights that uses one-fifth of all your food energy — the wrinkles are like crumpling paper to fit more surface into a small skull.",
+      "sceneDescription": "A human brain shown in dramatic detail — the iconic wrinkled pink-gray surface fills the frame, with deep folds (sulci) and ridges (gyri) creating its characteristic texture. The brain is alive with activity — glowing blue-white electrical signals pulse along the neural pathways visible on the surface, creating a lightning-like network of activity. The left and right hemispheres are visible with the central fissure between them. Parts of the brain glow different colors showing active regions — the frontal lobe pulses with decision-making activity, the visual cortex flickers. Individual neurons are suggested at the surface, with branching dendrites visible. Dramatic dark background with the brain floating, illuminated by its own neural activity. Ethereal blue-white glow. Photorealistic, dramatic, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Human brain in dramatic detail — wrinkled pink-gray surface with deep folds and ridges. Glowing blue-white electrical signals pulse along neural pathways like lightning. Left and right hemispheres visible. Different regions glow different colors. Dark background, self-illuminated. Photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "A cascade of neural activity erupts across the brain's surface — blue-white electrical pulses fire in rapid chains from the frontal lobe backward, lighting up regions in sequence. The wrinkled surface crackles with energy. Dendrite networks glow brighter as signals pass through."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The entire brain pulses with synchronized activity — all regions light up simultaneously in a wave of brilliant blue-white energy, then dim and pulse again rhythmically. The folds and wrinkles of the surface catch the neural glow, creating an intricate pattern of light. The brain appears as a living, thinking entity."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Crystal Bone Cathedral",
+      "itemToRemember": "Skeleton — 206 bones in an adult, protects organs, allows movement, makes blood cells in bone marrow",
+      "mnemonic": "A cathedral made of 206 crystal pillars — each bone is hollow and filled with red jelly (marrow) that makes your blood, while the whole structure protects your squishy organs like a suit of armor.",
+      "sceneDescription": "A complete human skeleton stands in a dramatic pose, arms slightly spread, shown from head to toe against a dark background. The skeleton is rendered with incredible anatomical accuracy — 206 bones visible with detailed joints, the skull with eye sockets and jaw, ribcage protecting the chest cavity, spine curving naturally, pelvis, arm and leg bones. The bones have a luminous quality — they glow with a warm ivory-gold light from within, and a cross-section of one femur reveals glowing red bone marrow inside the hollow center. The ribcage area shows a faint glow suggesting protected organs within. Joint connections are highlighted with subtle blue light. The skeleton appears strong and architectural, like a living framework. Dark dramatic background, rim-lit, photorealistic anatomical detail, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Complete human skeleton standing dramatically, arms spread, head to toe. 206 bones with anatomical accuracy. Bones glow warm ivory-gold from within. Cross-section femur shows red marrow. Ribcage glows suggesting protected organs. Joint connections highlighted blue. Dark background, rim-lit, photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The skeleton moves — joints articulate smoothly as it takes a step forward. The bones flex and rotate at each joint, demonstrating the incredible engineering of human movement. Blue light pulses at each active joint. The ribcage expands as if breathing."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Camera zooms into the femur cross-section, revealing the glowing red bone marrow factory inside. Tiny red and white blood cells are being produced and released into blood vessels that thread through the bone. The marrow pulses with life-giving energy. The hollow bone structure is both strong and light."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "The Winding River",
+      "itemToRemember": "Digestive System — food's journey from mouth to stomach to intestines takes 24-72 hours, small intestine is 20 feet long",
+      "mnemonic": "Food takes a 3-day river ride through your body — starting in the mouth waterfall, dropping into the stomach acid pool, then winding through 20 feet of intestinal river before reaching the exit.",
+      "sceneDescription": "The human digestive system shown as a dramatic anatomical journey — the full tract visible from mouth at the top to the end, like a winding river through the body. The esophagus drops from the mouth into the stomach, a muscular sac shown churning with green-yellow digestive acids. Below, the small intestine coils in elaborate loops — 20 feet of pinkish-red tubing with visible villi on the interior surface (shown in a magnified inset) absorbing nutrients. The large intestine frames the small intestine in its characteristic ascending-transverse-descending path. A piece of food (like an apple) is shown at various stages of digestion along the tract — whole at the mouth, breaking down in the stomach, becoming nutrients in the intestine. Warm anatomical colors, dramatic internal lighting, photorealistic, cinematic cross-section view.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Human digestive system — full tract from mouth to end like a winding river. Esophagus to churning stomach with green acids. Small intestine coils — 20 feet of pink tubing with villi. Large intestine framing. Food at stages of digestion. Warm anatomical colors, photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "Food drops down the esophagus into the stomach with a splash. The stomach muscles contract and churn, mixing the food with green-yellow digestive acids. The muscular walls squeeze rhythmically. The food breaks apart into smaller and smaller pieces in the acidic pool."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Liquefied food flows from the stomach into the small intestine. Camera follows it through the winding 20-foot tube. Tiny finger-like villi on the intestine walls absorb nutrients — they wave gently like underwater coral. Nutrients pass through the villi into blood vessels. The journey continues through endless coils."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Power Fiber Forge",
+      "itemToRemember": "Muscles — over 600 muscles in the body, strongest is the masseter (jaw), heart is a muscle that never stops",
+      "mnemonic": "Over 600 rubber bands layered throughout your body — the jaw muscle is the strongest pound-for-pound (it can bite with 170 pounds of force!), and the heart muscle works 24/7 without a single vacation day.",
+      "sceneDescription": "A human figure shown in the classic anatomical muscle illustration style — the écorché (skin removed to reveal muscles beneath). Over 600 muscles are visible in vivid reds and pinks, showing the layered fiber structure of major muscle groups. The figure is in a powerful flexing pose. The jaw muscles (masseter) are highlighted and glowing bright with a strength indicator showing it as the strongest. The chest is partially transparent, revealing the heart muscle beating inside the ribcage, glowing with golden light to show it never stops. Individual muscle fibers are visible in a magnified area, showing their bundled rope-like structure. The muscles appear powerful, dynamic, and alive — fibers contracting visibly. Dark dramatic background, anatomical precision, photorealistic, cinematic lighting.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Human écorché figure — skin removed revealing 600+ muscles in vivid reds and pinks. Powerful flexing pose. Jaw masseter highlighted glowing as strongest. Heart visible through transparent chest, glowing golden. Magnified muscle fibers showing bundled structure. Dark background, photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The muscle figure flexes its arm — the bicep and tricep contract and bulge, individual fibers visibly shortening and thickening. The opposing muscles work in coordinated pairs. Across the body, connected muscles activate in chains, showing how movement requires coordination of dozens of muscles."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Camera focuses on the glowing heart muscle visible through the transparent chest. The heart contracts powerfully, never stopping. Its muscle fibers are unique — branched and interconnected. The heartbeat sends pulses of golden light through the surrounding muscles. The jaw muscle tenses, showing its incredible strength."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    }
+  ]
+}

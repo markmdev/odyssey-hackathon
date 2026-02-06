@@ -1,0 +1,158 @@
+{
+  "name": "ocean-creatures",
+  "displayName": "Ocean Creatures",
+  "gradeLevel": "4-6",
+  "inputText": "Blue Whale — largest animal ever lived, up to 100 feet long, heart the size of a car, tongue weighs as much as an elephant\nGreat White Shark — apex predator, can detect one drop of blood in 25 gallons of water, 300 serrated teeth in rows\nOctopus — eight arms with suckers, three hearts, blue blood, can change color and texture instantly, extremely intelligent\nJellyfish — no brain, no heart, no blood, 95% water, some are immortal (Turritopsis), tentacles deliver painful stings\nSea Turtle — can live over 100 years, migrates thousands of miles, returns to the same beach where it was born to lay eggs\nAnglerfish — deep sea predator, female has a glowing lure on its head to attract prey in total darkness, males are tiny parasites",
+  "rooms": [
+    {
+      "index": 0,
+      "name": "Titan Blue Cathedral",
+      "itemToRemember": "Blue Whale — largest animal ever lived, up to 100 feet long, heart the size of a car, tongue weighs as much as an elephant",
+      "mnemonic": "The biggest animal that ever lived — longer than a basketball court, with a heart so huge you could crawl through its arteries, and a tongue that weighs as much as an entire elephant.",
+      "sceneDescription": "An enormous Blue Whale glides through deep crystal-clear ocean water, its massive 100-foot body dominating the entire frame. The whale is seen from slightly below and to the side, emphasizing its staggering size. Its blue-gray mottled skin has a beautiful marbled pattern. Sunlight streams down from the surface above in golden shafts, illuminating the whale's massive body. The whale's eye is visible — small relative to its body but intelligent and gentle. Its enormous mouth shows baleen plates along the jaw. A scuba diver is visible far below for scale, appearing tiny like an ant next to the whale. Deep blue water fades to darkness below and glows turquoise above. Schools of small fish scatter around the whale. Photorealistic, underwater, cinematic wide-angle, dramatic light rays.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Enormous Blue Whale gliding through crystal-clear ocean, 100-foot body dominating frame. Seen from below, blue-gray mottled skin. Golden sunlight shafts from surface. Gentle eye visible. Baleen plates. Tiny scuba diver for scale. Deep blue water. Fish scatter. Photorealistic, underwater, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The Blue Whale's enormous tail flukes rise slowly and sweep downward in a powerful stroke, propelling the 100-foot body forward. The water displacement creates swirling currents. Sunlight ripples across its massive blue-gray back. Bubbles stream from its body. The sheer mass moving through water is awe-inspiring."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The Blue Whale opens its enormous mouth wide, revealing rows of baleen plates as it engulfs a massive cloud of krill. Its throat expands like an accordion with hundreds of ventral grooves stretching. Water and krill rush into the cavernous mouth. The scale is overwhelming — the open mouth could swallow a car."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "Razor Tooth Patrol",
+      "itemToRemember": "Great White Shark — apex predator, can detect one drop of blood in 25 gallons of water, 300 serrated teeth in rows",
+      "mnemonic": "The ocean's ultimate hunter with 300 razor-sharp teeth lined up in conveyor-belt rows — and a nose so sensitive it can smell a single drop of blood mixed into a swimming pool.",
+      "sceneDescription": "A Great White Shark powers through clear blue ocean water directly toward the camera, its mouth partially open revealing rows upon rows of razor-sharp serrated teeth — 300 teeth arranged in multiple rows, the front teeth large and triangular, with replacement rows behind. The shark's body is massive and streamlined — dark gray-blue on top, stark white underneath. Its black eye is cold and focused. Sunlight from above creates dramatic lighting on its skin, highlighting every scar and scratch. The snout has visible electroreceptor pores (ampullae of Lorenzini). Bubbles and small fish scatter away from its path. The water is crystal clear blue-green. Power, speed, and predatory focus radiate from the image. Photorealistic, dramatic front-angle, underwater, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Great White Shark powering through clear blue water directly toward camera. Mouth open showing rows of 300 serrated teeth. Dark gray-blue back, white belly. Cold black eye. Sunlight on scarred skin. Electroreceptor pores on snout. Fish scatter. Photorealistic, dramatic, underwater, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The Great White Shark turns sharply, its powerful body twisting through the water. Its rows of teeth flash in the sunlight. The muscular tail propels it with explosive speed. Water churns in its wake. Small fish flee in panic. The shark's predatory agility is terrifying."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The Great White lunges upward with explosive force, breaching the surface. Its massive body launches partially out of the water, jaws wide open, 300 teeth gleaming in sunlight. Water cascades off its white belly. A burst of spray surrounds the shark. Raw predatory power captured mid-breach."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Chromatic Shapeshifter Den",
+      "itemToRemember": "Octopus — eight arms with suckers, three hearts, blue blood, can change color and texture instantly, extremely intelligent",
+      "mnemonic": "A genius alien with eight suckered arms, three hearts pumping blue blood, that can instantly transform its skin color and texture like a living chameleon — arguably the smartest invertebrate on Earth.",
+      "sceneDescription": "A large octopus sits on a colorful coral reef, its eight arms spread dramatically, each one covered in hundreds of visible suckers. The octopus is in the middle of changing color — its left side shows vivid coral-red matching the reef, while its right side shifts through electric blue and purple, with rippling chromatophore patterns visible on its skin like a living light show. Its skin texture is also changing — smooth on one side, bumpy and spiky on the other to match the coral. Two large, intelligent golden eyes stare directly at the camera. One arm reaches toward the viewer, suckers visible in detail. The coral reef around it is vibrant with tropical fish, anemones, and sea fans. Clear turquoise water with dappled sunlight from above. Photorealistic, vivid colors, underwater, cinematic close-up.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Large octopus on colorful coral reef, eight arms spread with visible suckers. Changing color — left side coral-red, right side electric blue-purple, chromatophore ripples. Texture shifting smooth to bumpy. Intelligent golden eyes at camera. Vibrant reef, tropical fish. Photorealistic, underwater, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The octopus rapidly shifts its entire body color — waves of electric blue, vivid orange, deep purple, and white ripple across its skin in mesmerizing patterns. Its texture transforms from smooth to spiky to coral-like. The chromatophore display is dazzling, like a living kaleidoscope."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The octopus jets backward off the reef, all eight arms trailing behind, suckers flashing. Its body flushes deep red in alarm. An ink cloud billows from its siphon, creating a dark screen. Through the dissipating ink, the octopus vanishes — perfectly camouflaged against a new rock, nearly invisible."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Ghost Drift Hall",
+      "itemToRemember": "Jellyfish — no brain, no heart, no blood, 95% water, some are immortal (Turritopsis), tentacles deliver painful stings",
+      "mnemonic": "A brainless, heartless, bloodless ghost made of 95% water that drifts through the ocean — and one species (Turritopsis) discovered the secret to immortality by turning back into a baby when it gets old.",
+      "sceneDescription": "A large moon jellyfish floats in dark deep-blue ocean water, its translucent bell-shaped body glowing with ethereal bioluminescence in pale blue and soft purple. The bell is almost completely transparent — you can see through it to the dark water beyond. Long trailing tentacles hang below, delicate and thread-like, glowing faintly with stinging cells. Inside the transparent body, the simple internal structure is visible — the radial canals and gonads form a four-leaf clover pattern. Several smaller jellyfish of different species float nearby — some pulsing with pink and orange light, others trailing extremely long tentacles. The dark water is filled with tiny particles of marine snow, lit by the jellyfish glow. No visible organs, no brain, no heart — just ethereal glowing water-creatures. Photorealistic, bioluminescent, underwater, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Large moon jellyfish floating in dark deep-blue water, translucent bell glowing ethereal blue-purple bioluminescence. See-through body, trailing tentacles with stinging cells. Four-leaf clover internal pattern. Smaller jellyfish nearby glowing pink and orange. Marine snow particles. Photorealistic, bioluminescent, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The jellyfish pulses its translucent bell — contracting and expanding rhythmically, propelling itself gently through the dark water. The bioluminescent glow intensifies with each pulse, sending waves of blue-purple light through its body. Tentacles drift and trail behind in graceful spirals."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Multiple jellyfish drift together in a mesmerizing swarm, their bioluminescent bodies creating a constellation of glowing blue, purple, pink, and green lights in the dark ocean. The transparent bells pulse at different rhythms. Long tentacles interweave. It's an alien, ethereal, otherworldly ballet of light."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Ancient Navigator Beach",
+      "itemToRemember": "Sea Turtle — can live over 100 years, migrates thousands of miles, returns to the same beach where it was born to lay eggs",
+      "mnemonic": "A wise 100-year-old ocean traveler that swims thousands of miles using an invisible map in its head — and always finds its way back to the exact beach where it was born, like a living GPS.",
+      "sceneDescription": "A large green sea turtle swims gracefully through crystal-clear tropical water, its flippers extended mid-stroke. The turtle's shell is beautifully patterned with overlapping scutes in shades of olive, brown, and gold. Its wise ancient face shows calm determination — the turtle appears old and experienced. Coral reef below with colorful fish. Shafts of golden sunlight stream down from the surface, creating patterns on the turtle's shell and the sandy bottom. In the background, a tropical beach is visible through the water surface — white sand where the turtle was born and will return. The water is impossibly clear turquoise. Small remora fish ride along on the turtle's shell. Seagrass waves gently on the seafloor. Photorealistic, peaceful, underwater, warm lighting, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Large green sea turtle swimming gracefully through crystal-clear tropical water, flippers extended. Beautiful shell with olive-brown-gold scutes. Wise ancient face. Coral reef below, colorful fish. Golden sunlight shafts. Tropical beach visible through surface. Turquoise water. Remora fish on shell. Photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The sea turtle glides upward toward the sunlit surface, its powerful flippers pulling it gracefully through the water. Sunlight grows brighter, casting the turtle in golden silhouette. Air bubbles trail from its nostrils. The surface shimmers above like liquid glass."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The sea turtle breaks the ocean surface and takes a breath, its ancient head lifted into warm golden sunset light. The tropical beach stretches in the background — home. The turtle's wet shell glistens in the fading sun. Calm turquoise water surrounds it. A moment of peaceful return after thousands of miles of ocean travel."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Abyss Lantern Trap",
+      "itemToRemember": "Anglerfish — deep sea predator, female has a glowing lure on its head to attract prey in total darkness, males are tiny parasites",
+      "mnemonic": "A nightmare fish in the pitch-black deep sea that dangles a glowing fishing rod from its forehead to lure prey — and the males are so tiny they permanently fuse to the female's body like living parasites.",
+      "sceneDescription": "A female anglerfish hovers in the pitch-black deep ocean, her enormous gaping mouth filled with long, needle-sharp translucent teeth pointing in every direction. Her bioluminescent lure — the esca — dangles from a fleshy rod (illicium) protruding from her forehead, glowing an eerie blue-green that illuminates her horrifying face in the darkness. Her body is dark brown-black, round and bloated, with rough bumpy skin. Her small beady eyes reflect the lure's light. A tiny parasitic male — barely visible — is fused to her belly, having permanently attached. The surrounding water is completely black except for the anglerfish's lure glow, with tiny bioluminescent particles floating in the water like stars. The scene is terrifying and fascinating. Photorealistic, dark, bioluminescent, deep sea, cinematic close-up.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Female anglerfish in pitch-black deep ocean. Enormous gaping mouth with needle-sharp translucent teeth. Bioluminescent blue-green lure dangling from forehead rod, illuminating horrifying face. Dark bloated body, rough skin. Tiny parasitic male fused to belly. Black water, bioluminescent particles. Photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The anglerfish's glowing lure swings gently in the dark water, casting eerie blue-green light across her nightmarish face. A small deep-sea fish approaches, drawn to the light. The anglerfish remains perfectly still, mouth open, needle teeth ready. The trap is set in the absolute darkness."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The anglerfish strikes with blinding speed — her enormous mouth snaps open impossibly wide and engulfs the prey fish in one gulp. Her needle teeth interlock like a cage. The lure flickers with the sudden movement. The dark water swirls. Then silence returns to the abyss, the lure glowing steadily again."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    }
+  ]
+}
