@@ -1,10 +1,10 @@
 # Memory Palace
 
-**Turn any study material into a walkable, AI-generated memory palace.**
+**Helping kids learn by turning study material into vivid, walkable AI-generated worlds.**
 
-Memory Palace uses the [Method of Loci](https://en.wikipedia.org/wiki/Method_of_loci) — an ancient memorization technique where you place items to remember in vivid mental locations — and brings it to life with AI-generated imagery and video powered by **Odyssey-2 Pro**.
+Memory Palace is an education tool built for K-12 classrooms. Students pick a topic — dinosaurs, ocean creatures, world wonders — and the app builds them a cinematic memory palace using the [Method of Loci](https://en.wikipedia.org/wiki/Method_of_loci), the same ancient technique used by memory champions. Each room is a vivid scene brought to life with **Odyssey-2 Pro** video generation, making abstract facts unforgettable.
 
-Students type what they need to learn. AI builds the palace. Odyssey makes it breathe.
+A 4th grader doesn't need to imagine a T-Rex — they watch one slam its foot into volcanic rock and crush a boulder with its jaws. Then they're quizzed, and they remember.
 
 ## Why Odyssey
 
