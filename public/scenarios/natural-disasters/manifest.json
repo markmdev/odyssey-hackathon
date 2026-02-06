@@ -2,7 +2,7 @@
   "name": "natural-disasters",
   "displayName": "Natural Disasters",
   "gradeLevel": "4-6",
-  "inputText": "Volcano — magma from Earth's mantle erupts through the crust, can shoot lava 2,000 feet high, pyroclastic flows travel 450 mph, creates new land over time\nTornado — violently rotating column of air, wind speeds up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale\nTsunami — ocean wave caused by underwater earthquake, can travel 500 mph across open ocean, slows but grows taller near shore (up to 100 feet)\nEarthquake — sudden release of energy in Earth's crust along fault lines, measured on Richter scale, P-waves travel fastest, can trigger landslides and tsunamis\nAvalanche — massive slide of snow down a mountain, can reach 200 mph, triggered by vibrations or new snow, carries 300,000 cubic yards of snow\nLightning Superstorm — lightning bolts carry 300 million volts, heat air to 54,000°F (5x hotter than Sun's surface), thunder is the sound of air expanding from the heat",
+  "inputText": "Volcano — magma from Earth's mantle erupts through the crust, can shoot lava 2,000 feet high, pyroclastic flows travel 450 mph, creates new land over time\nTornado — violently rotating column of air, wind speeds up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale\nTsunami — ocean wave caused by underwater earthquake, can travel 500 mph across open ocean, slows but grows taller near shore (up to 100 feet)\nAvalanche — massive slide of snow down a mountain, can reach 200 mph, triggered by vibrations or new snow, carries 300,000 cubic yards of snow\nLightning Superstorm — lightning bolts carry 300 million volts, heat air to 54,000°F (5x hotter than Sun's surface), thunder is the sound of air expanding from the heat",
   "rooms": [
     {
       "index": 0,
@@ -87,33 +87,6 @@
     },
     {
       "index": 3,
-      "name": "Fault Line Rift",
-      "itemToRemember": "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
-      "mnemonic": "The Earth's crust snapping like a broken cracker along invisible fault lines — energy waves radiate outward (P-waves arrive first as a warning), shaking everything and triggering chain reactions: landslides, tsunamis, building collapses.",
-      "sceneDescription": "A massive earthquake splitting open a city street — the ground is cracking apart in real-time, a jagged fissure ripping through asphalt and concrete, revealing glowing hot rock beneath. Buildings on either side of the fault are tilting and crumbling, glass shattering and facades cracking. Chunks of road are tilting at angles. Dust clouds billow from collapsing structures. Cars slide into the widening crack. The fissure extends into the distance, zigzagging through the urban landscape. Seismic waves are visible as ripples in the ground surface, like waves in water. Power lines spark and fall. Water mains burst, sending geysers into the air. The destruction is happening NOW — mid-collapse. Photorealistic, ground-level perspective, maximum destruction, cinematic.",
-      "odysseyKeyframes": [
-        {
-          "timestamp_ms": 0,
-          "prompt": "Massive earthquake splitting a city street — jagged fissure ripping through asphalt revealing hot rock beneath. Buildings tilting and crumbling, glass shattering. Chunks of road at angles. Dust clouds billowing. Cars sliding into the crack. Seismic waves visible as ground ripples. Photorealistic, mid-collapse, cinematic."
-        },
-        {
-          "timestamp_ms": 3000,
-          "prompt": "A tall building collapses in slow-motion, its structure failing floor by floor. Enormous dust clouds mushroom outward. The fissure widens, swallowing a section of road. Water mains burst, geysers shooting 50 feet into the dusty air. The ground continues to shake violently. More cracks radiate outward."
-        },
-        {
-          "timestamp_ms": 6000,
-          "prompt": "The earthquake triggers a landslide on a nearby hillside — tons of earth and rock cascade downward toward the city. Trees topple like dominoes. The dust cloud from collapsed buildings merges with the landslide debris. The scale of destruction spreads outward in all directions. Aftershock ripples through the shattered ground."
-        },
-        {
-          "timestamp_ms": 10000,
-          "end": true
-        }
-      ],
-      "imageFile": "room-3.png",
-      "videoFile": null
-    },
-    {
-      "index": 4,
       "name": "White Thunder Slope",
       "itemToRemember": "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
       "mnemonic": "A mountain's worth of snow — 300,000 cubic yards — suddenly lets go and thunders downhill at 200 mph, triggered by something as small as a shout or a skier's turn. An unstoppable white tidal wave.",
@@ -136,11 +109,11 @@
           "end": true
         }
       ],
-      "imageFile": "room-4.png",
-      "videoFile": "room-4.mp4"
+      "imageFile": "room-3.png",
+      "videoFile": "room-3.mp4"
     },
     {
-      "index": 5,
+      "index": 4,
       "name": "Bolt Forge Sky",
       "itemToRemember": "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
       "mnemonic": "A bolt carrying 300 million volts that superheats the air to 54,000 degrees — five times hotter than the surface of the Sun — and the crack of thunder is just the sound of air exploding outward from the heat.",
@@ -163,8 +136,8 @@
           "end": true
         }
       ],
-      "imageFile": "room-5.png",
-      "videoFile": "room-5.mp4"
+      "imageFile": "room-4.png",
+      "videoFile": "room-4.mp4"
     }
   ],
   "quizQuestions": [
@@ -174,7 +147,7 @@
       "options": [
         "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
         "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
         "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land"
       ],
       "correctIndex": 3
@@ -186,7 +159,7 @@
         "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
         "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
         "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis"
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore"
       ],
       "correctIndex": 2
     },
@@ -196,24 +169,13 @@
       "options": [
         "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
         "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
         "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore"
       ],
       "correctIndex": 3
     },
     {
       "roomIndex": 3,
-      "question": "What was in the \"Fault Line Rift\" room?",
-      "options": [
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
-        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
-        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
-        "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale"
-      ],
-      "correctIndex": 0
-    },
-    {
-      "roomIndex": 4,
       "question": "What was in the \"White Thunder Slope\" room?",
       "options": [
         "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
@@ -224,7 +186,7 @@
       "correctIndex": 3
     },
     {
-      "roomIndex": 5,
+      "roomIndex": 4,
       "question": "What was in the \"Bolt Forge Sky\" room?",
       "options": [
         "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
