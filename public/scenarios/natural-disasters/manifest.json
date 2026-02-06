@@ -29,7 +29,21 @@
         }
       ],
       "imageFile": "room-0.png",
-      "videoFile": "room-0.mp4"
+      "videoFile": "room-0.mp4",
+      "interactionButtons": [
+        {
+          "label": "Bigger eruption!",
+          "prompt": "The volcanic eruption is intensifying to maximum force, a colossal explosion sending a towering column of bright orange lava fountaining 2,000 feet into the dark ash-choked sky, glowing lava bombs arcing through the air like fireworks, new rivers of molten lava bursting through the mountainside, the entire crater splitting open with incandescent fury"
+        },
+        {
+          "label": "Lava meets ocean!",
+          "prompt": "Rivers of glowing orange-red lava are cascading into the ocean at the base of the volcano, creating massive explosions of white steam where molten rock meets water, new black land forming as lava cools into rock, enormous billowing steam clouds rising hundreds of feet, creation and destruction happening simultaneously"
+        },
+        {
+          "label": "Lightning in ash!",
+          "prompt": "Brilliant bolts of volcanic lightning are crackling through the massive dark ash cloud above the erupting volcano, jagged white-blue veins of electricity branching across the churning plume, the ash cloud lit from within by purple and orange flashes, the erupting lava glowing below, an apocalyptic electrical storm born from the eruption itself"
+        }
+      ]
     },
     {
       "index": 1,
@@ -56,7 +70,21 @@
         }
       ],
       "imageFile": "room-1.png",
-      "videoFile": "room-1.mp4"
+      "videoFile": "room-1.mp4",
+      "interactionButtons": [
+        {
+          "label": "Spin it faster!",
+          "prompt": "The massive EF5 tornado is intensifying and widening, the dark funnel spinning faster with visible debris — pieces of buildings, trees, and dirt — orbiting at 300 mph, satellite vortices spinning within the main funnel, the roar visible in the churning debris cloud, the supercell above crackling with lightning"
+        },
+        {
+          "label": "Rip the barn!",
+          "prompt": "The tornado is tearing through a red farmstead barn, the entire roof lifting off in one piece and disintegrating as it spirals upward into the dark rotating funnel, wooden beams and planks scattering, power lines snapping with bright sparks, the barn being ripped apart plank by plank by 300 mph winds"
+        },
+        {
+          "label": "Lightning strike!",
+          "prompt": "A massive bolt of lightning is striking from the green-tinted supercell thunderstorm directly beside the tornado, illuminating the entire dark scene in a brilliant white flash, the enormous funnel lit up for a moment revealing the terrifying scale of swirling debris inside, rain curtains glowing in the flash"
+        }
+      ]
     },
     {
       "index": 2,
@@ -83,7 +111,21 @@
         }
       ],
       "imageFile": "room-2.png",
-      "videoFile": "room-2.mp4"
+      "videoFile": "room-2.mp4",
+      "interactionButtons": [
+        {
+          "label": "Wall of water!",
+          "prompt": "The colossal 100-foot tsunami wave is curling and crashing forward, the massive dark blue-green wall of water towering above everything, white foam churning at the crest, boats and debris tumbling inside the wave face, the sheer unstoppable power of the ocean bearing down, spray filling the air"
+        },
+        {
+          "label": "Pull back the ocean",
+          "prompt": "The ocean is pulling dramatically backward before the tsunami arrives, the seafloor exposed for hundreds of yards revealing stranded fish, shells, and coral, the waterline receding at alarming speed, a dark ominous wall of water building on the distant horizon, growing taller by the second"
+        },
+        {
+          "label": "Second wave!",
+          "prompt": "A second even larger tsunami wave is rising behind the first, the massive dark blue-green wall of water stretching across the entire horizon, taller and more powerful than the initial wave, the already-flooded coastline about to be struck again, churning whitewater from the first wave still surging inland"
+        }
+      ]
     },
     {
       "index": 3,
@@ -110,7 +152,21 @@
         }
       ],
       "imageFile": "room-3.png",
-      "videoFile": "room-3.mp4"
+      "videoFile": "room-3.mp4",
+      "interactionButtons": [
+        {
+          "label": "Crack the ground!",
+          "prompt": "The ground is cracking and splitting open in a jagged fissure, asphalt and concrete ripping apart to reveal glowing hot rock beneath, seismic waves rippling visibly across the surface like waves in water, chunks of road tilting at crazy angles, dust and debris billowing from the widening rift"
+        },
+        {
+          "label": "Trigger a landslide",
+          "prompt": "The earthquake is triggering a massive landslide on a nearby hillside, tons of earth, rock, and uprooted trees cascading downward in a thundering avalanche of debris, dust clouds mushrooming outward, the ground still shaking violently, the hillside collapsing in slow motion under the seismic force"
+        },
+        {
+          "label": "Burst water mains!",
+          "prompt": "Water mains are bursting all along the cracked street, sending powerful geysers of water shooting 50 feet into the dusty air, the pressurized water spraying in every direction from the fractured ground, creating rainbows in the dust-filled sunlight, the earthquake fissure still widening below"
+        }
+      ]
     },
     {
       "index": 4,
@@ -137,7 +193,21 @@
         }
       ],
       "imageFile": "room-4.png",
-      "videoFile": "room-4.mp4"
+      "videoFile": "room-4.mp4",
+      "interactionButtons": [
+        {
+          "label": "Bigger avalanche!",
+          "prompt": "The massive avalanche is intensifying, an even larger section of the mountain snowpack breaking free along the fracture line, 300,000 cubic yards of churning white snow thundering downhill at 200 mph, the powder cloud expanding into an enormous white wall consuming the entire mountain face, trees vanishing into the torrent"
+        },
+        {
+          "label": "Snap the trees!",
+          "prompt": "Entire pine forests are being snapped and swallowed by the advancing wall of snow, massive tree trunks cracking like toothpicks as the avalanche plows through at 200 mph, wooden splinters and snow debris spraying hundreds of feet into the air, the unstoppable white wave flattening everything in its path"
+        },
+        {
+          "label": "Powder cloud!",
+          "prompt": "The avalanche's powder cloud is billowing hundreds of feet into the clear blue sky like a mushroom cloud of white snow dust, the leading edge of fine ice crystals racing outward ahead of the main snow mass, creating a shockwave of displaced air visible in the swirling particles, the mountain disappearing behind the white curtain"
+        }
+      ]
     }
   ],
   "quizQuestions": [

@@ -29,7 +29,21 @@
         }
       ],
       "imageFile": "room-0.png",
-      "videoFile": "room-0.mp4"
+      "videoFile": "room-0.mp4",
+      "interactionButtons": [
+        {
+          "label": "Light the signals!",
+          "prompt": "Signal fires are erupting on every watchtower along the Great Wall, flames and thick smoke billowing into the fiery sunset sky, a chain of fire racing from tower to tower across the mountain ridges, stretching toward the horizon, the ancient wall glowing orange in the firelight"
+        },
+        {
+          "label": "Raise the banners",
+          "prompt": "Hundreds of red battle flags are unfurling and snapping in a strong wind along the top of the Great Wall, the crimson silk catching the golden sunset light, warriors in bronze armor are raising spears beneath them, the banners stretching along the wall for miles across the mountain peaks"
+        },
+        {
+          "label": "March the army",
+          "prompt": "An enormous army of ancient Chinese soldiers is marching in perfect formation along the top of the Great Wall, hundreds of warriors in gleaming bronze armor pounding forward in unison, dust rising from their synchronized footsteps, the wall stretching endlessly across mountain ridges into the sunset"
+        }
+      ]
     },
     {
       "index": 1,
@@ -56,7 +70,21 @@
         }
       ],
       "imageFile": "room-1.png",
-      "videoFile": "room-1.mp4"
+      "videoFile": "room-1.mp4",
+      "interactionButtons": [
+        {
+          "label": "Part the clouds!",
+          "prompt": "Thick clouds are dramatically parting to reveal the full sprawling ruins of Machu Picchu, golden sunlight breaking through in a single brilliant beam that illuminates the ancient stone terraces, wind whipping the mist apart, the hidden Inca city emerging from centuries of concealment on the mountain peak"
+        },
+        {
+          "label": "Summon a condor",
+          "prompt": "A massive Andean condor is swooping low over Machu Picchu's main plaza, its 10-foot wingspan casting a dark shadow across the ancient stones, feathers ruffling in the mountain wind, racing clouds streaming past below the ruins making the city appear to float in the sky"
+        },
+        {
+          "label": "Explore the ruins",
+          "prompt": "Clouds are flowing through the stone streets of Machu Picchu like rivers of mist, swirling through doorways and around precisely cut Inca walls overgrown with jungle vines, golden light catching the wet stone surfaces, the ancient abandoned city slowly revealing its secrets in the mountain fog"
+        }
+      ]
     },
     {
       "index": 2,
@@ -83,7 +111,21 @@
         }
       ],
       "imageFile": "room-2.png",
-      "videoFile": "room-2.mp4"
+      "videoFile": "room-2.mp4",
+      "interactionButtons": [
+        {
+          "label": "Crowd goes wild!",
+          "prompt": "50,000 spectators in the ancient Colosseum are leaping to their feet and roaring with excitement, arms raised, the massive stone amphitheater reverberating with thunderous cheers, flower petals and laurel wreaths raining down into the sandy arena below, red and gold banners waving frantically"
+        },
+        {
+          "label": "Gladiator charge!",
+          "prompt": "A gladiator in gleaming bronze armor is charging across the sandy arena floor of the Colosseum, sword raised high, sand kicking up from powerful strides, the massive lion circling in the background, 50,000 spectators watching breathlessly from the four stories of packed stone tiers"
+        },
+        {
+          "label": "Release the lion",
+          "prompt": "A massive golden-maned lion is bursting through a wooden gate at the edge of the Colosseum arena, muscles rippling, claws extended, sand flying from its powerful paws as it leaps into the sunlit arena, the crowd of 50,000 gasping and pointing from the stone tiers above"
+        }
+      ]
     },
     {
       "index": 3,
@@ -110,7 +152,21 @@
         }
       ],
       "imageFile": "room-3.png",
-      "videoFile": "room-3.mp4"
+      "videoFile": "room-3.mp4",
+      "interactionButtons": [
+        {
+          "label": "Place a block!",
+          "prompt": "Thousands of Egyptian workers are heaving a massive car-sized limestone block into position on the Great Pyramid, wooden levers straining, ropes taut, the block landing with a thundering boom that sends dust billowing, the half-built pyramid rising 481 feet under the blazing desert sun"
+        },
+        {
+          "label": "Zoom out wide",
+          "prompt": "The full epic scale of the Great Pyramid construction is visible from high above — the 481-foot structure rising from the desert surrounded by an entire city of workers, ramps, and supply routes, boats carrying stone blocks on the nearby Nile, tens of thousands of workers swarming like ants across the greatest building project in history"
+        },
+        {
+          "label": "Carve the Sphinx",
+          "prompt": "Workers are chiseling the enormous Sphinx in the foreground, stone chips flying as the great lion-body and pharaoh-face take shape from raw bedrock, the half-built Great Pyramid towering behind them, desert sun blazing, the ancient monument emerging from the living stone"
+        }
+      ]
     },
     {
       "index": 4,
@@ -137,7 +193,21 @@
         }
       ],
       "imageFile": "room-4.png",
-      "videoFile": "room-4.mp4"
+      "videoFile": "room-4.mp4",
+      "interactionButtons": [
+        {
+          "label": "Launch fireworks!",
+          "prompt": "Dozens of spectacular fireworks are exploding simultaneously above the Taj Mahal's white marble dome, brilliant bursts of gold, red, green, and blue cascading downward like waterfalls of sparks, every color reflecting in the long pool below, the white marble glowing in a psychedelic rainbow"
+        },
+        {
+          "label": "Mirror reflection",
+          "prompt": "The Taj Mahal's perfect white marble form is reflecting flawlessly in the long still pool below, creating a mirror-image double, the dome and four minarets shimmering in the water, oil lamps lining the garden pathways casting warm golden reflections, the night sky full of stars above"
+        },
+        {
+          "label": "Golden shower!",
+          "prompt": "A massive golden firework is bursting directly above the Taj Mahal's central dome, showering the white marble with cascading golden sparks that rain down like a luminous waterfall, the entire building turning gold for a moment, the pool below shattering into a thousand golden fragments"
+        }
+      ]
     },
     {
       "index": 5,
@@ -164,7 +234,21 @@
         }
       ],
       "imageFile": "room-5.png",
-      "videoFile": "room-5.mp4"
+      "videoFile": "room-5.mp4",
+      "interactionButtons": [
+        {
+          "label": "Summon the serpent!",
+          "prompt": "The shadow of the feathered serpent Kukulkan is forming down El Castillo's staircase, triangular shadows of light and dark cascading down the balustrade as the equinox sun sets, the serpent body appearing to undulate and slither toward the carved stone head at the base, the crowd gasping in awe"
+        },
+        {
+          "label": "Start the dance",
+          "prompt": "Maya dancers in elaborate feathered costumes and jade jewelry are whirling at the base of El Castillo, their enormous feathered headdresses spinning and swaying, bare feet pounding the stone plaza in rhythm with thundering drums, torches blazing on the pyramid steps above, the sunset sky burning deep orange and red"
+        },
+        {
+          "label": "Light the torches",
+          "prompt": "Dozens of blazing torches are igniting in sequence up the steps of El Castillo pyramid, flames leaping to life one after another from base to summit, casting flickering amber light across the ancient limestone, the pyramid glowing like a beacon against the deep orange equinox sunset sky"
+        }
+      ]
     }
   ],
   "quizQuestions": [

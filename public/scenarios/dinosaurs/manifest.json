@@ -29,7 +29,21 @@
         }
       ],
       "imageFile": "room-0.png",
-      "videoFile": "room-0.mp4"
+      "videoFile": "room-0.mp4",
+      "interactionButtons": [
+        {
+          "label": "Make it roar!",
+          "prompt": "The T-Rex is roaring with its enormous head thrown back, jaws gaping wide revealing rows of bone-crushing teeth, a visible shockwave rippling outward through the volcanic steam and dust, the ground cracking beneath its feet from the vibration"
+        },
+        {
+          "label": "Stomp the ground",
+          "prompt": "The T-Rex is stomping its massive foot down hard onto the volcanic crater floor, the basalt is cracking and splitting open with bright orange lava gushing upward through the fractures, shockwaves radiating outward, dust and sparks exploding from the impact point"
+        },
+        {
+          "label": "Tiny arm wave",
+          "prompt": "The T-Rex is wiggling its comically tiny arms in a confused waving motion, looking befuddled and frustrated while its massive 40-foot body towers overhead, the tiny arms flapping uselessly against its enormous muscular torso in the volcanic crater"
+        }
+      ]
     },
     {
       "index": 1,
@@ -56,7 +70,21 @@
         }
       ],
       "imageFile": "room-1.png",
-      "videoFile": "room-1.mp4"
+      "videoFile": "room-1.mp4",
+      "interactionButtons": [
+        {
+          "label": "Charge forward!",
+          "prompt": "The Triceratops is charging at full speed through the flowering meadow, head lowered like a battering ram with three gleaming horns pointed forward, massive bony frill angled for impact, flowers and dirt flying up from its thundering feet, the ancient stone wall looming ahead about to shatter"
+        },
+        {
+          "label": "Shake the frill",
+          "prompt": "The Triceratops is shaking its enormous bony frill from side to side in a dramatic threat display, the three crystal-sharp horns catching golden afternoon light, flower petals swirling around its massive head, the ground trembling beneath its heavy body"
+        },
+        {
+          "label": "Munch some flowers",
+          "prompt": "The Triceratops is happily munching on a huge bouquet of colorful wildflowers growing from the vine-covered stone wall, its beak-like mouth gently plucking blooms, petals falling from its jaws, looking peaceful and content despite its fearsome three-horned head"
+        }
+      ]
     },
     {
       "index": 2,
@@ -83,7 +111,21 @@
         }
       ],
       "imageFile": "room-2.png",
-      "videoFile": "room-2.mp4"
+      "videoFile": "room-2.mp4",
+      "interactionButtons": [
+        {
+          "label": "Swing the tail!",
+          "prompt": "The Stegosaurus is swinging its spiked thagomizer tail in a devastating arc, the four deadly spikes smashing through a boulder and sending rock fragments exploding in every direction, its body twisting with the momentum, diamond-shaped back plates glowing golden in the sunrise light"
+        },
+        {
+          "label": "Light up plates",
+          "prompt": "The Stegosaurus is flushing its row of diamond-shaped back plates bright crimson red in a threat display, blood pumping visibly through each plate from front to back in a mesmerizing wave of color, the plates practically glowing against the misty mountain ridge at sunrise"
+        },
+        {
+          "label": "Look confused",
+          "prompt": "The Stegosaurus is swinging its tiny head around in bewilderment, its walnut-sized brain struggling to figure out which direction to go, bumping into a fern grove while its massive armored body and deadly tail drag behind, looking adorably dim-witted"
+        }
+      ]
     },
     {
       "index": 3,
@@ -110,7 +152,21 @@
         }
       ],
       "imageFile": "room-3.png",
-      "videoFile": "room-3.mp4"
+      "videoFile": "room-3.mp4",
+      "interactionButtons": [
+        {
+          "label": "Flash the claws!",
+          "prompt": "All three Velociraptors are extending their curved sickle claws forward in unison, the deadly hooked talons gleaming in shafts of jungle light, each raptor is perched on a different branch with iridescent blue-green feathers ruffled, intelligent eyes locked on the viewer"
+        },
+        {
+          "label": "Leap between trees",
+          "prompt": "The lead Velociraptor is launching itself between two massive tree trunks in a spectacular parkour leap, its feathered turkey-sized body stretched horizontally through the air, sickle claw slashing bark as it pushes off, leaves and splinters exploding from the impact point"
+        },
+        {
+          "label": "Pack head tilt",
+          "prompt": "All three Velociraptors are tilting their feathered heads in perfect synchronization, studying the viewer with eerily intelligent eyes, one is hissing softly showing small sharp teeth, iridescent blue-green plumage shimmering in the dappled jungle light, unnervingly coordinated"
+        }
+      ]
     },
     {
       "index": 4,
@@ -137,7 +193,21 @@
         }
       ],
       "imageFile": "room-4.png",
-      "videoFile": "room-4.mp4"
+      "videoFile": "room-4.mp4",
+      "interactionButtons": [
+        {
+          "label": "Reach the treetops",
+          "prompt": "The enormous Brachiosaurus is stretching its incredibly long neck upward through the canopy, its head breaking through the treetops into golden clouds above, leaves and branches raining down, the 85-foot body reaching like a living skyscraper with its terracotta giraffe-patterned skin glowing in sunlight"
+        },
+        {
+          "label": "Shake the earth",
+          "prompt": "The Brachiosaurus is slamming one of its massive pillar-like front legs down, the ground cracking and trembling with the impact, a shockwave rippling outward through puddles and fern groves, smaller dinosaurs scattering in every direction, dust and leaves billowing upward from the earth-shaking footstep"
+        },
+        {
+          "label": "Gentle eye blink",
+          "prompt": "The Brachiosaurus is lowering its enormous head down through the canopy to eye level, blinking one gentle calm eye directly at the viewer, its huge head framed by falling leaves and broken branches, warm afternoon light catching its textured bumpy scales, a surprisingly tender moment from an 85-foot giant"
+        }
+      ]
     },
     {
       "index": 5,
@@ -164,7 +234,21 @@
         }
       ],
       "imageFile": "room-5.png",
-      "videoFile": "room-5.mp4"
+      "videoFile": "room-5.mp4",
+      "interactionButtons": [
+        {
+          "label": "Dive for fish!",
+          "prompt": "The Pteranodon is diving at incredible speed toward the ocean surface, wings tucked back in a steep plunge, its pointed head crest cutting through the air like a blade, the turquoise water rushing up with visible fish below, motion blur streaking past, spray beginning to part from the approaching pressure wave"
+        },
+        {
+          "label": "Spread the wings",
+          "prompt": "The Pteranodon is fully spreading its enormous 20-foot wingspan wide open, the thin leathery membranes stretching taut and glowing translucent in the orange sunset light, soaring majestically along the jagged coastal cliffs with ocean spray rising below"
+        },
+        {
+          "label": "Catch a fish!",
+          "prompt": "The Pteranodon is snatching a large silver fish from the ocean surface with its long beak, water exploding in a spectacular spray around the impact point, its enormous wings snapping fully open to brake, the caught fish thrashing and glinting in the sunset light"
+        }
+      ]
     }
   ],
   "quizQuestions": [

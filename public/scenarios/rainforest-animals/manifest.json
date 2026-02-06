@@ -29,7 +29,21 @@
         }
       ],
       "imageFile": "room-0.png",
-      "videoFile": "room-0.mp4"
+      "videoFile": "room-0.mp4",
+      "interactionButtons": [
+        {
+          "label": "Pounce attack!",
+          "prompt": "The muscular jaguar is launching itself from the mossy riverbank in a powerful pounce, its golden rosette-spotted body stretched horizontally through the air, jaws wide open showing enormous canine teeth, water droplets spraying from its fur, dense tropical rainforest steaming behind it, the ultimate ambush predator mid-strike"
+        },
+        {
+          "label": "Show the bite!",
+          "prompt": "The jaguar is clamping its massive jaws down with bone-crushing force, demonstrating the strongest bite of any big cat, its powerful jaw muscles bulging under golden spotted fur, canine teeth sinking deep, the raw crushing power visible in every tensed muscle of its face and neck"
+        },
+        {
+          "label": "Swim the river",
+          "prompt": "The jaguar is swimming powerfully through the dark jungle river, only its spotted head and shoulders visible above the surface, amber eyes locked forward with predatory focus, water rippling around its muscular body, green jungle reflections shimmering on the dark water, a big cat perfectly at home in the water"
+        }
+      ]
     },
     {
       "index": 1,
@@ -56,7 +70,21 @@
         }
       ],
       "imageFile": "room-1.png",
-      "videoFile": "room-1.mp4"
+      "videoFile": "room-1.mp4",
+      "interactionButtons": [
+        {
+          "label": "Hop closer!",
+          "prompt": "The brilliant electric-blue poison dart frog is hopping directly toward the viewer across dark wet leaf litter, its tiny toxic body glistening with moisture, jet-black spots vivid against the cobalt blue, bright orange toe pads spread wide mid-leap, the neon colors practically glowing against the dark rainforest floor"
+        },
+        {
+          "label": "Flash the warning",
+          "prompt": "All three poison dart frogs are puffing up and displaying their brightest warning colors — the blue one is electric cobalt, the red one is blazing strawberry with blue legs, the yellow one is radioactive gold — all glistening with toxic moisture on the dark wet forest floor, nature's most vivid danger signs"
+        },
+        {
+          "label": "Scare the snake!",
+          "prompt": "A snake is recoiling away from the tiny golden poison dart frog, repelled by its lethal toxin, the fearless frog holding its ground with bright yellow skin practically glowing as a warning, the other neon-colored frogs hopping unconcerned nearby on the dark wet jungle floor, tiny but deadly"
+        }
+      ]
     },
     {
       "index": 2,
@@ -83,7 +111,21 @@
         }
       ],
       "imageFile": "room-2.png",
-      "videoFile": "room-2.mp4"
+      "videoFile": "room-2.mp4",
+      "interactionButtons": [
+        {
+          "label": "Grab a berry!",
+          "prompt": "The keel-billed toucan is stretching its enormous multicolored bill toward a cluster of ripe red berries on a thin branch, the rainbow-gradient beak of green, orange, red, blue, and yellow reaching forward, the thin branch bending under its weight, lush green canopy glowing with golden sunlight all around"
+        },
+        {
+          "label": "Toss and catch!",
+          "prompt": "The toucan is tossing a bright red berry up into the air with the tip of its massive colorful bill and catching it in its open beak, head tilted back, the berry mid-arc against the lush green canopy, golden sunlight catching the vivid rainbow gradient of the enormous bill"
+        },
+        {
+          "label": "Spread the wings!",
+          "prompt": "The toucan is spreading its jet-black wings wide and launching from a branch into flight, its enormous multicolored bill leading the way through the canopy, bright yellow chest flashing, tropical flowers and leaves scattering in its wake, shafts of golden light streaming through the lush green forest"
+        }
+      ]
     },
     {
       "index": 3,
@@ -110,7 +152,21 @@
         }
       ],
       "imageFile": "room-3.png",
-      "videoFile": "room-3.mp4"
+      "videoFile": "room-3.mp4",
+      "interactionButtons": [
+        {
+          "label": "Squeeze tighter!",
+          "prompt": "The enormous green anaconda is tightening its massive coils around its prey, muscles rippling along its olive-green tree-trunk-thick body, dark oval spots stretching with the constriction, each coil visibly squeezing tighter, murky swamp water churning around the 550-pound snake's thrashing body"
+        },
+        {
+          "label": "Rise from water!",
+          "prompt": "The green anaconda is surging upward out of the murky brown-green swamp water, its enormous olive-green head and thick body rising dramatically, mouth gaping open showing curved teeth, water cascading off its muscular coils, swamp vegetation and lily pads scattering, the 20-foot beast emerging like a living submarine"
+        },
+        {
+          "label": "Slide underwater",
+          "prompt": "The massive green anaconda is gliding silently beneath the murky swamp surface, only its dark patterned scales visible through the brown-green water, creating a long slow wake, lily pads parting as the 550-pound body passes underneath, an invisible ambush predator lurking in its murky domain"
+        }
+      ]
     },
     {
       "index": 4,
@@ -137,7 +193,21 @@
         }
       ],
       "imageFile": "room-4.png",
-      "videoFile": "room-4.mp4"
+      "videoFile": "room-4.mp4",
+      "interactionButtons": [
+        {
+          "label": "Talons out!",
+          "prompt": "The harpy eagle is extending its enormous talons forward in a striking pose, each curved claw as long as a grizzly bear's, the massive feet spread wide with lethal precision, slate-gray and white feathers flared, distinctive split crest standing tall, the most powerful raptor talons in the world on full display"
+        },
+        {
+          "label": "Dive through trees!",
+          "prompt": "The harpy eagle is rocketing through dense rainforest canopy at 50 mph, wings folded back for speed, threading between massive tree trunks with impossible agility, leaves and small branches shattering as it punches through, its distinctive split crest blown flat by the wind, a blur of slate-gray power"
+        },
+        {
+          "label": "Spread the wings!",
+          "prompt": "The harpy eagle is snapping its enormous wings fully open to brake, spanning nearly 7 feet across, slate-gray and white feathers flaring dramatically, massive talons gripping a thick branch that splinters and cracks under the force, leaves cascading down from the canopy impact, pure aerial dominance"
+        }
+      ]
     },
     {
       "index": 5,
@@ -164,7 +234,21 @@
         }
       ],
       "imageFile": "room-5.png",
-      "videoFile": "room-5.mp4"
+      "videoFile": "room-5.mp4",
+      "interactionButtons": [
+        {
+          "label": "Flash red eyes!",
+          "prompt": "The red-eyed tree frog is snapping its enormous crimson-red eyes wide open in a sudden startle display, the blazing red irises practically glowing against its vivid lime-green body, blue-and-yellow striped sides flashing, orange suction-cup toes gripping a wet leaf, raindrops beading on its smooth skin"
+        },
+        {
+          "label": "Catch a bug!",
+          "prompt": "The red-eyed tree frog is shooting its long sticky pink tongue out at lightning speed, snatching a moth from the air mid-flight, the tongue stretched to its full length, its enormous red eyes bulging with the effort, vivid green body perched on a rain-soaked leaf with orange toes gripping tight"
+        },
+        {
+          "label": "Leap to a leaf!",
+          "prompt": "The red-eyed tree frog is mid-leap between two bright green leaves in the rain, its vivid lime-green body stretched horizontally, blue-and-yellow striped sides fully exposed, enormous crimson eyes wide open, bright orange suction-cup toes reaching for the next leaf, raindrops streaking past its tiny airborne body"
+        }
+      ]
     }
   ],
   "quizQuestions": [

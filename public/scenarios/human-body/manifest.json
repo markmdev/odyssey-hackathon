@@ -29,7 +29,21 @@
         }
       ],
       "imageFile": "room-0.png",
-      "videoFile": "room-0.mp4"
+      "videoFile": "room-0.mp4",
+      "interactionButtons": [
+        {
+          "label": "Pump it!",
+          "prompt": "The giant anatomical heart is contracting in a powerful beat, all four chambers squeezing in sequence, a visible pulse of bright red blood surging through the arteries and branching outward, the muscle fibers rippling with each contraction, the pulse wave traveling through every blood vessel like a drumbeat of life"
+        },
+        {
+          "label": "See the chambers",
+          "prompt": "The giant heart's cross-section is revealing all four chambers in vivid detail — the left atrium and ventricle filling with bright red oxygenated blood, the right atrium and ventricle filling with dark blue deoxygenated blood, the valves opening and closing like tiny doors, the muscular walls glistening and clearly separated"
+        },
+        {
+          "label": "Follow the blood!",
+          "prompt": "A stream of bright red blood cells is rushing out of the heart's left ventricle through the aorta, racing through branching arteries that extend outward in every direction like a tree of life, each vessel pulsing with the heartbeat, the red cells glowing as they carry oxygen on their journey through the entire body"
+        }
+      ]
     },
     {
       "index": 1,
@@ -56,7 +70,21 @@
         }
       ],
       "imageFile": "room-1.png",
-      "videoFile": "room-1.mp4"
+      "videoFile": "room-1.mp4",
+      "interactionButtons": [
+        {
+          "label": "Take a breath!",
+          "prompt": "The pair of pink spongy lungs is expanding with a deep breath, the tissue stretching and inflating, bronchial branches opening wider, blue oxygen molecules rushing down through the branching airways into 300 million tiny grape-like alveoli, the lung tissue glowing brighter pink as it fills with life-giving air"
+        },
+        {
+          "label": "Breathe out!",
+          "prompt": "The lungs are contracting and exhaling, red carbon dioxide molecules streaming upward through the bronchial tree and out the trachea, the pink tissue compressing, the alveoli deflating slightly as they release CO2, the exchange visible — blue oxygen absorbed into blood capillaries, red CO2 escaping outward"
+        },
+        {
+          "label": "Zoom into alveoli",
+          "prompt": "A dramatically magnified view is showing the inside of the tiny grape-like alveoli clusters, the delicate walls so thin that blue oxygen molecules are passing directly through into the red blood capillaries wrapped around each sac, while red CO2 molecules pass the other way, the gas exchange happening at the microscopic level"
+        }
+      ]
     },
     {
       "index": 2,
@@ -83,7 +111,21 @@
         }
       ],
       "imageFile": "room-2.png",
-      "videoFile": "room-2.mp4"
+      "videoFile": "room-2.mp4",
+      "interactionButtons": [
+        {
+          "label": "Fire the neurons!",
+          "prompt": "A massive cascade of neural activity is erupting across the brain's wrinkled pink-gray surface, blue-white electrical pulses firing in rapid chains from the frontal lobe backward, lighting up region after region in brilliant flashes, 86 billion neurons crackling with energy, dendrite networks glowing brighter as signals race through them"
+        },
+        {
+          "label": "Light up all regions",
+          "prompt": "The entire brain is pulsing with synchronized activity, all regions lighting up simultaneously in a brilliant wave of blue-white energy — the frontal lobe glowing with decision-making, the visual cortex flickering, the cerebellum sparkling with coordination signals, the wrinkled surface ablaze with the work of 86 billion neurons thinking at once"
+        },
+        {
+          "label": "Zoom into neurons",
+          "prompt": "A magnified view is revealing individual neurons at the brain's surface, their branching tree-like dendrites reaching out to connect with thousands of neighboring cells, blue-white electrical signals jumping across tiny synaptic gaps in sparks of light, the neural network visible as an intricate web of living wires carrying thoughts"
+        }
+      ]
     },
     {
       "index": 3,
@@ -110,7 +152,21 @@
         }
       ],
       "imageFile": "room-3.png",
-      "videoFile": null
+      "videoFile": null,
+      "interactionButtons": [
+        {
+          "label": "Move the skeleton!",
+          "prompt": "The complete 206-bone human skeleton is stepping forward in a walking motion, joints articulating smoothly, the bones flexing and rotating at each connection point, blue light pulsing at every active joint, the ribcage expanding as if breathing, the ivory-gold glowing bones demonstrating the incredible engineering of human movement"
+        },
+        {
+          "label": "See the marrow",
+          "prompt": "A cross-section of the femur bone is revealing the glowing red bone marrow factory inside, tiny red and white blood cells being produced and released into blood vessels that thread through the hollow bone, the marrow pulsing with life-giving energy, the bone structure both strong and surprisingly light inside"
+        },
+        {
+          "label": "Glow the joints!",
+          "prompt": "All 206 bones of the skeleton are illuminated with every joint connection highlighted in brilliant blue light, the ball-and-socket joints of the hips and shoulders glowing brightest, hinge joints at the knees and elbows pulsing, the spine's interlocking vertebrae shimmering, the entire skeletal framework lit up like an architectural blueprint"
+        }
+      ]
     },
     {
       "index": 4,
@@ -137,7 +193,21 @@
         }
       ],
       "imageFile": "room-4.png",
-      "videoFile": "room-4.mp4"
+      "videoFile": "room-4.mp4",
+      "interactionButtons": [
+        {
+          "label": "Drop the food!",
+          "prompt": "A piece of food is dropping down the esophagus into the stomach with a splash, the muscular stomach walls contracting and churning, mixing the food with bubbling green-yellow digestive acids, the food breaking apart into smaller and smaller pieces in the powerful acid pool, the muscular sac squeezing rhythmically"
+        },
+        {
+          "label": "Travel the intestine",
+          "prompt": "Liquefied food is flowing from the stomach into the winding 20-foot small intestine, the camera following it through the endless pink coils, tiny finger-like villi on the intestine walls waving gently like underwater coral as they absorb nutrients, nutrients passing through the villi walls into surrounding blood vessels"
+        },
+        {
+          "label": "Zoom into villi",
+          "prompt": "A dramatically magnified view is showing the tiny finger-like villi lining the small intestine wall, each one waving gently and absorbing nutrients from the passing food, blood capillaries visible inside each villus carrying away the absorbed nutrition, the surface looking like a dense forest of microscopic coral"
+        }
+      ]
     },
     {
       "index": 5,
@@ -164,7 +234,21 @@
         }
       ],
       "imageFile": "room-5.png",
-      "videoFile": "room-5.mp4"
+      "videoFile": "room-5.mp4",
+      "interactionButtons": [
+        {
+          "label": "Flex the muscles!",
+          "prompt": "The muscle figure is flexing both arms powerfully, the biceps and triceps contracting and bulging with vivid red-pink fibers visibly shortening and thickening, over 600 muscles activating in coordinated chains across the body, each major muscle group rippling with visible fiber detail against the dark dramatic background"
+        },
+        {
+          "label": "Show the jaw!",
+          "prompt": "The masseter jaw muscle is tensing and glowing bright with a strength indicator, the most powerful muscle pound-for-pound in the entire body clenching with 170 pounds of force, the jaw fibers bulging and contracting on the ecorche figure's face, highlighting how this small muscle outperforms all others in raw bite strength"
+        },
+        {
+          "label": "Heart never stops!",
+          "prompt": "The heart muscle is beating powerfully and glowing with golden light through the transparent chest of the muscle figure, its unique branched and interconnected fibers contracting rhythmically, never stopping, sending pulses of warm golden light radiating outward through all 600 surrounding muscles, the one muscle that works 24/7 without rest"
+        }
+      ]
     }
   ],
   "quizQuestions": [

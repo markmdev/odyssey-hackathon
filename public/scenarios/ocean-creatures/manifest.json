@@ -29,7 +29,21 @@
         }
       ],
       "imageFile": "room-0.png",
-      "videoFile": "room-0.mp4"
+      "videoFile": "room-0.mp4",
+      "interactionButtons": [
+        {
+          "label": "Tail splash!",
+          "prompt": "The Blue Whale's enormous tail flukes are sweeping downward in a powerful stroke, displacing a massive wall of water, swirling currents and bubbles spiraling outward from the 100-foot body, golden sunlight shafts rippling across its blue-gray mottled back, the sheer force of the movement visible in the churning ocean"
+        },
+        {
+          "label": "Open wide!",
+          "prompt": "The Blue Whale is opening its enormous mouth impossibly wide, revealing rows of baleen plates as it engulfs a massive shimmering cloud of krill, its accordion-like throat grooves stretching and expanding, water and krill rushing into the cavernous mouth that could swallow a car, sunlight illuminating the interior"
+        },
+        {
+          "label": "Swim beside it",
+          "prompt": "The Blue Whale is gliding peacefully through crystal-clear water directly past the viewer, its 100-foot body stretching endlessly from nose to tail, the gentle intelligent eye looking sideways at the camera, sunlight streaming across its beautiful mottled blue-gray skin, a tiny scuba diver visible far below for scale"
+        }
+      ]
     },
     {
       "index": 1,
@@ -56,7 +70,21 @@
         }
       ],
       "imageFile": "room-1.png",
-      "videoFile": "room-1.mp4"
+      "videoFile": "room-1.mp4",
+      "interactionButtons": [
+        {
+          "label": "Show the teeth!",
+          "prompt": "The Great White Shark is opening its massive jaws wide, revealing row upon row of 300 razor-sharp serrated teeth arranged in a terrifying conveyor-belt formation, the triangular front teeth gleaming white in the sunlight, its cold black eye staring directly at the viewer through crystal-clear blue water"
+        },
+        {
+          "label": "Breach the surface!",
+          "prompt": "The Great White Shark is launching its massive body out of the ocean in a spectacular breach, jaws wide open with 300 teeth gleaming in sunlight, water cascading off its white belly and dark gray-blue back, an explosion of spray surrounding the shark mid-air, raw predatory power frozen at its peak"
+        },
+        {
+          "label": "Circle closer",
+          "prompt": "The Great White Shark is circling slowly closer through the clear blue water, its powerful streamlined body turning in a tightening spiral, every scar and scratch visible on its skin, electroreceptor pores dotting its snout, cold focused black eye tracking movement, the water churning gently in its wake"
+        }
+      ]
     },
     {
       "index": 2,
@@ -83,7 +111,21 @@
         }
       ],
       "imageFile": "room-2.png",
-      "videoFile": "room-2.mp4"
+      "videoFile": "room-2.mp4",
+      "interactionButtons": [
+        {
+          "label": "Change colors!",
+          "prompt": "The octopus is rapidly shifting its entire body through a dazzling spectrum of colors — waves of electric blue, vivid orange, deep purple, and bright white are rippling across its skin in mesmerizing chromatophore patterns, its texture morphing from smooth to spiky to coral-like, a living kaleidoscope on the vibrant reef"
+        },
+        {
+          "label": "Squirt ink!",
+          "prompt": "The octopus is jetting backward off the coral reef, all eight suckered arms trailing behind, its body flushing deep alarm-red as a massive cloud of dark ink billows from its siphon, creating a swirling black smokescreen in the turquoise water, the octopus vanishing into the inky darkness"
+        },
+        {
+          "label": "Reach an arm out",
+          "prompt": "The octopus is extending one long arm directly toward the viewer, hundreds of white suckers visible in incredible detail along the underside, the arm curling and probing curiously, its intelligent golden eye staring from behind the outstretched tentacle, chromatophore colors rippling across its skin"
+        }
+      ]
     },
     {
       "index": 3,
@@ -110,7 +152,21 @@
         }
       ],
       "imageFile": "room-3.png",
-      "videoFile": "room-3.mp4"
+      "videoFile": "room-3.mp4",
+      "interactionButtons": [
+        {
+          "label": "Pulse and glow!",
+          "prompt": "The moon jellyfish is pulsing its translucent bell with intensified bioluminescence, each rhythmic contraction sending brilliant waves of blue-purple light radiating through its transparent body, the glow illuminating the dark deep-sea water, long trailing tentacles glowing with ethereal light"
+        },
+        {
+          "label": "Jellyfish swarm!",
+          "prompt": "Dozens of bioluminescent jellyfish are drifting together in a mesmerizing swarm, their transparent bells pulsing at different rhythms, creating a constellation of glowing blue, purple, pink, and green lights scattered through the dark ocean like living stars, long tentacles interweaving gracefully"
+        },
+        {
+          "label": "Trail the tentacles",
+          "prompt": "The jellyfish is drifting gently through the dark water with its long delicate tentacles trailing behind in graceful spiraling ribbons, each thread glowing faintly with bioluminescent stinging cells, marine snow particles floating past like underwater snowflakes, the ethereal ghostlike creature made of 95 percent water"
+        }
+      ]
     },
     {
       "index": 4,
@@ -137,7 +193,21 @@
         }
       ],
       "imageFile": "room-4.png",
-      "videoFile": "room-4.mp4"
+      "videoFile": "room-4.mp4",
+      "interactionButtons": [
+        {
+          "label": "Swim to shore!",
+          "prompt": "The ancient green sea turtle is swimming powerfully toward a tropical beach visible through the shimmering water surface, its strong flippers pulling it gracefully through turquoise water, golden sunset light growing brighter as it rises, the white sand beach of its birthplace stretching in the warm distance"
+        },
+        {
+          "label": "Ride a current",
+          "prompt": "The sea turtle is gliding effortlessly on a warm ocean current, its flippers tucked at its sides, its beautifully patterned olive-brown-gold shell catching dappled sunlight, small remora fish hitching a ride on its back, tropical coral reef passing below in a blur of color"
+        },
+        {
+          "label": "Take a breath",
+          "prompt": "The sea turtle is breaking the ocean surface and lifting its ancient wise head into the warm golden sunset light to take a deep breath, its wet shell glistening with water droplets, the calm turquoise ocean stretching to the horizon, a peaceful moment after thousands of miles of ocean migration"
+        }
+      ]
     },
     {
       "index": 5,
@@ -164,7 +234,21 @@
         }
       ],
       "imageFile": "room-5.png",
-      "videoFile": "room-5.mp4"
+      "videoFile": "room-5.mp4",
+      "interactionButtons": [
+        {
+          "label": "Dangle the lure!",
+          "prompt": "The anglerfish's bioluminescent lure is swinging gently through the pitch-black deep sea, casting an eerie blue-green glow across her nightmarish face full of needle-sharp translucent teeth, the fleshy rod on her forehead waving the glowing esca back and forth, drawing a small curious fish closer to the trap"
+        },
+        {
+          "label": "Snap the jaws!",
+          "prompt": "The anglerfish is snapping her enormous mouth open impossibly wide, needle-sharp teeth interlocking like a cage, lunging forward in the pitch darkness to engulf prey in one lightning-fast gulp, her bioluminescent lure flickering wildly with the sudden violent movement, the dark water swirling"
+        },
+        {
+          "label": "Light up the dark",
+          "prompt": "The anglerfish's bioluminescent lure is glowing with intensified blue-green light, illuminating a wider circle of the pitch-black abyss, revealing her horrifying bloated dark body, needle teeth, beady eyes, and the tiny parasitic male fused to her belly, bioluminescent particles floating like stars around her"
+        }
+      ]
     }
   ],
   "quizQuestions": [
