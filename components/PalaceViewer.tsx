@@ -80,8 +80,8 @@ export default function PalaceViewer({
 
   return (
     <div className="relative flex h-dvh flex-col bg-black">
-      {/* Top bar */}
-      <div className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between bg-black/60 px-6 py-4 pt-[env(safe-area-inset-top)]">
+      {/* Top bar — static on mobile, absolute overlay on desktop */}
+      <div className="flex shrink-0 items-center justify-between bg-black px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] md:absolute md:inset-x-0 md:top-0 md:z-20 md:bg-black/60 md:px-6 md:py-4 md:pt-[max(1rem,env(safe-area-inset-top))]">
         <div className="flex items-center gap-3">
           <button
             onClick={onExit}
@@ -90,7 +90,7 @@ export default function PalaceViewer({
           >
             ← Back
           </button>
-          <span className="font-display text-xl italic text-white/90">{room.name}</span>
+          <span className="font-display text-base italic text-white/90 md:text-xl">{room.name}</span>
         </div>
         <div className="flex items-center gap-3">
           {isStreaming && (
@@ -112,8 +112,8 @@ export default function PalaceViewer({
         </div>
       </div>
 
-      {/* Media area — full bleed */}
-      <div className="flex min-h-0 flex-1 items-center justify-center">
+      {/* Media area — fixed 16:9 on mobile, full bleed on desktop */}
+      <div className="relative aspect-video w-full shrink-0 md:aspect-auto md:min-h-0 md:flex-1">
         {room.videoUrl ? (
           <div className="relative h-full w-full">
             <video
@@ -124,7 +124,7 @@ export default function PalaceViewer({
               muted
               playsInline
               onEnded={handleVideoEnded}
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover md:object-contain"
             />
             {/* Transition overlay: only while actively starting a new stream */}
             {videoEnded && streamStatus === 'starting' && (
@@ -141,7 +141,7 @@ export default function PalaceViewer({
             <img
               src={room.imageDataUrl}
               alt={room.name}
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover md:object-contain"
             />
             {videosLoading && (
               <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
@@ -158,18 +158,18 @@ export default function PalaceViewer({
         )}
       </div>
 
-      {/* Bottom content overlay — mnemonic + optional interaction buttons */}
-      <div className="absolute right-0 bottom-24 left-0 z-10 flex justify-center px-6">
-        <div className="flex w-full max-w-2xl flex-col items-center gap-3">
+      {/* Content — scrollable on mobile, absolute overlay on desktop */}
+      <div className="flex flex-1 justify-center overflow-y-auto px-4 py-3 md:absolute md:inset-x-0 md:bottom-24 md:z-10 md:flex-none md:overflow-visible md:px-6 md:py-0">
+        <div className="flex w-full max-w-2xl flex-col items-center gap-3 md:items-center">
           {/* Item to remember */}
           <div className="w-full rounded-2xl bg-black/70 px-6 py-3 text-center backdrop-blur-md">
-            <p className="font-display text-pretty text-2xl italic leading-snug text-white">
+            <p className="font-display text-pretty text-xl italic leading-snug text-white md:text-2xl">
               {room.itemToRemember}
             </p>
           </div>
 
           {/* Mnemonic description */}
-          <div className="w-full rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-pretty text-base leading-relaxed text-white/90 backdrop-blur-md">
+          <div className="w-full rounded-2xl border border-white/10 bg-black/70 px-4 py-3 text-center text-pretty text-sm leading-relaxed text-white/90 backdrop-blur-md md:px-6 md:py-4 md:text-base">
             {room.mnemonic}
           </div>
 
@@ -198,8 +198,8 @@ export default function PalaceViewer({
         </div>
       </div>
 
-      {/* Bottom navigation */}
-      <div className="absolute right-0 bottom-0 left-0 z-20 flex items-center justify-center gap-4 bg-black/60 px-6 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+      {/* Bottom navigation — static on mobile, absolute overlay on desktop */}
+      <div className="flex shrink-0 items-center justify-center gap-4 bg-black px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:absolute md:inset-x-0 md:bottom-0 md:z-20 md:bg-black/60 md:px-6 md:py-5 md:pb-[max(1.25rem,env(safe-area-inset-bottom))]">
         <button
           onClick={() => onNavigate(-1)}
           disabled={isFirstRoom}
