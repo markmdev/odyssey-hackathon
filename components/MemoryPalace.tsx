@@ -71,8 +71,16 @@ export default function MemoryPalace() {
         const stream = await client.connect({
           onStreamStarted: () => setIsStreaming(true),
           onStreamEnded: () => setIsStreaming(false),
-          onStreamError: (reason: string, msg: string) =>
-            setPalaceStatus(`Stream error: ${reason} — ${msg}`),
+          onStreamError: (reason: string, msg: string) => {
+            console.warn('[Odyssey] Stream error:', reason, msg);
+            setIsStreaming(false);
+            // NSFW rejections — silently fall back to static image
+            if (reason === 'nsfw_content') {
+              setPalaceStatus('');
+            } else {
+              setPalaceStatus(`Stream error: ${reason} — ${msg}`);
+            }
+          },
           onError: (err: Error) => setPalaceStatus(`Error: ${err.message}`),
           onDisconnected: () => {
             setOdysseyReady(false);

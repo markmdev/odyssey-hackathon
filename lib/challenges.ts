@@ -20,7 +20,8 @@ Rules:
 - Mnemonics should create strong visual/emotional associations with the item
 - Scene descriptions should be painterly and rich — they will generate still images
 - Odyssey prompts should describe the same scene but emphasize ambient animation and first-person perspective
-- Make it memorable: the weirder and more vivid, the better`;
+- Make it memorable: the weirder and more vivid, the better
+- IMPORTANT: Keep all imagery family-friendly. No violence, gore, weapons, nudity, or dark/disturbing content. Use whimsical, fantastical, colorful, and playful imagery instead. Think Pixar, not horror.`;
 
 export const challenges: Challenge[] = [
   {
