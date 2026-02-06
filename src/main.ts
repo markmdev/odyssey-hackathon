@@ -196,24 +196,32 @@ backBtn.addEventListener('click', async () => {
 // -- Keyboard controls --
 
 window.addEventListener('keydown', async (e) => {
-  if (!playing || !client || interacting) return;
-
   const key = e.key.toLowerCase();
+  const mappedKey = key === ' ' ? ' ' : key;
+
+  // Debug: show why key was ignored
+  if (!playing || !client || interacting) {
+    console.log(`[key:${mappedKey}] ignored — playing:${playing} client:${!!client} interacting:${interacting}`);
+    return;
+  }
+
   const scenario = scenarios[selectedScenario];
-  const action = scenario.keys[key === ' ' ? ' ' : key];
+  const action = scenario.keys[mappedKey];
   if (!action) return;
 
   e.preventDefault();
 
   // Highlight key in HUD
-  const keyEl = document.querySelector(`.key[data-key="${key === ' ' ? ' ' : key}"]`) as HTMLElement | null;
+  const keyEl = document.querySelector(`.key[data-key="${mappedKey}"]`) as HTMLElement | null;
   keyEl?.classList.add('active');
 
   actionLabel.textContent = action.label;
+  gameStatus.textContent = `Sending: ${action.label}...`;
   interacting = true;
 
   try {
     await client.interact({ prompt: action.prompt });
+    gameStatus.textContent = `Sent: ${action.label}`;
   } catch (err) {
     gameStatus.textContent = `Interact failed: ${(err as Error).message}`;
   } finally {
