@@ -159,7 +159,7 @@ export default function PalaceViewer({
       </div>
 
       {/* Bottom content overlay — mnemonic + optional interaction buttons */}
-      <div className="absolute right-0 bottom-20 left-0 z-10 flex justify-center px-6">
+      <div className="absolute right-0 bottom-24 left-0 z-10 flex justify-center px-6">
         <div className="flex w-full max-w-2xl flex-col items-center gap-3">
           {/* Item to remember */}
           <div className="w-full rounded-2xl bg-black/70 px-6 py-3 text-center backdrop-blur-md">
@@ -199,7 +199,7 @@ export default function PalaceViewer({
       </div>
 
       {/* Bottom navigation */}
-      <div className="absolute right-0 bottom-0 left-0 z-20 flex items-center justify-center gap-4 bg-black/60 px-6 py-5 pb-[env(safe-area-inset-bottom)]">
+      <div className="absolute right-0 bottom-0 left-0 z-20 flex items-center justify-center gap-4 bg-black/60 px-6 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
         <button
           onClick={() => onNavigate(-1)}
           disabled={isFirstRoom}
