@@ -1,16 +1,11 @@
 'use client';
 
 import type { Room } from '@/lib/types';
-import type { RefObject } from 'react';
 
 interface Props {
   room: Room;
   roomIndex: number;
   totalRooms: number;
-  imageUrl: string | null;
-  isStreaming: boolean;
-  status: string;
-  videoRef: RefObject<HTMLVideoElement | null>;
   onNavigate: (direction: 1 | -1) => void;
   isLastRoom: boolean;
   isFirstRoom: boolean;
@@ -20,16 +15,10 @@ export default function PalaceViewer({
   room,
   roomIndex,
   totalRooms,
-  imageUrl,
-  isStreaming,
-  status,
-  videoRef,
   onNavigate,
   isLastRoom,
   isFirstRoom,
 }: Props) {
-  const showLoading = !imageUrl && !isStreaming;
-
   return (
     <div className="flex h-screen flex-col">
       {/* Top bar */}
@@ -42,36 +31,26 @@ export default function PalaceViewer({
 
       {/* Media area */}
       <div className="relative flex min-h-0 flex-1 items-center justify-center bg-black">
-        {/* Loading spinner */}
-        {showLoading && (
+        {room.videoUrl ? (
+          <video
+            key={room.videoUrl}
+            src={room.videoUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="max-h-[70vh] object-contain"
+          />
+        ) : room.imageDataUrl ? (
+          <img
+            src={room.imageDataUrl}
+            alt={room.name}
+            className="max-h-[70vh] object-contain"
+          />
+        ) : (
           <div className="flex flex-col items-center gap-3 text-gray-500">
             <div className="h-10 w-10 animate-spin rounded-full border-[3px] border-white/10 border-t-indigo-500" />
-            <span className="text-sm">{status || 'Generating room image...'}</span>
-          </div>
-        )}
-
-        {/* Static image (shown when Odyssey isn't streaming) */}
-        {imageUrl && (
-          <img
-            src={imageUrl}
-            alt={room.name}
-            className={`max-h-[70vh] object-contain ${isStreaming ? 'hidden' : ''}`}
-          />
-        )}
-
-        {/* Odyssey video stream */}
-        <video
-          ref={videoRef}
-          autoPlay
-          playsInline
-          muted
-          className={`max-h-[70vh] object-contain ${isStreaming ? '' : 'hidden'}`}
-        />
-
-        {/* Status overlay */}
-        {status && !showLoading && (
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-lg bg-black/60 px-4 py-2 text-sm text-gray-400 backdrop-blur">
-            {status}
+            <span className="text-sm">Loading room...</span>
           </div>
         )}
       </div>

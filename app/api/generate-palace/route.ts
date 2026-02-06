@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Missing OPENAI_API_KEY' }, { status: 500 });
   }
 
-  const { systemPrompt, items } = await req.json();
+  const { systemPrompt, text } = await req.json();
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         { role: 'system', content: systemPrompt },
         {
           role: 'user',
-          content: `Create a memory palace with ${items.length} rooms for these items:\n\n${items.map((item: string, i: number) => `${i + 1}. ${item}`).join('\n')}`,
+          content: `Create a memory palace for this study material:\n\n${text}`,
         },
       ],
     }),

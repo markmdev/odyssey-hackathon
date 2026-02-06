@@ -1,11 +1,4 @@
-export interface Challenge {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  items: string[];
-  systemPrompt: string;
-}
+export type GradeLevel = 'K-3' | '4-6' | '7-9' | '10-12';
 
 export interface Room {
   index: number;
@@ -14,6 +7,15 @@ export interface Room {
   mnemonic: string;
   sceneDescription: string;
   odysseyPrompt: string;
+  imageDataUrl?: string;
+  videoUrl?: string;
+}
+
+export interface SubjectTemplate {
+  id: string;
+  name: string;
+  icon: string;
+  placeholder: string;
 }
 
 export interface QuizQuestion {
