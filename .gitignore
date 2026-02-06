@@ -4,3 +4,8 @@ CLAUDE.md
 node_modules/
 .claude/
 .meridian/
+AGENTS.md
+IDENTITY.md
+MEMORY.md
+SOUL.md
+USER.md

@@ -23,6 +23,7 @@ Knowledge docs for external tools, APIs, and libraries. Each doc contains everyt
 | Tool | Doc | Version |
 |------|-----|---------|
 | @odysseyml/odyssey | [odyssey-sdk.md](odyssey-sdk.md) | 1.0.0 |
+| @google/genai (Gemini Image Gen) | [gemini-image-gen.md](gemini-image-gen.md) | 1.40.0 |
 
 ## Reference Material
 
