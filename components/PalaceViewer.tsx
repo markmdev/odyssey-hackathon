@@ -9,6 +9,7 @@ interface Props {
   onNavigate: (direction: 1 | -1) => void;
   isLastRoom: boolean;
   isFirstRoom: boolean;
+  videosLoading: boolean;
 }
 
 export default function PalaceViewer({
@@ -18,6 +19,7 @@ export default function PalaceViewer({
   onNavigate,
   isLastRoom,
   isFirstRoom,
+  videosLoading,
 }: Props) {
   return (
     <div className="flex h-screen flex-col">
@@ -42,11 +44,19 @@ export default function PalaceViewer({
             className="max-h-[70vh] object-contain"
           />
         ) : room.imageDataUrl ? (
-          <img
-            src={room.imageDataUrl}
-            alt={room.name}
-            className="max-h-[70vh] object-contain"
-          />
+          <div className="relative">
+            <img
+              src={room.imageDataUrl}
+              alt={room.name}
+              className="max-h-[70vh] object-contain"
+            />
+            {videosLoading && (
+              <div className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 backdrop-blur">
+                <div className="h-3 w-3 animate-spin rounded-full border-2 border-white/20 border-t-indigo-400" />
+                <span className="text-xs text-white/70">Bringing to life...</span>
+              </div>
+            )}
+          </div>
         ) : (
           <div className="flex flex-col items-center gap-3 text-gray-500">
             <div className="h-10 w-10 animate-spin rounded-full border-[3px] border-white/10 border-t-indigo-500" />

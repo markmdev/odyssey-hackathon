@@ -27,6 +27,7 @@ export default function MemoryPalace() {
   // Generating state
   const [genPhase, setGenPhase] = useState<GenPhase>('designing');
   const [imagesReady, setImagesReady] = useState(0);
+  const [videosLoading, setVideosLoading] = useState(false);
 
   // Quiz state
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
@@ -46,19 +47,29 @@ export default function MemoryPalace() {
       setRooms(newRooms);
 
       // Phase 2: Gemini paints all rooms IN PARALLEL
+      // Enter palace as soon as FIRST image arrives
       setGenPhase('painting');
+      let enteredPalace = false;
+
       const imageDataUrls = await generateAllImages(newRooms, (i, dataUrl) => {
         newRooms[i].imageDataUrl = dataUrl;
         setRooms([...newRooms]);
         setImagesReady((prev) => prev + 1);
+
+        // Enter palace on first image
+        if (!enteredPalace) {
+          enteredPalace = true;
+          setCurrentRoom(0);
+          setScreen('palace');
+        }
       });
 
-      // Phase 3: Odyssey batch simulate
-      setGenPhase('animating');
+      // Phase 3: Odyssey batch simulate — runs in background after all images ready
       const { Odyssey } = await import('@odysseyml/odyssey');
       const apiKey = process.env.NEXT_PUBLIC_ODYSSEY_API_KEY;
 
       if (apiKey) {
+        setVideosLoading(true);
         const client = new Odyssey({ apiKey });
 
         const job = await client.simulate({
@@ -76,15 +87,27 @@ export default function MemoryPalace() {
           portrait: false,
         });
 
-        // Phase 4: Poll for completion
-        setGenPhase('rendering');
+        // Poll in background — update rooms as videos arrive
         let status = await client.getSimulateStatus(job.job_id);
 
         while (!['completed', 'failed', 'cancelled'].includes(status.status)) {
           await new Promise((r) => setTimeout(r, 3000));
           status = await client.getSimulateStatus(job.job_id);
+
+          // Eagerly update any streams that have video_url already
+          if (status.streams) {
+            let updated = false;
+            for (const stream of status.streams) {
+              if (stream.video_url && !newRooms[stream.script_index].videoUrl) {
+                newRooms[stream.script_index].videoUrl = stream.video_url;
+                updated = true;
+              }
+            }
+            if (updated) setRooms([...newRooms]);
+          }
         }
 
+        // Final update when completed
         if (status.status === 'completed') {
           for (const stream of status.streams) {
             if (stream.video_url) {
@@ -93,15 +116,13 @@ export default function MemoryPalace() {
           }
           setRooms([...newRooms]);
         }
-        // If failed/cancelled, fall through — static images still work
-      }
 
-      // Enter palace
-      setCurrentRoom(0);
-      setScreen('palace');
+        setVideosLoading(false);
+      }
     } catch (err) {
       console.error('Palace generation failed:', err);
-      // If we have rooms + images, still enter palace
+      setVideosLoading(false);
+      // If we have rooms + images, stay in palace (might already be there)
       if (rooms.length > 0 && rooms[0].imageDataUrl) {
         setCurrentRoom(0);
         setScreen('palace');
@@ -184,6 +205,7 @@ export default function MemoryPalace() {
           onNavigate={navigateRoom}
           isLastRoom={currentRoom === rooms.length - 1}
           isFirstRoom={currentRoom === 0}
+          videosLoading={videosLoading}
         />
       )}
 
