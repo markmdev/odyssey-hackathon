@@ -37,12 +37,12 @@ export default function HomeScreen({
 }: Props) {
   if (scenarios.length > 0 && !isLiveMode) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center gap-10 p-8">
+      <div className="flex min-h-dvh flex-col items-center justify-center gap-10 p-8">
         <div className="text-center">
-          <h1 className="mb-3 font-display text-6xl font-normal italic tracking-tight text-white">
+          <h1 className="mb-3 font-display text-6xl font-normal italic text-balance text-white">
             Memory Palace
           </h1>
-          <p className="text-lg text-gray-500">Choose a world to explore</p>
+          <p className="text-lg text-pretty text-gray-500">Choose a world to explore</p>
         </div>
 
         <div className="grid w-full max-w-3xl grid-cols-2 gap-4 sm:grid-cols-3">
@@ -52,13 +52,13 @@ export default function HomeScreen({
               <button
                 key={s.name}
                 onClick={() => onSelectScenario(s.name)}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-surface-raised text-left transition-all duration-200 hover:border-border-hover hover:bg-surface-hover"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-surface-raised text-left transition-colors duration-200 hover:border-border-hover hover:bg-surface-hover"
               >
                 <div className="aspect-video w-full overflow-hidden">
                   <img
                     src={`/scenarios/${s.name}/room-0.png`}
                     alt={s.displayName}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
                   />
                 </div>
                 <div className="px-4 py-3">
@@ -66,14 +66,14 @@ export default function HomeScreen({
                     <span className="text-lg">{meta.emoji}</span>
                     <span className="font-display text-lg text-white">{s.displayName}</span>
                   </div>
-                  <p className="mt-0.5 text-xs text-gray-500">{meta.rooms} rooms</p>
+                  <p className="mt-0.5 text-pretty text-xs text-gray-500">{meta.rooms} rooms</p>
                 </div>
               </button>
             );
           })}
         </div>
 
-        <p className="text-sm text-gray-600">
+        <p className="text-pretty text-sm text-gray-600">
           <a href="?live" className="transition-colors hover:text-gray-400">
             or create your own →
           </a>
@@ -83,11 +83,11 @@ export default function HomeScreen({
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4">
-      <h1 className="font-display text-6xl font-normal italic tracking-tight text-white">
+    <div className="flex min-h-dvh flex-col items-center justify-center gap-6 px-4">
+      <h1 className="font-display text-6xl font-normal italic text-balance text-white">
         Memory Palace
       </h1>
-      <p className="text-gray-500">Learn anything by walking through it</p>
+      <p className="text-pretty text-gray-500">Learn anything by walking through it</p>
 
       <textarea
         value={inputText}

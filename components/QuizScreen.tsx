@@ -23,15 +23,15 @@ export default function QuizScreen({
   const key = `${questionIndex}`;
 
   return (
-    <div key={key} className="flex min-h-screen flex-col items-center justify-center gap-8 px-4">
+    <div key={key} className="flex min-h-dvh flex-col items-center justify-center gap-8 px-4">
       <div className="text-center">
-        <h2 className="font-display text-4xl italic text-white">Test Your Memory</h2>
-        <p className="mt-2 text-sm text-gray-500">
+        <h2 className="font-display text-4xl italic text-balance text-white">Test Your Memory</h2>
+        <p className="mt-2 text-pretty text-sm text-gray-500">
           Question {questionIndex + 1} of {totalQuestions}
         </p>
       </div>
 
-      <p className="max-w-lg text-center text-xl leading-relaxed text-gray-200">
+      <p className="max-w-lg text-pretty text-center text-xl leading-relaxed text-gray-200">
         {question.question}
       </p>
 
@@ -56,7 +56,7 @@ export default function QuizScreen({
                 setAnswered(i);
                 onAnswer(i);
               }}
-              className={`rounded-xl border-2 px-5 py-3.5 text-left text-base transition-all ${style}`}
+              className={`rounded-xl border-2 px-5 py-3.5 text-left text-base transition-colors ${style}`}
             >
               {option}
             </button>

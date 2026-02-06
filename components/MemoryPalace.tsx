@@ -349,7 +349,7 @@ export default function MemoryPalace() {
   );
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-dvh overflow-hidden">
       {screen === 'home' && (
         <HomeScreen
           templates={templates}

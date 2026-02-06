@@ -27,20 +27,20 @@ export default function GeneratingScreen({ phase, rooms, imagesReady, totalRooms
           : 0.8;
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-8">
-      <div className="relative h-14 w-14">
+    <div className="flex min-h-dvh flex-col items-center justify-center gap-8">
+      <div className="relative size-14">
         <div className="absolute inset-0 animate-spin rounded-full border-[3px] border-white/5 border-t-accent" />
         <div className="absolute inset-2 animate-spin rounded-full border-[2px] border-white/5 border-b-accent/50" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }} />
       </div>
 
       <div className="text-center">
-        <h2 className="font-display text-3xl italic text-white">Building your palace...</h2>
-        <p className="mt-2 text-sm text-gray-500">{PHASE_LABELS[phase]}</p>
+        <h2 className="font-display text-3xl italic text-balance text-white">Building your palace...</h2>
+        <p className="mt-2 text-pretty text-sm text-gray-500">{PHASE_LABELS[phase]}</p>
       </div>
 
       <div className="h-1 w-72 overflow-hidden rounded-full bg-white/5">
         <div
-          className="h-full rounded-full bg-accent transition-all duration-700 ease-out"
+          className="h-full rounded-full bg-accent transition-transform duration-200 ease-out"
           style={{ width: `${Math.round(progress * 100)}%` }}
         />
       </div>
@@ -61,7 +61,7 @@ export default function GeneratingScreen({ phase, rooms, imagesReady, totalRooms
       )}
 
       {phase === 'painting' && totalRooms > 0 && (
-        <p className="text-xs text-gray-600">
+        <p className="text-pretty text-xs text-gray-600">
           {imagesReady} of {totalRooms} images ready
         </p>
       )}

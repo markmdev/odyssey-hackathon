@@ -30,14 +30,14 @@ export default function ResultsScreen({
           : 'The palace grows with each visit.';
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4">
-      <h2 className="font-display text-3xl italic text-white">Results</h2>
+    <div className="flex min-h-dvh flex-col items-center justify-center gap-6 px-4">
+      <h2 className="font-display text-3xl italic text-balance text-white">Results</h2>
 
       <div className="font-display text-8xl font-normal text-accent">
         {score}/{total}
       </div>
 
-      <p className="text-lg text-gray-500">{message}</p>
+      <p className="text-pretty text-lg text-gray-500">{message}</p>
 
       <div className="flex max-h-52 w-[90vw] max-w-md flex-col gap-1.5 overflow-y-auto">
         {questions.map((q, i) => (

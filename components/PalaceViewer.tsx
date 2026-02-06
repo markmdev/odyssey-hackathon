@@ -77,14 +77,14 @@ export default function PalaceViewer({
   };
 
   return (
-    <div className="relative flex h-screen flex-col bg-black">
+    <div className="relative flex h-dvh flex-col bg-black">
       {/* Top bar */}
-      <div className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between bg-gradient-to-b from-black/80 to-transparent px-6 py-4">
+      <div className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between bg-black/60 px-6 py-4 pt-[env(safe-area-inset-top)]">
         <span className="font-display text-xl italic text-white/90">{room.name}</span>
         <div className="flex items-center gap-3">
           {isStreaming && (
             <div className="flex items-center gap-1.5 rounded-full bg-red-500/20 px-2.5 py-1">
-              <div className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
+              <div className="size-2 rounded-full bg-red-500" />
               <span className="text-xs font-medium text-red-400">LIVE</span>
             </div>
           )}
@@ -92,7 +92,7 @@ export default function PalaceViewer({
             {Array.from({ length: totalRooms }, (_, i) => (
               <div
                 key={i}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full ${
                   i === roomIndex ? 'w-6 bg-accent' : 'w-1.5 bg-white/20'
                 }`}
               />
@@ -119,7 +119,7 @@ export default function PalaceViewer({
             {videoEnded && streamStatus === 'starting' && (
               <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 backdrop-blur-sm">
                 <div className="flex items-center gap-3 rounded-2xl bg-black/60 px-6 py-3">
-                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-white/20 border-t-accent" />
+                  <div className="size-4 animate-spin rounded-full border-2 border-white/20 border-t-accent" />
                   <span className="text-sm text-white/70">Entering live mode...</span>
                 </div>
               </div>
@@ -134,14 +134,14 @@ export default function PalaceViewer({
             />
             {videosLoading && (
               <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
-                <div className="h-3 w-3 animate-spin rounded-full border-2 border-white/20 border-t-accent" />
+                <div className="size-3 animate-spin rounded-full border-2 border-white/20 border-t-accent" />
                 <span className="text-xs text-white/60">Bringing to life...</span>
               </div>
             )}
           </div>
         ) : (
           <div className="flex flex-col items-center gap-3 text-gray-500">
-            <div className="h-10 w-10 animate-spin rounded-full border-[3px] border-white/10 border-t-accent" />
+            <div className="size-10 animate-spin rounded-full border-[3px] border-white/10 border-t-accent" />
             <span className="text-sm">Loading room...</span>
           </div>
         )}
@@ -152,13 +152,13 @@ export default function PalaceViewer({
         <div className="flex w-full max-w-2xl flex-col items-center gap-3">
           {/* Item to remember */}
           <div className="w-full rounded-2xl bg-black/70 px-6 py-3 text-center backdrop-blur-md">
-            <p className="font-display text-2xl italic leading-snug text-white">
+            <p className="font-display text-pretty text-2xl italic leading-snug text-white">
               {room.itemToRemember}
             </p>
           </div>
 
           {/* Mnemonic description */}
-          <div className="w-full rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-base leading-relaxed text-white/90 backdrop-blur-md">
+          <div className="w-full rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-pretty text-base leading-relaxed text-white/90 backdrop-blur-md">
             {room.mnemonic}
           </div>
 
@@ -170,11 +170,11 @@ export default function PalaceViewer({
                   key={i}
                   onClick={() => handleButtonClick(i, btn.prompt)}
                   disabled={cooldown || interactingButton !== null}
-                  className="rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all hover:border-accent/40 hover:bg-accent/30 disabled:opacity-40"
+                  className="rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-colors hover:border-accent/40 hover:bg-accent/30 disabled:opacity-40"
                 >
                   {interactingButton === i ? (
                     <span className="flex items-center gap-2">
-                      <div className="h-3 w-3 animate-spin rounded-full border-2 border-white/20 border-t-white" />
+                      <div className="size-3 animate-spin rounded-full border-2 border-white/20 border-t-white" />
                       {btn.label}
                     </span>
                   ) : (
@@ -188,7 +188,7 @@ export default function PalaceViewer({
       </div>
 
       {/* Bottom navigation */}
-      <div className="absolute right-0 bottom-0 left-0 z-20 flex items-center justify-center gap-4 bg-gradient-to-t from-black/80 to-transparent px-6 py-5">
+      <div className="absolute right-0 bottom-0 left-0 z-20 flex items-center justify-center gap-4 bg-black/60 px-6 py-5 pb-[env(safe-area-inset-bottom)]">
         <button
           onClick={() => onNavigate(-1)}
           disabled={isFirstRoom}

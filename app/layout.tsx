@@ -1,9 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Memory Palace',
   description: 'Learn anything by walking through a vivid AI-generated memory palace',
+};
+
+export const viewport: Viewport = {
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -15,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-surface text-gray-300 antialiased min-h-screen font-body">
+      <body className="bg-surface text-gray-300 antialiased min-h-dvh font-body">
         {children}
       </body>
     </html>
