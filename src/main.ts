@@ -7,6 +7,7 @@ const promptInput = document.getElementById('prompt') as HTMLInputElement;
 const interactInput = document.getElementById('interact') as HTMLInputElement;
 const connectBtn = document.getElementById('connectBtn') as HTMLButtonElement;
 const disconnectBtn = document.getElementById('disconnectBtn') as HTMLButtonElement;
+const orientBtn = document.getElementById('orientBtn') as HTMLButtonElement;
 const startBtn = document.getElementById('startBtn') as HTMLButtonElement;
 const endBtn = document.getElementById('endBtn') as HTMLButtonElement;
 const interactBtn = document.getElementById('interactBtn') as HTMLButtonElement;
@@ -14,6 +15,12 @@ const interactBtn = document.getElementById('interactBtn') as HTMLButtonElement;
 apiKeyInput.value = import.meta.env.VITE_ODYSSEY_API_KEY ?? '';
 
 let client: Odyssey | null = null;
+let portrait = true;
+
+orientBtn.addEventListener('click', () => {
+  portrait = !portrait;
+  orientBtn.textContent = portrait ? 'Portrait' : 'Landscape';
+});
 
 function setStatus(msg: string) {
   status.textContent = msg;
@@ -23,6 +30,7 @@ function setConnectedUI(connected: boolean) {
   connectBtn.disabled = connected;
   apiKeyInput.disabled = connected;
   disconnectBtn.disabled = !connected;
+  orientBtn.disabled = !connected;
   startBtn.disabled = !connected;
   endBtn.disabled = !connected;
   interactBtn.disabled = !connected;
@@ -81,7 +89,7 @@ startBtn.addEventListener('click', async () => {
   setStatus('Starting stream...');
   startBtn.disabled = true;
   try {
-    await client!.startStream({ prompt });
+    await client!.startStream({ prompt, portrait });
     promptInput.value = '';
   } catch (err) {
     setStatus(`Start failed: ${(err as Error).message}`);
