@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import type { Room, QuizQuestion, GradeLevel } from '@/lib/types';
 import { templates } from '@/lib/templates';
 import { generatePalace, generateAllImages } from '@/lib/api-client';
 import { generateQuizQuestions } from '@/lib/quiz';
 import { listScenarios, loadScenario } from '@/lib/scenarios';
+import { imageToBlob } from '@/lib/image-utils';
 import HomeScreen from './HomeScreen';
 import GeneratingScreen, { type GenPhase } from './GeneratingScreen';
 import PalaceViewer from './PalaceViewer';
@@ -13,6 +14,8 @@ import QuizScreen from './QuizScreen';
 import ResultsScreen from './ResultsScreen';
 
 type Screen = 'home' | 'generating' | 'palace' | 'quiz' | 'results';
+type ConnectionStatus = 'idle' | 'connecting' | 'connected' | 'failed';
+type StreamStatus = 'idle' | 'starting' | 'streaming' | 'ending';
 
 export default function MemoryPalace() {
   const [screen, setScreen] = useState<Screen>('home');
@@ -39,10 +42,121 @@ export default function MemoryPalace() {
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
 
+  // Interactive streaming state (prepared scenarios only)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const odysseyClientRef = useRef<any>(null);
+  const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>('idle');
+  const [streamStatus, setStreamStatus] = useState<StreamStatus>('idle');
+  const streamStatusRef = useRef<StreamStatus>('idle');
+  const [interactiveStream, setInteractiveStream] = useState<MediaStream | null>(null);
+
   const isLiveMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('live');
 
   useEffect(() => {
     listScenarios().then(setScenarios);
+  }, []);
+
+  // Keep streamStatusRef in sync
+  useEffect(() => {
+    streamStatusRef.current = streamStatus;
+  }, [streamStatus]);
+
+  // Cleanup: disconnect on unmount + beforeunload
+  useEffect(() => {
+    const handleUnload = () => {
+      odysseyClientRef.current?.disconnect();
+    };
+    window.addEventListener('beforeunload', handleUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleUnload);
+      odysseyClientRef.current?.disconnect();
+    };
+  }, []);
+
+  const connectOdyssey = useCallback(async () => {
+    const apiKey = process.env.NEXT_PUBLIC_ODYSSEY_API_KEY;
+    if (!apiKey) {
+      setConnectionStatus('failed');
+      return;
+    }
+    try {
+      setConnectionStatus('connecting');
+      const { Odyssey } = await import('@odysseyml/odyssey');
+      const client = new Odyssey({ apiKey });
+      const stream = await client.connect({
+        onStreamStarted: () => {
+          setStreamStatus('streaming');
+          streamStatusRef.current = 'streaming';
+        },
+        onStreamEnded: () => {
+          setStreamStatus('idle');
+          streamStatusRef.current = 'idle';
+        },
+        onInteractAcknowledged: () => {},
+        onStreamError: (reason, message) => {
+          console.error('Stream error:', reason, message);
+          setStreamStatus('idle');
+          streamStatusRef.current = 'idle';
+        },
+        onError: (err, fatal) => {
+          console.error('Odyssey error:', err, fatal);
+          if (fatal) setConnectionStatus('failed');
+        },
+        onDisconnected: () => {
+          setConnectionStatus('idle');
+          setInteractiveStream(null);
+        },
+      });
+      odysseyClientRef.current = client;
+      setInteractiveStream(stream);
+      setConnectionStatus('connected');
+    } catch (err) {
+      console.error('Odyssey connect failed:', err);
+      setConnectionStatus('failed');
+    }
+  }, []);
+
+  const startStreamForRoom = useCallback(async (roomIndex: number) => {
+    const client = odysseyClientRef.current;
+    if (!client || connectionStatus !== 'connected') return;
+    const room = rooms[roomIndex];
+    if (!room?.imageDataUrl) return;
+    try {
+      setStreamStatus('starting');
+      streamStatusRef.current = 'starting';
+      const blob = await imageToBlob(room.imageDataUrl);
+      await client.startStream({
+        prompt: room.odysseyKeyframes[0]?.prompt ?? room.sceneDescription,
+        image: blob,
+        portrait: false,
+      });
+      // streamStatus set to 'streaming' by onStreamStarted handler
+    } catch (err) {
+      console.error('startStream failed:', err);
+      setStreamStatus('idle');
+      streamStatusRef.current = 'idle';
+    }
+  }, [connectionStatus, rooms]);
+
+  const handleInteract = useCallback(async (prompt: string) => {
+    const client = odysseyClientRef.current;
+    if (!client || streamStatusRef.current !== 'streaming') return;
+    try {
+      await client.interact({ prompt });
+    } catch (err) {
+      console.error('Interact failed:', err);
+    }
+  }, []);
+
+  const disconnectOdyssey = useCallback(() => {
+    const client = odysseyClientRef.current;
+    if (!client) return;
+    client.disconnect();
+    odysseyClientRef.current = null;
+    setConnectionStatus('idle');
+    setStreamStatus('idle');
+    streamStatusRef.current = 'idle';
+    setInteractiveStream(null);
   }, []);
 
   // Build palace pipeline
@@ -145,6 +259,9 @@ export default function MemoryPalace() {
     setScreen('generating');
     setImagesReady(0);
 
+    // Pre-connect: start WebRTC connection while fake loading plays
+    connectOdyssey();
+
     try {
       // Fake Phase 1: "Designing rooms..." (1.5s)
       setGenPhase('designing');
@@ -180,12 +297,23 @@ export default function MemoryPalace() {
 
   // Navigate between rooms
   const navigateRoom = useCallback(
-    (direction: 1 | -1) => {
+    async (direction: 1 | -1) => {
       const nextIndex = currentRoom + direction;
       if (nextIndex < 0) return;
 
+      // End active stream before changing room
+      const client = odysseyClientRef.current;
+      if (client && streamStatusRef.current === 'streaming') {
+        setStreamStatus('ending');
+        streamStatusRef.current = 'ending';
+        try { await client.endStream(); } catch { /* ignore */ }
+        setStreamStatus('idle');
+        streamStatusRef.current = 'idle';
+      }
+
       if (nextIndex >= rooms.length) {
-        // Use pre-stored quiz questions if available (prepared mode), otherwise generate
+        // Disconnect when leaving palace for quiz
+        disconnectOdyssey();
         const questions = quizQuestions.length > 0 ? quizQuestions : generateQuizQuestions(rooms);
         setQuizQuestions(questions);
         setQuizIndex(0);
@@ -197,7 +325,7 @@ export default function MemoryPalace() {
 
       setCurrentRoom(nextIndex);
     },
-    [currentRoom, rooms, quizQuestions],
+    [currentRoom, rooms, quizQuestions, disconnectOdyssey],
   );
 
   // Handle quiz answer
@@ -255,6 +383,11 @@ export default function MemoryPalace() {
           isLastRoom={currentRoom === rooms.length - 1}
           isFirstRoom={currentRoom === 0}
           videosLoading={videosLoading}
+          interactiveStream={interactiveStream}
+          streamStatus={streamStatus}
+          connectionStatus={connectionStatus}
+          onInteract={handleInteract}
+          onVideoEnded={() => startStreamForRoom(currentRoom)}
         />
       )}
 
