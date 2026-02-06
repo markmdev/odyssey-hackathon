@@ -64,7 +64,7 @@ export default function MemoryPalace() {
         }
       });
 
-      // Phase 3: Odyssey batch simulate — runs in background after all images ready
+      // Phase 3: Odyssey — fire individual simulate per room, poll independently
       const { Odyssey } = await import('@odysseyml/odyssey');
       const apiKey = process.env.NEXT_PUBLIC_ODYSSEY_API_KEY;
 
@@ -72,9 +72,10 @@ export default function MemoryPalace() {
         setVideosLoading(true);
         const client = new Odyssey({ apiKey });
 
-        const job = await client.simulate({
-          scripts: newRooms.map((room, i) =>
-            room.odysseyKeyframes.map((kf, ki) => {
+        // Fire all simulate calls in parallel (one per room)
+        const simulatePromises = newRooms.map(async (room, i) => {
+          try {
+            const script = room.odysseyKeyframes.map((kf, ki) => {
               if (ki === 0) {
                 return { timestamp_ms: kf.timestamp_ms, start: { prompt: kf.prompt!, image: imageDataUrls[i] } };
               }
@@ -82,42 +83,29 @@ export default function MemoryPalace() {
                 return { timestamp_ms: kf.timestamp_ms, end: {} };
               }
               return { timestamp_ms: kf.timestamp_ms, interact: { prompt: kf.prompt! } };
-            })
-          ),
-          portrait: false,
+            });
+
+            const job = await client.simulate({ script, portrait: false });
+
+            // Poll this room's job independently
+            let status = await client.getSimulateStatus(job.job_id);
+            while (!['completed', 'failed', 'cancelled'].includes(status.status)) {
+              await new Promise((r) => setTimeout(r, 3000));
+              status = await client.getSimulateStatus(job.job_id);
+            }
+
+            if (status.status === 'completed' && status.streams?.[0]?.video_url) {
+              newRooms[i].videoUrl = status.streams[0].video_url;
+              setRooms([...newRooms]);
+            }
+          } catch (err) {
+            console.error(`Simulate failed for room ${i}:`, err);
+            // Room stays as static image — graceful degradation
+          }
         });
 
-        // Poll in background — update rooms as videos arrive
-        let status = await client.getSimulateStatus(job.job_id);
-
-        while (!['completed', 'failed', 'cancelled'].includes(status.status)) {
-          await new Promise((r) => setTimeout(r, 3000));
-          status = await client.getSimulateStatus(job.job_id);
-
-          // Eagerly update any streams that have video_url already
-          if (status.streams) {
-            let updated = false;
-            for (const stream of status.streams) {
-              if (stream.video_url && !newRooms[stream.script_index].videoUrl) {
-                newRooms[stream.script_index].videoUrl = stream.video_url;
-                updated = true;
-              }
-            }
-            if (updated) setRooms([...newRooms]);
-          }
-        }
-
-        // Final update when completed
-        if (status.status === 'completed') {
-          for (const stream of status.streams) {
-            if (stream.video_url) {
-              newRooms[stream.script_index].videoUrl = stream.video_url;
-            }
-          }
-          setRooms([...newRooms]);
-        }
-
-        setVideosLoading(false);
+        // Wait for all to finish, then clear loading
+        Promise.all(simulatePromises).then(() => setVideosLoading(false));
       }
     } catch (err) {
       console.error('Palace generation failed:', err);
