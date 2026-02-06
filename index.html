@@ -3,93 +3,774 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odyssey Playground</title>
+  <title>Skyscraper Live: The Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0b1118;
+      --panel: rgba(8, 14, 22, 0.86);
+      --panel-border: rgba(212, 232, 255, 0.24);
+      --ink: #eff8ff;
+      --muted: #9ab6cf;
+      --accent: #ef8b2c;
+      --accent-soft: rgba(239, 139, 44, 0.18);
+      --safe: #6fd0a4;
+      --warn: #ff6f4a;
+      --hud: rgba(7, 17, 26, 0.62);
+      --focus: #7ec9ff;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    video {
-      flex: 1;
-      min-height: 0;
       width: 100%;
-      max-height: 70vh;
-      object-fit: contain;
-      background: #111;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at 20% 0%, #1a2635 0%, #0b1118 52%, #070a0f 100%);
+      color: var(--ink);
+      font-family: 'Barlow', sans-serif;
     }
-    .controls {
-      padding: 16px;
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      background:
+        radial-gradient(60vw 40vh at 85% 0%, rgba(126, 201, 255, 0.1), transparent 62%),
+        radial-gradient(50vw 40vh at 10% 100%, rgba(239, 139, 44, 0.09), transparent 68%);
+      filter: blur(0.6px);
+    }
+
+    body::after {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+      opacity: 0.36;
+    }
+
+    .shell {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 18px;
+      width: 100%;
+      height: 100%;
+      padding: 18px;
+    }
+
+    .stage {
+      position: relative;
+      min-width: 0;
+      border-radius: 18px;
+      border: 1px solid rgba(173, 210, 240, 0.2);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #02060c;
+      isolation: isolate;
+    }
+
+    .stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(239, 139, 44, 0.08), transparent 32%, transparent 68%, rgba(126, 201, 255, 0.08));
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    #worldVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #050a12;
+      opacity: 1;
+      transition: opacity 220ms ease;
+    }
+
+    #worldVideo.idle {
+      opacity: 0;
+    }
+
+    #holdOverlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .stage-state {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 55% 45%, rgba(126, 201, 255, 0.14), transparent 52%),
+        linear-gradient(170deg, rgba(8, 20, 31, 0.96), rgba(7, 14, 21, 0.98));
+      color: var(--ink);
+      transition: opacity 220ms ease;
+      pointer-events: none;
+    }
+
+    .stage-state.hidden {
+      opacity: 0;
+    }
+
+    .stage-state-card {
+      width: min(520px, 100%);
+      border: 1px solid rgba(212, 232, 255, 0.24);
+      border-radius: 14px;
+      background: rgba(8, 16, 24, 0.72);
+      backdrop-filter: blur(5px);
+      padding: 18px 20px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34);
+      display: grid;
+      gap: 8px;
+    }
+
+    #stageStateTitle {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 30px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    #stageStateBody {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .hud {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      background: #151515;
-      border-top: 1px solid #222;
+      justify-content: space-between;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 220ms ease;
     }
-    .row {
+
+    .hud.hidden {
+      opacity: 0;
+    }
+
+    .hud-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 18px 0;
+      gap: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(223, 242, 255, 0.25);
+      background: var(--hud);
+      backdrop-filter: blur(5px);
+      color: var(--ink);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    #floorDisplay {
+      min-width: 72px;
+      padding: 8px 18px;
+      font-size: 20px;
+    }
+
+    #timerDisplay {
+      min-width: 120px;
+      padding: 8px 20px;
+      font-size: 30px;
+    }
+
+    #timerDisplay.urgent {
+      color: #ffd2c0;
+      border-color: rgba(255, 111, 74, 0.64);
+      box-shadow: 0 0 20px rgba(255, 111, 74, 0.26);
+      animation: pulse 820ms infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    #pauseBtn {
+      pointer-events: auto;
+      cursor: pointer;
+      border: 1px solid rgba(239, 248, 255, 0.34);
+      border-radius: 999px;
+      background: rgba(7, 17, 26, 0.66);
+      color: var(--ink);
+      padding: 7px 16px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 170ms ease;
+    }
+
+    #pauseBtn:hover {
+      background: rgba(15, 31, 47, 0.9);
+    }
+
+    .hud-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      padding: 0 18px 18px;
+    }
+
+    .limb-panel,
+    .state-panel {
+      background: rgba(7, 17, 26, 0.72);
+      border: 1px solid rgba(217, 239, 255, 0.2);
+      border-radius: 14px;
+      backdrop-filter: blur(6px);
+      padding: 10px 14px;
+      pointer-events: auto;
+    }
+
+    .limb-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      min-width: 148px;
+    }
+
+    .limb-tag {
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      text-transform: uppercase;
+      border: 1px solid rgba(217, 239, 255, 0.16);
+      border-radius: 10px;
+      padding: 4px 8px;
+      text-align: center;
+      transition: 180ms ease;
+    }
+
+    .limb-tag.active {
+      color: #08131f;
+      background: linear-gradient(135deg, #ffd9b6, #ef8b2c);
+      border-color: rgba(239, 139, 44, 0.8);
+      box-shadow: 0 6px 16px rgba(239, 139, 44, 0.45);
+    }
+
+    .state-panel {
+      min-width: 198px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: right;
+    }
+
+    .state-label {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    #stabilityDisplay {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 23px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    #stabilityDisplay.stable {
+      color: var(--safe);
+    }
+
+    #stabilityDisplay.precarious,
+    #stabilityDisplay.overextended {
+      color: #ffd5ba;
+    }
+
+    #stabilityDisplay.critical,
+    #stabilityDisplay.fail {
+      color: #ff8d75;
+    }
+
+    #statusLine {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 360px;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 7;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(160deg, rgba(2, 9, 15, 0.86), rgba(3, 10, 18, 0.72));
+      padding: 24px;
+      text-align: center;
+      pointer-events: auto;
+    }
+
+    .overlay.hidden {
+      display: none;
+    }
+
+    .overlay-card {
+      width: min(520px, 100%);
+      border: 1px solid rgba(219, 241, 255, 0.25);
+      border-radius: 16px;
+      background: rgba(7, 17, 26, 0.92);
+      padding: 24px;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.4);
+      display: grid;
+      gap: 12px;
+      justify-items: center;
+    }
+
+    .overlay h2 {
+      font-family: 'Rajdhani', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 36px;
+    }
+
+    .overlay p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .panel {
+      position: relative;
+      border-radius: 18px;
+      border: 1px solid var(--panel-border);
+      background: var(--panel);
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-rows: auto auto auto 1fr;
+      overflow: hidden;
+    }
+
+    .panel-head {
+      border-bottom: 1px solid rgba(210, 234, 255, 0.16);
+      padding: 16px 16px 14px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .panel h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 34px;
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+    }
+
+    .panel-sub {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .section {
+      border-bottom: 1px solid rgba(210, 234, 255, 0.12);
+      padding: 14px 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    label {
+      display: grid;
+      gap: 5px;
+      font-size: 13px;
+      color: #d5e9f8;
+    }
+
+    input,
+    select,
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    input[type='text'],
+    input[type='password'],
+    input[type='number'] {
+      width: 100%;
+      border: 1px solid rgba(203, 230, 250, 0.2);
+      border-radius: 10px;
+      background: rgba(8, 16, 26, 0.95);
+      color: var(--ink);
+      padding: 10px 11px;
+      outline: none;
+      transition: border-color 170ms ease, box-shadow 170ms ease;
+    }
+
+    input[type='range'] {
+      width: 100%;
+    }
+
+    input:focus-visible,
+    select:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 1px;
+    }
+
+    input:focus {
+      border-color: rgba(126, 201, 255, 0.75);
+      box-shadow: 0 0 0 1px rgba(126, 201, 255, 0.25);
+    }
+
+    .controls-row {
       display: flex;
       gap: 8px;
-      align-items: center;
     }
-    input {
-      flex: 1;
-      padding: 10px 12px;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 6px;
-      color: #e0e0e0;
-      font-size: 14px;
-      outline: none;
-    }
-    input:focus { border-color: #555; }
-    input::placeholder { color: #666; }
+
     button {
-      padding: 10px 18px;
-      border: none;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
+      border-radius: 10px;
+      border: 1px solid transparent;
       cursor: pointer;
-      white-space: nowrap;
+      padding: 9px 12px;
+      transition: transform 150ms ease, background 180ms ease, opacity 180ms ease;
     }
-    button:disabled { opacity: 0.4; cursor: not-allowed; }
-    .btn-primary { background: #2563eb; color: white; }
-    .btn-primary:hover:not(:disabled) { background: #1d4ed8; }
-    .btn-secondary { background: #333; color: #e0e0e0; }
-    .btn-secondary:hover:not(:disabled) { background: #444; }
-    .btn-danger { background: #dc2626; color: white; }
-    .btn-danger:hover:not(:disabled) { background: #b91c1c; }
-    #status {
+
+    button:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, #f7a95d, #ef8b2c 56%, #d96e13);
+      color: #0e1723;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .btn-sub {
+      border-color: rgba(203, 230, 250, 0.2);
+      background: rgba(8, 16, 26, 0.85);
+    }
+
+    .mode-pills {
+      display: grid;
+      gap: 7px;
+    }
+
+    .mode-pill {
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(203, 230, 250, 0.23);
+      background: rgba(8, 16, 26, 0.85);
+      text-align: left;
+      display: grid;
+      gap: 3px;
+    }
+
+    .mode-pill.active {
+      border-color: rgba(239, 139, 44, 0.78);
+      background: var(--accent-soft);
+    }
+
+    .mode-title {
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .mode-desc {
+      color: var(--muted);
       font-size: 12px;
-      color: #888;
-      padding: 0 2px;
+    }
+
+    .stat-line {
+      display: flex;
+      justify-content: space-between;
+      color: #d9ecfb;
+      font-size: 13px;
+    }
+
+    .leaderboard {
+      min-height: 0;
+      overflow: auto;
+      border-radius: 10px;
+      border: 1px solid rgba(203, 230, 250, 0.16);
+      background: rgba(6, 13, 20, 0.72);
+      padding: 6px;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .leaderboard li {
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: rgba(10, 19, 30, 0.78);
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      gap: 10px;
+    }
+
+    .leaderboard li span {
+      color: var(--muted);
+    }
+
+    .leaderboard-empty {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 14px;
+    }
+
+    .mini-help {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      display: grid;
+      gap: 4px;
+    }
+
+    #toast {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 9;
+      max-width: min(420px, calc(100% - 32px));
+      border-radius: 10px;
+      border: 1px solid rgba(216, 239, 255, 0.2);
+      background: rgba(6, 14, 23, 0.86);
+      color: var(--muted);
+      padding: 9px 12px;
+      font-size: 13px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 190ms ease, transform 190ms ease;
+      pointer-events: none;
+    }
+
+    #toast.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1120px) {
+      .shell {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr) auto;
+      }
+
+      .panel {
+        max-height: 46vh;
+      }
+
+      .panel h1 {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        padding: 10px;
+        gap: 10px;
+      }
+
+      .hud-top,
+      .hud-bottom {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      #timerDisplay {
+        font-size: 24px;
+      }
+
+      .panel {
+        max-height: 54vh;
+      }
+
+      .overlay-card {
+        padding: 18px;
+      }
+
+      .overlay h2 {
+        font-size: 29px;
+      }
+
+      #stageStateTitle {
+        font-size: 24px;
+      }
+
+      #stageStateBody {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
-  <video id="video" autoplay playsinline muted></video>
-  <div class="controls">
-    <div class="row">
-      <input id="apiKey" type="password" placeholder="API key (ody_...)" />
-      <button id="connectBtn" class="btn-primary">Connect</button>
-      <button id="disconnectBtn" class="btn-danger" disabled>Disconnect</button>
-    </div>
-    <div class="row">
-      <input id="prompt" placeholder="Describe a scene to generate..." />
-      <button id="orientBtn" class="btn-secondary" disabled title="Toggle portrait/landscape">Portrait</button>
-      <button id="startBtn" class="btn-primary" disabled>Start Stream</button>
-      <button id="endBtn" class="btn-secondary" disabled>End</button>
-    </div>
-    <div class="row">
-      <input id="interact" placeholder="Steer the scene midstream..." />
-      <button id="interactBtn" class="btn-secondary" disabled>Send</button>
-    </div>
-    <div id="status">Disconnected</div>
-  </div>
+  <main class="shell">
+    <section class="stage" aria-live="polite">
+      <video id="worldVideo" autoplay playsinline muted></video>
+      <div id="stageState" class="stage-state">
+        <div class="stage-state-card">
+          <h2 id="stageStateTitle">Odyssey Disconnected</h2>
+          <p id="stageStateBody">Enter your API key and connect to open a live rendering session.</p>
+        </div>
+      </div>
+      <canvas id="holdOverlay"></canvas>
+
+      <div id="hud" class="hud hidden">
+        <div class="hud-top">
+          <div id="floorDisplay" class="pill">F1</div>
+          <div id="timerDisplay" class="pill">15:00</div>
+          <button id="pauseBtn" type="button">Pause</button>
+        </div>
+
+        <div class="hud-bottom">
+          <div class="limb-panel">
+            <div class="limb-grid" id="limbIndicator">
+              <div class="limb-tag" data-limb-tag="lh">1 LH</div>
+              <div class="limb-tag" data-limb-tag="rh">2 RH</div>
+              <div class="limb-tag" data-limb-tag="lf">3 LF</div>
+              <div class="limb-tag" data-limb-tag="rf">4 RF</div>
+            </div>
+          </div>
+
+          <div class="state-panel">
+            <div class="state-label">Posture</div>
+            <div id="stabilityDisplay" class="stable">Stable</div>
+            <div id="statusLine">Select a limb to begin.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+        <div class="overlay-card">
+          <h2 id="overlayTitle">Paused</h2>
+          <p id="overlayBody">Press Esc to resume.</p>
+          <div class="controls-row" id="overlayActions"></div>
+        </div>
+      </div>
+
+      <div id="toast"></div>
+    </section>
+
+    <aside class="panel">
+      <header class="panel-head">
+        <div class="eyebrow">Odyssey 2-Pro</div>
+        <h1>Skyscraper Live</h1>
+        <p class="panel-sub">Free-solo Salesforce Tower with Cairn-style limb control and live world-model rendering.</p>
+      </header>
+
+      <section class="section">
+        <div class="section-title">Connection</div>
+        <label for="apiKey">API key
+          <input id="apiKey" type="password" placeholder="ody_..." autocomplete="off" spellcheck="false" />
+        </label>
+        <div class="controls-row">
+          <button id="connectBtn" class="btn-main" type="button">Connect</button>
+          <button id="disconnectBtn" class="btn-sub" type="button" disabled>Disconnect</button>
+        </div>
+        <div class="stat-line"><span>Status</span><strong id="connectionStatus">Disconnected</strong></div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Run Setup</div>
+        <div class="mode-pills" id="modePills">
+          <button class="mode-pill active" data-mode="precision" type="button">
+            <div class="mode-title">Precision</div>
+            <div class="mode-desc">1-4 limb select, mouse aim, click commit.</div>
+          </button>
+          <button class="mode-pill" data-mode="wasd" type="button">
+            <div class="mode-title">WASD</div>
+            <div class="mode-desc">Tab cycle limb, WASD target, E commit.</div>
+          </button>
+        </div>
+        <label for="overlayOpacity">Hold overlay opacity
+          <input id="overlayOpacity" type="range" min="0.05" max="0.95" step="0.05" value="0.45" />
+        </label>
+        <label for="playerName">Leaderboard name
+          <input id="playerName" type="text" maxlength="18" placeholder="Climber" autocomplete="off" />
+        </label>
+        <div class="controls-row">
+          <button id="startRunBtn" class="btn-main" type="button" disabled>Start Climb</button>
+          <button id="restartBtn" class="btn-sub" type="button" disabled>Restart (R)</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Controls</div>
+        <div class="mini-help" id="controlsHelp">
+          <div>1/2/3/4 select limb, mouse to aim, click to commit</div>
+          <div>Right-drag orbit camera, scroll zoom</div>
+          <div>Space rest, Esc pause, R quick restart</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Leaderboard</div>
+        <ul id="leaderboardList" class="leaderboard"></ul>
+      </section>
+    </aside>
+  </main>
+
   <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
