@@ -158,9 +158,9 @@ export default function PalaceViewer({
         )}
       </div>
 
-      {/* Content — scrollable on mobile, absolute overlay on desktop */}
-      <div className="flex flex-1 justify-center overflow-y-auto px-4 py-3 md:absolute md:inset-x-0 md:bottom-24 md:z-10 md:flex-none md:overflow-visible md:px-6 md:py-0">
-        <div className="flex w-full max-w-2xl flex-col items-center gap-3 md:items-center">
+      {/* Content — in-flow on mobile, absolute overlay on desktop */}
+      <div className="flex flex-1 justify-center overflow-y-auto px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:absolute md:inset-x-0 md:bottom-24 md:z-10 md:flex-none md:overflow-visible md:px-6 md:py-0 md:pb-0">
+        <div className="flex w-full max-w-2xl flex-col items-center gap-3">
           {/* Item to remember */}
           <div className="w-full rounded-2xl bg-black/70 px-6 py-3 text-center backdrop-blur-md">
             <p className="font-display text-pretty text-xl italic leading-snug text-white md:text-2xl">
@@ -195,11 +195,28 @@ export default function PalaceViewer({
               ))}
             </div>
           )}
+
+          {/* Navigation buttons — inline on mobile */}
+          <div className="flex items-center justify-center gap-4 pt-1 md:hidden">
+            <button
+              onClick={() => onNavigate(-1)}
+              disabled={isFirstRoom}
+              className="rounded-xl border border-white/10 bg-white/5 px-7 py-2.5 text-[15px] backdrop-blur-sm transition-colors hover:bg-white/10 disabled:opacity-20"
+            >
+              ← Previous
+            </button>
+            <button
+              onClick={() => onNavigate(1)}
+              className="rounded-xl bg-accent px-7 py-2.5 text-[15px] font-semibold text-white transition-colors hover:bg-accent-hover"
+            >
+              {isLastRoom ? 'Start Quiz →' : 'Next →'}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Bottom navigation — static on mobile, absolute overlay on desktop */}
-      <div className="flex shrink-0 items-center justify-center gap-4 bg-black px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:absolute md:inset-x-0 md:bottom-0 md:z-20 md:bg-black/60 md:px-6 md:py-5 md:pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+      {/* Bottom navigation — desktop only, absolute overlay */}
+      <div className="hidden md:absolute md:inset-x-0 md:bottom-0 md:z-20 md:flex md:items-center md:justify-center md:gap-4 md:bg-black/60 md:px-6 md:py-5 md:pb-[max(1.25rem,env(safe-area-inset-bottom))]">
         <button
           onClick={() => onNavigate(-1)}
           disabled={isFirstRoom}
