@@ -115,8 +115,8 @@ export default function PalaceViewer({
               onEnded={handleVideoEnded}
               className="h-full w-full object-contain"
             />
-            {/* Transition overlay: video ended, waiting for stream */}
-            {videoEnded && streamStatus !== 'streaming' && connectionStatus !== 'failed' && (
+            {/* Transition overlay: only while actively starting a new stream */}
+            {videoEnded && streamStatus === 'starting' && (
               <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 backdrop-blur-sm">
                 <div className="flex items-center gap-3 rounded-2xl bg-black/60 px-6 py-3">
                   <div className="h-4 w-4 animate-spin rounded-full border-2 border-white/20 border-t-accent" />
@@ -147,42 +147,45 @@ export default function PalaceViewer({
         )}
       </div>
 
-      {/* Interaction buttons */}
-      {isStreaming && room.interactionButtons && (
-        <div className="absolute right-0 bottom-44 left-0 z-10 flex justify-center px-6">
-          <div className="flex flex-wrap justify-center gap-2">
-            {room.interactionButtons.map((btn, i) => (
-              <button
-                key={i}
-                onClick={() => handleButtonClick(i, btn.prompt)}
-                disabled={cooldown || interactingButton !== null}
-                className="rounded-xl border border-white/10 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-md transition-all hover:border-accent/40 hover:bg-accent/30 disabled:opacity-40"
-              >
-                {interactingButton === i ? (
-                  <span className="flex items-center gap-2">
-                    <div className="h-3 w-3 animate-spin rounded-full border-2 border-white/20 border-t-white" />
-                    {btn.label}
-                  </span>
-                ) : (
-                  btn.label
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Mnemonic overlay */}
-      <div className="absolute right-0 bottom-24 left-0 z-10 flex justify-center px-6">
-        <div className="w-full max-w-2xl">
-          <div className="mb-3 rounded-2xl bg-black/70 px-6 py-3 text-center backdrop-blur-md">
+      {/* Bottom content overlay — mnemonic + optional interaction buttons */}
+      <div className="absolute right-0 bottom-20 left-0 z-10 flex justify-center px-6">
+        <div className="flex w-full max-w-2xl flex-col items-center gap-3">
+          {/* Item to remember */}
+          <div className="w-full rounded-2xl bg-black/70 px-6 py-3 text-center backdrop-blur-md">
             <p className="font-display text-2xl italic leading-snug text-white">
               {room.itemToRemember}
             </p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-base leading-relaxed text-white/90 backdrop-blur-md">
-            {room.mnemonic}
-          </div>
+
+          {/* Mnemonic description — hidden when streaming to make room for buttons */}
+          {!isStreaming && (
+            <div className="w-full rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-base leading-relaxed text-white/90 backdrop-blur-md">
+              {room.mnemonic}
+            </div>
+          )}
+
+          {/* Interaction buttons — shown when streaming, replaces mnemonic */}
+          {isStreaming && room.interactionButtons && (
+            <div className="flex flex-wrap justify-center gap-2">
+              {room.interactionButtons.map((btn, i) => (
+                <button
+                  key={i}
+                  onClick={() => handleButtonClick(i, btn.prompt)}
+                  disabled={cooldown || interactingButton !== null}
+                  className="rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-medium text-white backdrop-blur-md transition-all hover:border-accent/40 hover:bg-accent/30 disabled:opacity-40"
+                >
+                  {interactingButton === i ? (
+                    <span className="flex items-center gap-2">
+                      <div className="h-3 w-3 animate-spin rounded-full border-2 border-white/20 border-t-white" />
+                      {btn.label}
+                    </span>
+                  ) : (
+                    btn.label
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
