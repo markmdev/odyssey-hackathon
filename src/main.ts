@@ -134,7 +134,8 @@ const overlayBody = elem<HTMLElement>('overlayBody');
 const overlayActions = elem<HTMLElement>('overlayActions');
 const toast = elem<HTMLElement>('toast');
 
-const apiKeyInput = elem<HTMLInputElement>('apiKey');
+const DEFAULT_API_KEY = import.meta.env.VITE_ODYSSEY_API_KEY ?? '';
+
 const connectBtn = elem<HTMLButtonElement>('connectBtn');
 const disconnectBtn = elem<HTMLButtonElement>('disconnectBtn');
 const connectionStatus = elem<HTMLElement>('connectionStatus');
@@ -224,7 +225,6 @@ const initialState = (): GameState => ({
 
 const state: GameState = initialState();
 
-apiKeyInput.value = import.meta.env.VITE_ODYSSEY_API_KEY ?? '';
 playerNameInput.value = localStorage.getItem(PLAYER_NAME_KEY) ?? '';
 
 bindVideoEvents();
@@ -238,7 +238,7 @@ resizeCanvas();
 refreshDerivedState();
 computeAimTarget();
 render();
-showToast('Enter Odyssey API key to connect and begin the run.');
+showToast('Connect to Odyssey and begin the run.');
 
 rafId = requestAnimationFrame(loop);
 
@@ -364,11 +364,7 @@ async function runVisualRecoveryIfNeeded(): Promise<void> {
 }
 
 async function connectOdyssey(): Promise<void> {
-  const apiKey = apiKeyInput.value.trim();
-  if (!apiKey) {
-    showToast('API key required.');
-    return;
-  }
+  const apiKey = DEFAULT_API_KEY;
 
   if (connected) {
     showToast('Already connected.');
@@ -1740,7 +1736,7 @@ function updateStageStateUI(nowMs: number): void {
   }
 
   if (!connected) {
-    setStageState('Odyssey Disconnected', 'Enter your API key and connect to open a live rendering session.');
+    setStageState('Odyssey Disconnected', 'Press Connect to open a live rendering session.');
     video.classList.add('idle');
     return;
   }
@@ -1940,7 +1936,6 @@ function updateConnectionStatus(text: string): void {
 function updateControlsState(): void {
   connectBtn.disabled = connected;
   disconnectBtn.disabled = !connected;
-  apiKeyInput.disabled = connected;
   startRunBtn.disabled = !connected || state.phase === 'CONNECTING' || state.phase === 'CLIMBING' || state.phase === 'PAUSED';
   restartBtn.disabled = !connected || (state.phase !== 'CLIMBING' && state.phase !== 'PAUSED' && state.phase !== 'FALLING' && state.phase !== 'SUMMIT');
   pauseBtn.disabled = !(state.phase === 'CLIMBING' || state.phase === 'PAUSED');
