@@ -27,20 +27,24 @@ export default function GeneratingScreen({ phase, rooms, imagesReady, totalRooms
           : 0.8;
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-6">
-      <div className="h-12 w-12 animate-spin rounded-full border-[3px] border-white/10 border-t-indigo-500" />
-      <h2 className="text-2xl font-semibold">Building your palace...</h2>
-      <p className="text-sm text-gray-500">{PHASE_LABELS[phase]}</p>
+    <div className="flex min-h-screen flex-col items-center justify-center gap-8">
+      <div className="relative h-14 w-14">
+        <div className="absolute inset-0 animate-spin rounded-full border-[3px] border-white/5 border-t-accent" />
+        <div className="absolute inset-2 animate-spin rounded-full border-[2px] border-white/5 border-b-accent/50" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }} />
+      </div>
 
-      {/* Progress bar */}
-      <div className="h-1 w-72 overflow-hidden rounded-full bg-white/10">
+      <div className="text-center">
+        <h2 className="font-display text-3xl italic text-white">Building your palace...</h2>
+        <p className="mt-2 text-sm text-gray-500">{PHASE_LABELS[phase]}</p>
+      </div>
+
+      <div className="h-1 w-72 overflow-hidden rounded-full bg-white/5">
         <div
-          className="h-full rounded-full bg-indigo-500 transition-all duration-500"
+          className="h-full rounded-full bg-accent transition-all duration-700 ease-out"
           style={{ width: `${Math.round(progress * 100)}%` }}
         />
       </div>
 
-      {/* Image thumbnails as they appear */}
       {rooms.length > 0 && imagesReady > 0 && (
         <div className="flex flex-wrap justify-center gap-2 px-8">
           {rooms.slice(0, imagesReady).map((room) =>
@@ -49,7 +53,7 @@ export default function GeneratingScreen({ phase, rooms, imagesReady, totalRooms
                 key={room.index}
                 src={room.imageDataUrl}
                 alt={room.name}
-                className="h-16 w-28 rounded-lg object-cover opacity-80"
+                className="h-16 w-28 rounded-lg object-cover opacity-70 ring-1 ring-white/10"
               />
             ) : null,
           )}

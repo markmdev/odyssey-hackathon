@@ -22,33 +22,34 @@ export default function ResultsScreen({
   const pct = Math.round((score / total) * 100);
   const message =
     pct === 100
-      ? 'Perfect! Your palace is built.'
+      ? 'Perfect recall. Your palace stands strong.'
       : pct >= 75
-        ? 'Great recall! A few rooms to revisit.'
+        ? 'Strong memory. A few rooms to revisit.'
         : pct >= 50
-          ? 'Good start — practice makes permanent.'
-          : 'Keep building — the palace grows with practice.';
+          ? 'Good foundation. Practice deepens the palace.'
+          : 'The palace grows with each visit.';
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-6">
-      <h2 className="text-3xl font-bold">Results</h2>
+    <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4">
+      <h2 className="font-display text-3xl italic text-white">Results</h2>
 
-      <div className="bg-gradient-to-br from-violet-400 to-indigo-500 bg-clip-text text-7xl font-extrabold text-transparent">
+      <div className="font-display text-8xl font-normal text-accent">
         {score}/{total}
       </div>
 
       <p className="text-lg text-gray-500">{message}</p>
 
-      {/* Breakdown */}
-      <div className="flex max-h-48 w-[90vw] max-w-md flex-col gap-1.5 overflow-y-auto">
+      <div className="flex max-h-52 w-[90vw] max-w-md flex-col gap-1.5 overflow-y-auto">
         {questions.map((q, i) => (
           <div
             key={i}
-            className="flex items-center gap-3 rounded-lg bg-white/5 px-4 py-2 text-sm"
+            className="flex items-center gap-3 rounded-lg border border-border bg-surface-raised px-4 py-2.5 text-sm"
           >
-            <span className="text-lg">{answers[i] ? '✓' : '✗'}</span>
-            <span className={answers[i] ? 'text-green-400' : 'text-red-400'}>
-              {rooms[q.roomIndex].itemToRemember}
+            <span className={`text-lg ${answers[i] ? 'text-green-400' : 'text-red-400'}`}>
+              {answers[i] ? '\u2713' : '\u2717'}
+            </span>
+            <span className={answers[i] ? 'text-gray-300' : 'text-gray-400'}>
+              {rooms[q.roomIndex]?.itemToRemember}
             </span>
           </div>
         ))}
@@ -57,15 +58,15 @@ export default function ResultsScreen({
       <div className="flex gap-3">
         <button
           onClick={onRetry}
-          className="rounded-lg bg-indigo-500 px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-indigo-600"
+          className="rounded-xl bg-accent px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-hover"
         >
-          Try Again
+          Walk Again
         </button>
         <button
           onClick={onNewChallenge}
-          className="rounded-lg border border-white/10 bg-white/5 px-8 py-3 text-base font-semibold transition-colors hover:bg-white/10"
+          className="rounded-xl border border-border bg-surface-raised px-8 py-3 text-base font-semibold transition-colors hover:bg-surface-hover"
         >
-          New Challenge
+          New Topic
         </button>
       </div>
     </div>

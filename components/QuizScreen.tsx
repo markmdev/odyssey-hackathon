@@ -20,30 +20,31 @@ export default function QuizScreen({
 }: Props) {
   const [answered, setAnswered] = useState<number | null>(null);
 
-  // Reset when question changes
   const key = `${questionIndex}`;
 
   return (
-    <div key={key} className="flex h-screen flex-col items-center justify-center gap-7">
-      <h2 className="text-3xl font-bold">Test Your Memory</h2>
-      <p className="text-sm text-gray-500">
-        Question {questionIndex + 1} of {totalQuestions}
-      </p>
+    <div key={key} className="flex min-h-screen flex-col items-center justify-center gap-8 px-4">
+      <div className="text-center">
+        <h2 className="font-display text-4xl italic text-white">Test Your Memory</h2>
+        <p className="mt-2 text-sm text-gray-500">
+          Question {questionIndex + 1} of {totalQuestions}
+        </p>
+      </div>
 
-      <p className="max-w-lg text-center text-xl font-medium leading-relaxed">
+      <p className="max-w-lg text-center text-xl leading-relaxed text-gray-200">
         {question.question}
       </p>
 
       <div className="flex w-96 max-w-[90vw] flex-col gap-2.5">
         {question.options.map((option, i) => {
-          let style = 'border-white/10 bg-white/5 hover:border-indigo-500/50 hover:bg-indigo-500/5';
+          let style = 'border-border bg-surface-raised hover:border-border-hover hover:bg-surface-hover';
           if (answered !== null) {
             if (i === question.correctIndex) {
-              style = 'border-green-500 bg-green-500/10';
+              style = 'border-green-500/60 bg-green-500/10';
             } else if (i === answered && answered !== question.correctIndex) {
-              style = 'border-red-500 bg-red-500/10';
+              style = 'border-red-500/60 bg-red-500/10';
             } else {
-              style = 'border-white/5 bg-white/[0.02] opacity-50';
+              style = 'border-white/5 bg-white/[0.02] opacity-40';
             }
           }
 
