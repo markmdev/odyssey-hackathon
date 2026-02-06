@@ -90,4 +90,4 @@ Handcrafted room data in `scripts/data/` ensures high-quality demo content. The 
 
 ## Built by
 
-Mark — Odyssey Hackathon 2026
+Mark, Oscar, and Javokhir — Odyssey Hackathon 2026
