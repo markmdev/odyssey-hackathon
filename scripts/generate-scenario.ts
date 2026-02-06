@@ -14,12 +14,16 @@ function parseArgs(argv: string[]): {
   grade: GradeLevel;
   input?: string;
   displayName?: string;
+  manifest?: string;
+  geminiModel: string;
 } {
   const args = argv.slice(2);
   let name: string | undefined;
   let grade: GradeLevel = '4-6';
   let input: string | undefined;
   let displayName: string | undefined;
+  let manifest: string | undefined;
+  let geminiModel = 'gemini-2.5-flash-image';
 
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
@@ -35,6 +39,12 @@ function parseArgs(argv: string[]): {
       case '--display-name':
         displayName = args[++i];
         break;
+      case '--manifest':
+        manifest = args[++i];
+        break;
+      case '--gemini-model':
+        geminiModel = args[++i];
+        break;
       case '--help':
         console.log(`Usage: npx tsx scripts/generate-scenario.ts --name <name> [options]
 
@@ -43,6 +53,8 @@ Options:
   --grade <string>         Grade level: K-3, 4-6, 7-9, 10-12 (default: 4-6)
   --input <string>         Input text directly. If omitted, reads from stdin.
   --display-name <string>  Human-readable name. Defaults to titleCase of name.
+  --manifest <path>        Pre-written room data JSON. Skips GPT step.
+  --gemini-model <string>  Gemini model ID (default: gemini-2.5-flash-image)
   --help                   Show this help message`);
         process.exit(0);
     }
@@ -53,7 +65,7 @@ Options:
     process.exit(1);
   }
 
-  return { name, grade, input, displayName };
+  return { name, grade, input, displayName, manifest, geminiModel };
 }
 
 // ---------------------------------------------------------------------------
@@ -127,17 +139,22 @@ async function designRooms(
 async function generateRoomImage(
   sceneDescription: string,
   outputPath: string,
+  geminiModel: string,
 ): Promise<boolean> {
   try {
     const { GoogleGenAI } = await import('@google/genai');
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
 
+    const isPro = geminiModel.includes('pro');
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image',
+      model: geminiModel,
       contents: sceneDescription,
       config: {
-        responseModalities: ['Image'],
-        imageConfig: { aspectRatio: '16:9' },
+        responseModalities: isPro ? ['TEXT', 'IMAGE'] : ['Image'],
+        imageConfig: {
+          aspectRatio: '16:9',
+          ...(isPro ? { imageSize: '2K' } : {}),
+        },
       },
     });
 
@@ -252,24 +269,11 @@ interface Manifest {
 }
 
 async function main() {
-  const { name, grade, input, displayName } = parseArgs(process.argv);
+  const { name, grade, input, displayName, manifest: manifestPath, geminiModel } = parseArgs(process.argv);
   const display = displayName ?? toTitleCase(name);
 
   log(`Creating scenario: ${name} (grade ${grade})`);
-
-  // ---- Input text ----
-  let inputText: string;
-  if (input) {
-    inputText = input;
-  } else {
-    log('Reading input from stdin... (paste text, then Ctrl+D)');
-    inputText = await readStdin();
-  }
-
-  if (!inputText) {
-    console.error('[generate-scenario] Error: no input text provided');
-    process.exit(1);
-  }
+  log(`Gemini model: ${geminiModel}`);
 
   // ---- Output directory ----
   const outDir = path.resolve(
@@ -280,17 +284,44 @@ async function main() {
   );
   fs.mkdirSync(outDir, { recursive: true });
 
-  // ---- Step 1: GPT designs rooms ----
-  log('GPT: Designing rooms...');
   let rooms: Room[];
-  try {
-    rooms = await designRooms(inputText, grade);
-    log(`GPT: Done — ${rooms.length} rooms designed`);
-  } catch (err) {
-    console.error(
-      `[generate-scenario] GPT failed: ${(err as Error).message}`,
-    );
-    process.exit(1);
+  let inputText: string;
+
+  if (manifestPath) {
+    // ---- Load pre-written room data (skip GPT) ----
+    log(`Loading rooms from manifest: ${manifestPath}`);
+    const manifestData = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+    rooms = manifestData.rooms.map((r: Omit<Room, 'index'> & { index?: number }, i: number) => ({
+      ...r,
+      index: r.index ?? i,
+    }));
+    inputText = manifestData.inputText ?? '';
+    log(`Loaded ${rooms.length} rooms from manifest`);
+  } else {
+    // ---- Input text ----
+    if (input) {
+      inputText = input;
+    } else {
+      log('Reading input from stdin... (paste text, then Ctrl+D)');
+      inputText = await readStdin();
+    }
+
+    if (!inputText) {
+      console.error('[generate-scenario] Error: no input text provided');
+      process.exit(1);
+    }
+
+    // ---- Step 1: GPT designs rooms ----
+    log('GPT: Designing rooms...');
+    try {
+      rooms = await designRooms(inputText, grade);
+      log(`GPT: Done — ${rooms.length} rooms designed`);
+    } catch (err) {
+      console.error(
+        `[generate-scenario] GPT failed: ${(err as Error).message}`,
+      );
+      process.exit(1);
+    }
   }
 
   // ---- Step 2: Gemini generates images (sequential) ----
@@ -301,7 +332,7 @@ async function main() {
     process.stdout.write(
       `[generate-scenario] Gemini: Generating room ${i + 1}/${rooms.length} image...`,
     );
-    const ok = await generateRoomImage(room.sceneDescription, imgPath);
+    const ok = await generateRoomImage(room.sceneDescription, imgPath, geminiModel);
     imageResults.push(ok);
     console.log(ok ? ' done \u2713' : ' FAILED');
   }
@@ -337,7 +368,7 @@ async function main() {
   const quizQuestions = generateQuizQuestions(rooms);
 
   // ---- Step 5: Write manifest ----
-  const manifest: Manifest = {
+  const outputManifest: Manifest = {
     name,
     displayName: display,
     gradeLevel: grade,
@@ -355,8 +386,8 @@ async function main() {
     quizQuestions,
   };
 
-  const manifestPath = path.join(outDir, 'manifest.json');
-  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+  const outputManifestPath = path.join(outDir, 'manifest.json');
+  fs.writeFileSync(outputManifestPath, JSON.stringify(outputManifest, null, 2));
 
   log(`Saved to public/scenarios/${name}/`);
   log(`Manifest: public/scenarios/${name}/manifest.json`);
