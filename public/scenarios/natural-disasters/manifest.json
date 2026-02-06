@@ -1,0 +1,238 @@
+{
+  "name": "natural-disasters",
+  "displayName": "Natural Disasters",
+  "gradeLevel": "4-6",
+  "inputText": "Volcano — magma from Earth's mantle erupts through the crust, can shoot lava 2,000 feet high, pyroclastic flows travel 450 mph, creates new land over time\nTornado — violently rotating column of air, wind speeds up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale\nTsunami — ocean wave caused by underwater earthquake, can travel 500 mph across open ocean, slows but grows taller near shore (up to 100 feet)\nEarthquake — sudden release of energy in Earth's crust along fault lines, measured on Richter scale, P-waves travel fastest, can trigger landslides and tsunamis\nAvalanche — massive slide of snow down a mountain, can reach 200 mph, triggered by vibrations or new snow, carries 300,000 cubic yards of snow\nLightning Superstorm — lightning bolts carry 300 million volts, heat air to 54,000°F (5x hotter than Sun's surface), thunder is the sound of air expanding from the heat",
+  "rooms": [
+    {
+      "index": 0,
+      "name": "Eruption Summit",
+      "itemToRemember": "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
+      "mnemonic": "Earth's crust cracking open like an egg as liquid rock blasts 2,000 feet into the sky — and the deadly ground-hugging cloud of ash and gas (pyroclastic flow) races downhill faster than any car at 450 mph.",
+      "sceneDescription": "A massive volcanic eruption in full explosive force — a towering column of bright orange-red lava fountaining 2,000 feet into a dark ash-filled sky. The volcano's crater is splitting open with incandescent lava pouring over multiple sides. Rivers of glowing orange-red molten lava cascade down the mountain slopes, burning everything in their path. A pyroclastic flow — a massive rolling cloud of superheated ash and gas — races down the left flank at terrifying speed. The sky is choked with dark volcanic ash clouds lit from below by the lava glow. Lightning bolts crackle through the ash cloud (volcanic lightning). Boulders of glowing rock arc through the air. The scale is apocalyptic. Photorealistic, maximum drama, explosive action from frame one, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Massive volcanic eruption in full explosive force — towering column of bright orange lava fountaining 2,000 feet into dark ash sky. Crater splitting open, incandescent lava pouring over sides. Rivers of molten lava cascading down slopes. Pyroclastic flow racing downhill. Lightning in ash cloud. Photorealistic, apocalyptic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The eruption intensifies — a massive explosion sends a shockwave visible in the ash cloud. Glowing lava bombs arc through the dark sky like fireworks. The pyroclastic flow accelerates downhill, consuming trees and everything in its path. New rivers of lava burst through the mountainside. The ground shakes."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Lava reaches the base of the volcano and flows into the ocean, creating massive steam explosions where molten rock meets water. Enormous white steam clouds billow upward. New land forms as lava cools into black rock. The volcano continues erupting above, painting the sky orange. Creation and destruction simultaneously."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-0.png",
+      "videoFile": "room-0.mp4"
+    },
+    {
+      "index": 1,
+      "name": "Vortex Alley",
+      "itemToRemember": "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
+      "mnemonic": "A spinning column of wind so powerful it rips houses apart like paper — born from a massive supercell thunderstorm, with wind speeds up to 300 mph rated on a destruction scale from 'light damage' to 'incredible devastation.'",
+      "sceneDescription": "A massive EF5 tornado tearing across flat farmland, its enormous dark funnel stretching from a green-tinted supercell thunderstorm down to the ground. The tornado is violently rotating, with visible debris — pieces of buildings, trees, dirt — spinning in its vortex. The funnel is over a mile wide at the base. The supercell cloud above is apocalyptically structured with mammatus clouds and a green-tinted wall cloud. Dust and debris create a wide debris cloud at ground level. Power lines snap and spark. A barn is being ripped apart, pieces spiraling upward into the funnel. The landscape is flat prairie with dark dramatic storm light. Rain curtains visible to the sides. Photorealistic, terrifying scale, maximum destruction, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Massive EF5 tornado tearing across flat farmland, enormous dark funnel from green supercell to ground. Violently rotating with debris — buildings, trees spinning in vortex. Mile-wide base. Mammatus clouds above. Barn being ripped apart, pieces spiraling up. Dark storm light. Photorealistic, terrifying, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The tornado rips through a farmstead — the roof of a house lifts off in one piece and disintegrates as it spirals upward into the funnel. Power lines snap with bright sparks. Trees are uprooted and tossed. The roar is visible in the churning debris cloud. Dirt and wreckage orbit the vortex at 300 mph."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The tornado's funnel widens as it intensifies, the debris cloud expanding at ground level. Multiple vortices spin within the main funnel — satellite tornadoes. Lightning strikes from the supercell illuminate the entire scene in white flashes. The destruction path behind the tornado is a scar of flattened earth."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-1.png",
+      "videoFile": "room-1.mp4"
+    },
+    {
+      "index": 2,
+      "name": "Wave Wall Harbor",
+      "itemToRemember": "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
+      "mnemonic": "An invisible ripple that races across the ocean at jet-plane speed (500 mph) — but when it hits shallow water near shore, it rears up into a 100-foot wall of water that swallows everything.",
+      "sceneDescription": "A colossal tsunami wave towering 100 feet above a coastal city, the massive wall of dark blue-green water about to crash. The wave is curling at the top with white foam and spray, carrying boats, debris, and fish within its face. The sheer scale dwarfs the buildings below — multi-story structures look like toys beneath the wave. People are running in the streets below. The ocean behind the wave has pulled back, exposing the seafloor. The sky is dark and ominous. Water is already surging through the lower streets. The wave's face shows incredible detail — churning, powerful, unstoppable. Photorealistic, overwhelming scale, moment of impact, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Colossal 100-foot tsunami wave towering above a coastal city, massive wall of dark blue-green water about to crash. Curling white foam at top, carrying boats and debris. Buildings look like toys beneath it. Ocean pulled back exposing seafloor. Dark sky. Water surging through streets. Photorealistic, overwhelming, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The tsunami crashes into the city — the wall of water smashes through buildings, sending up enormous explosions of white spray. Cars, boats, and debris tumble in the churning flood. Windows shatter, walls collapse. The water surges inland with terrifying momentum, swallowing block after block."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The floodwaters rush through the city streets like raging rivers, carrying everything. A second wave is visible behind the first, even larger. The entire coastline is underwater. Ships sit on top of buildings. The raw power of the ocean overwhelming all human construction. Devastating and unstoppable."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-2.png",
+      "videoFile": "room-2.mp4"
+    },
+    {
+      "index": 3,
+      "name": "Fault Line Rift",
+      "itemToRemember": "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+      "mnemonic": "The Earth's crust snapping like a broken cracker along invisible fault lines — energy waves radiate outward (P-waves arrive first as a warning), shaking everything and triggering chain reactions: landslides, tsunamis, building collapses.",
+      "sceneDescription": "A massive earthquake splitting open a city street — the ground is cracking apart in real-time, a jagged fissure ripping through asphalt and concrete, revealing glowing hot rock beneath. Buildings on either side of the fault are tilting and crumbling, glass shattering and facades cracking. Chunks of road are tilting at angles. Dust clouds billow from collapsing structures. Cars slide into the widening crack. The fissure extends into the distance, zigzagging through the urban landscape. Seismic waves are visible as ripples in the ground surface, like waves in water. Power lines spark and fall. Water mains burst, sending geysers into the air. The destruction is happening NOW — mid-collapse. Photorealistic, ground-level perspective, maximum destruction, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Massive earthquake splitting a city street — jagged fissure ripping through asphalt revealing hot rock beneath. Buildings tilting and crumbling, glass shattering. Chunks of road at angles. Dust clouds billowing. Cars sliding into the crack. Seismic waves visible as ground ripples. Photorealistic, mid-collapse, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "A tall building collapses in slow-motion, its structure failing floor by floor. Enormous dust clouds mushroom outward. The fissure widens, swallowing a section of road. Water mains burst, geysers shooting 50 feet into the dusty air. The ground continues to shake violently. More cracks radiate outward."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The earthquake triggers a landslide on a nearby hillside — tons of earth and rock cascade downward toward the city. Trees topple like dominoes. The dust cloud from collapsed buildings merges with the landslide debris. The scale of destruction spreads outward in all directions. Aftershock ripples through the shattered ground."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-3.png",
+      "videoFile": null
+    },
+    {
+      "index": 4,
+      "name": "White Thunder Slope",
+      "itemToRemember": "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
+      "mnemonic": "A mountain's worth of snow — 300,000 cubic yards — suddenly lets go and thunders downhill at 200 mph, triggered by something as small as a shout or a skier's turn. An unstoppable white tidal wave.",
+      "sceneDescription": "A massive avalanche thundering down a steep mountain face at 200 mph — an enormous wall of churning white snow and ice, hundreds of feet tall, crashing down the slope. The leading edge is a violent cloud of powdered snow billowing outward like an explosion. Entire pine trees are being snapped and swallowed by the wave of snow. The mountain above shows the fracture line where the snowpack broke — a clean jagged line across the slope. Blue sky above contrasts with the white chaos below. Snow debris sprays hundreds of feet into the air. The scale is overwhelming — the avalanche is wider than a football field and moving faster than a freight train. Photorealistic, maximum kinetic energy, explosive force, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Massive avalanche thundering down steep mountain at 200 mph — enormous wall of churning white snow hundreds of feet tall. Violent powder cloud billowing outward. Pine trees snapping and being swallowed. Fracture line visible above. Blue sky contrast. Snow spraying hundreds of feet high. Photorealistic, explosive, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The avalanche accelerates, the powder cloud expanding into a massive white wall consuming the entire mountain face. Trees vanish into the churning snow. The roar creates a visible shockwave of displaced air ahead of the snow. Chunks of ice and rock tumble within the white torrent. Unstoppable momentum."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The avalanche reaches the valley floor and fans outward, the wall of snow decelerating into a massive debris field of churned snow, broken trees, and ice blocks. The powder cloud rises hundreds of feet into the blue sky like a nuclear mushroom cloud. Snow dust settles slowly over the devastated landscape."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-4.png",
+      "videoFile": "room-4.mp4"
+    },
+    {
+      "index": 5,
+      "name": "Bolt Forge Sky",
+      "itemToRemember": "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
+      "mnemonic": "A bolt carrying 300 million volts that superheats the air to 54,000 degrees — five times hotter than the surface of the Sun — and the crack of thunder is just the sound of air exploding outward from the heat.",
+      "sceneDescription": "A massive lightning superstorm over a dark dramatic landscape — multiple enormous lightning bolts striking the ground simultaneously, branching in brilliant white-blue veins across the pitch-black sky. The main bolt is incredibly thick and bright, forking into dozens of branches. The ground where it strikes explodes with a shower of white-hot sparks and fused sand (fulgurite). The storm clouds above are massive and layered, lit from within by continuous sheet lightning in purple and blue. Rain pours in visible curtains. The landscape below is illuminated in stroboscopic flashes — each bolt freezing the scene in brilliant white light. The electrical energy is palpable. Photorealistic, multiple simultaneous strikes, maximum electrical violence, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Massive lightning superstorm — multiple enormous bolts striking ground simultaneously, brilliant white-blue veins branching across pitch-black sky. Main bolt incredibly thick, forking into dozens of branches. Ground exploding with white-hot sparks. Storm clouds lit by purple sheet lightning. Rain curtains. Photorealistic, electrical violence, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "A colossal bolt of lightning strikes a lone tree, which explodes in a shower of burning splinters and steam. The bolt is so bright it whites out the center of the frame. Branch lightning arcs across the sky in every direction. The thunderclap is visible as a shockwave rippling through the rain. The air glows with superheated plasma."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Continuous rapid-fire lightning illuminates the entire storm like a strobe light. Bolt after bolt strikes the ground in quick succession. The landscape flickers between brilliant white and total darkness. The storm clouds roil and churn with internal lightning. A ball of lightning hovers near the ground, glowing eerily. Raw electrical apocalypse."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-5.png",
+      "videoFile": "room-5.mp4"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "roomIndex": 0,
+      "question": "What was in the \"Eruption Summit\" room?",
+      "options": [
+        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
+        "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "roomIndex": 1,
+      "question": "What was in the \"Vortex Alley\" room?",
+      "options": [
+        "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "roomIndex": 2,
+      "question": "What was in the \"Wave Wall Harbor\" room?",
+      "options": [
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
+        "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "roomIndex": 3,
+      "question": "What was in the \"Fault Line Rift\" room?",
+      "options": [
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
+        "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "roomIndex": 4,
+      "question": "What was in the \"White Thunder Slope\" room?",
+      "options": [
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "roomIndex": 5,
+      "question": "What was in the \"Bolt Forge Sky\" room?",
+      "options": [
+        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
+        "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
