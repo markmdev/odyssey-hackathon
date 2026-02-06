@@ -301,14 +301,13 @@ export default function MemoryPalace() {
       const nextIndex = currentRoom + direction;
       if (nextIndex < 0) return;
 
-      // End active stream before changing room
+      // End active stream — fire and forget (next video plays for 10s,
+      // plenty of time for endStream to complete before next startStream)
       const client = odysseyClientRef.current;
       if (client && streamStatusRef.current === 'streaming') {
-        setStreamStatus('ending');
-        streamStatusRef.current = 'ending';
-        try { await client.endStream(); } catch { /* ignore */ }
         setStreamStatus('idle');
         streamStatusRef.current = 'idle';
+        client.endStream().catch(() => {});
       }
 
       if (nextIndex >= rooms.length) {
