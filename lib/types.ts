@@ -1,5 +1,10 @@
 export type GradeLevel = 'K-3' | '4-6' | '7-9' | '10-12';
 
+export interface InteractionButton {
+  label: string;
+  prompt: string;
+}
+
 export interface OdysseyKeyframe {
   timestamp_ms: number;
   prompt?: string;
@@ -13,6 +18,7 @@ export interface Room {
   mnemonic: string;
   sceneDescription: string;
   odysseyKeyframes: OdysseyKeyframe[];
+  interactionButtons?: InteractionButton[];
   imageDataUrl?: string;
   videoUrl?: string;
 }
@@ -38,6 +44,7 @@ export interface PreparedRoom {
   mnemonic: string;
   sceneDescription: string;
   odysseyKeyframes: OdysseyKeyframe[];
+  interactionButtons?: InteractionButton[];
   imageFile: string | null;
   videoFile: string | null;
 }

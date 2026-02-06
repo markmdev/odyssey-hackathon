@@ -22,6 +22,7 @@ export async function loadScenario(name: string): Promise<{ rooms: Room[]; quizQ
     mnemonic: r.mnemonic,
     sceneDescription: r.sceneDescription,
     odysseyKeyframes: r.odysseyKeyframes,
+    interactionButtons: r.interactionButtons,
     imageDataUrl: r.imageFile ? `/scenarios/${name}/${r.imageFile}` : undefined,
     videoUrl: r.videoFile ? `/scenarios/${name}/${r.videoFile}` : undefined,
   }));

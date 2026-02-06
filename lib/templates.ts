@@ -62,6 +62,11 @@ Return ONLY valid JSON with this structure:
         { "timestamp_ms": 3000, "prompt": "First action — something dramatic changes in the scene related to the mnemonic." },
         { "timestamp_ms": 6000, "prompt": "Second action — the scene transforms further, building on the mnemonic imagery." },
         { "timestamp_ms": 10000, "end": true }
+      ],
+      "interactionButtons": [
+        { "label": "Short fun action (2-4 words)", "prompt": "Stative present-continuous description of the scene after this interaction..." },
+        { "label": "Another action", "prompt": "Another stative present-continuous description..." },
+        { "label": "Third action", "prompt": "Third stative present-continuous description..." }
       ]
     }
   ]
@@ -77,6 +82,10 @@ Rules:
 - Middle keyframes (t=3s, t=6s) introduce dramatic changes that reinforce the mnemonic
 - Last keyframe (t=10s) is always { "timestamp_ms": 10000, "end": true }
 - Actions should be visually dramatic and directly tied to the memory association
+- interactionButtons: 3 per room, for live interactive exploration after the video
+- Button labels should be short and fun (2-4 words, kid-friendly)
+- Button prompts MUST use stative present-continuous phrasing ("The T-Rex is roaring with its head thrown back") NOT dynamic verbs ("The T-Rex roars") to avoid action looping in the world model
+- Each button prompt should describe a rich, detailed scene state with colors, effects, and environmental details
 - Keep all imagery family-friendly (Pixar, not horror). No violence, gore, weapons, nudity, or dark/disturbing content. Use whimsical, fantastical, colorful, and playful imagery.`;
 
 const GRADE_GUIDANCE: Record<GradeLevel, string> = {

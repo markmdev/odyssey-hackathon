@@ -266,6 +266,7 @@ interface ManifestRoom {
   mnemonic: string;
   sceneDescription: string;
   odysseyKeyframes: OdysseyKeyframe[];
+  interactionButtons?: { label: string; prompt: string }[];
   imageFile: string | null;
   videoFile: string | null;
 }
@@ -396,6 +397,7 @@ async function main() {
       mnemonic: room.mnemonic,
       sceneDescription: room.sceneDescription,
       odysseyKeyframes: room.odysseyKeyframes,
+      interactionButtons: room.interactionButtons,
       imageFile: imageResults[i] ? `room-${i}.png` : null,
       videoFile: videoResults[i] ? `room-${i}.mp4` : null,
     })),
