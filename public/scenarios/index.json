@@ -1,7 +1,8 @@
 [
   { "name": "dinosaurs", "displayName": "Dinosaurs" },
-  { "name": "solar-system", "displayName": "Solar System" },
   { "name": "world-wonders", "displayName": "World Wonders" },
   { "name": "human-body", "displayName": "Human Body" },
-  { "name": "ocean-creatures", "displayName": "Ocean Creatures" }
+  { "name": "ocean-creatures", "displayName": "Ocean Creatures" },
+  { "name": "rainforest-animals", "displayName": "Rainforest Animals" },
+  { "name": "natural-disasters", "displayName": "Natural Disasters" }
 ]

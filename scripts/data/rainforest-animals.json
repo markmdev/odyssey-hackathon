@@ -1,0 +1,158 @@
+{
+  "name": "rainforest-animals",
+  "displayName": "Rainforest Animals",
+  "gradeLevel": "4-6",
+  "inputText": "Jaguar — third-largest big cat, strongest bite of any cat, can crush turtle shells, excellent swimmer, ambush predator with rosette-spotted fur\nPoison Dart Frog — tiny but deadly, bright colors warn predators (aposematism), some carry enough poison to kill 10 adults, indigenous people used their toxin on blowdarts\nToucan — enormous colorful bill can be one-third of its body length, bill regulates body temperature, uses bill to reach fruit on thin branches\nGreen Anaconda — heaviest snake in the world (up to 550 pounds), kills by constriction, lives in swamps and rivers, can swallow prey whole\nHarpy Eagle — one of the largest eagles, talons as big as grizzly bear claws, hunts monkeys and sloths from the canopy, can fly up to 50 mph through dense forest\nRed-Eyed Tree Frog — bright red eyes startle predators (startle coloration), vivid green body with blue-and-yellow striped sides, sticks to leaves with suction-cup toes",
+  "rooms": [
+    {
+      "index": 0,
+      "name": "Ambush Pool",
+      "itemToRemember": "Jaguar — third-largest big cat, strongest bite of any cat, can crush turtle shells, excellent swimmer, ambush predator",
+      "mnemonic": "A spotted powerhouse that hunts by surprise — its jaws are so strong it can bite straight through a turtle's shell like cracking a walnut. The only big cat that loves to swim.",
+      "sceneDescription": "A muscular jaguar mid-leap, launching itself from a mossy riverbank into dark jungle water with a massive splash. Its powerful body is stretched out horizontally, golden fur with black rosette spots glistening with water droplets. Jaws wide open showing enormous canine teeth. The dark green river surface explodes with spray around the jaguar. Dense tropical rainforest surrounds the river — massive trees with hanging vines and epiphytes. Dappled green-gold light filters through the thick canopy above. The jaguar's intense amber eyes are locked on something in the water. Raw predatory power captured mid-strike. Photorealistic, action shot, dramatic lighting, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "A muscular jaguar mid-leap launching into dark jungle river with massive splash. Golden rosette-spotted fur glistening with water droplets. Jaws wide open, enormous canine teeth. Water exploding around it. Dense rainforest, hanging vines. Dappled green-gold light through canopy. Photorealistic, action shot, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The jaguar crashes into the river, submerging partially, then surges back up with powerful strokes. Water pours off its spotted coat. It grabs a large caiman in its massive jaws, teeth clamping down on the skull. Spray flies everywhere. Pure explosive power."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The jaguar hauls its prey out of the water onto the muddy bank, muscles rippling under wet spotted fur. Water streams off its body. It shakes its head, sending droplets flying. The jungle steams around it. Victorious apex predator, dripping and powerful."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "Neon Warning Floor",
+      "itemToRemember": "Poison Dart Frog — tiny but deadly, bright colors warn predators (aposematism), some carry enough poison to kill 10 adults",
+      "mnemonic": "Nature's tiniest assassin — a frog the size of a paperclip dressed in neon 'danger' signs. Its skin oozes enough poison to kill ten people, and indigenous hunters dipped their blowdarts in it.",
+      "sceneDescription": "A brilliant blue poison dart frog mid-hop on the dark, wet rainforest floor, its tiny body launched into the air between glistening leaves. The frog is electric cobalt blue with jet-black spots, its skin glistening with moisture and toxin. Its bright orange toe pads are spread wide mid-leap. Around it on the dark leaf litter, two more dart frogs — one strawberry-red with blue legs, one golden yellow — are also in motion, hopping across wet leaves. Raindrops splash on the leaves around them. The forest floor is dark and wet with decomposing leaves, mushrooms, and moss. Dramatic macro photography perspective, shallow depth of field, the frogs pop against the dark background. Photorealistic, vivid neon colors, cinematic macro shot.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "A brilliant electric-blue poison dart frog mid-hop above dark wet rainforest floor. Black spots, orange toe pads spread wide. Two more dart frogs in motion — strawberry-red and golden yellow. Raindrops splashing on leaves. Dark leaf litter, mushrooms, moss. Photorealistic, vivid neon colors, cinematic macro."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The blue dart frog lands on a glistening wet leaf with a splash of water. Its toxic skin gleams under a shaft of light. The red frog hops onto a mushroom cap. The yellow frog climbs a mossy twig. All three are vivid neon against the dark forest floor. Raindrops continue falling."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "A snake lunges toward the golden dart frog but recoils instantly, repelled by the toxin. The tiny frog holds its ground fearlessly, its bright yellow skin practically glowing with warning. The other frogs continue hopping unconcerned. Neon colors blazing against the dark wet jungle floor."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Canopy Fruit Snatch",
+      "itemToRemember": "Toucan — enormous colorful bill can be one-third of its body length, bill regulates body temperature, uses bill to reach fruit on thin branches",
+      "mnemonic": "A bird carrying a rainbow-colored banana on its face that's one-third of its entire body — it doubles as an air conditioner AND a fruit-picking tool for branches too thin to sit on.",
+      "sceneDescription": "A keel-billed toucan in flight through the rainforest canopy, its enormous multicolored bill leading the way. The bill is a stunning gradient of green, orange, red, blue, and yellow — nearly a third of the bird's total length. Wings spread wide showing jet-black feathers with a bright yellow chest. The toucan is swooping toward a cluster of ripe red berries on a thin branch. Lush green canopy all around with tropical flowers — bromeliads, orchids, and heliconias in reds and oranges. Shafts of golden sunlight pierce through gaps in the canopy. Other tropical birds visible in the background. The scene bursts with color and movement. Photorealistic, vivid tropical colors, mid-flight action, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "A keel-billed toucan in flight through rainforest canopy, enormous multicolored bill leading the way — green, orange, red, blue, yellow gradient. Wings spread wide, black feathers, yellow chest. Swooping toward red berries. Lush canopy, tropical flowers, golden light shafts. Photorealistic, vivid, mid-flight, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The toucan lands on a thin branch that bends under its weight. It stretches its enormous colorful bill toward a cluster of ripe berries just out of reach. The branch bobs and sways. Leaves rustle. The toucan's bill glows warm in a sunbeam, radiating heat like a natural thermostat."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The toucan plucks a bright red berry with the tip of its massive bill and tosses it up, catching it in its open beak. It tilts its head back to swallow. A second toucan swoops in from behind, wings flaring. Feathers and leaves scatter. The canopy comes alive with color and motion."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Constriction Swamp",
+      "itemToRemember": "Green Anaconda — heaviest snake in the world (up to 550 pounds), kills by constriction, lives in swamps and rivers, can swallow prey whole",
+      "mnemonic": "The world's heaviest snake — 550 pounds of pure squeezing muscle that lives in murky swamp water. It coils around prey and squeezes tighter with every breath, then unhinges its jaw to swallow dinner whole.",
+      "sceneDescription": "An enormous green anaconda surging out of murky swamp water, its massive olive-green body coiling powerfully as it strikes. The snake is thick as a tree trunk — easily 20 feet visible with more beneath the water. Dark oval spots pattern its muscular body. Its head is lunging forward with mouth gaping open, showing the curved teeth. Murky brown-green swamp water splashes and sprays as the massive body displaces water. Swamp environment with partially submerged trees, hanging moss, floating vegetation, and lily pads. Humid, misty atmosphere. Green-filtered light. The scale of the snake is terrifying. Photorealistic, explosive action, dramatic lighting, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Enormous green anaconda surging out of murky swamp water, massive olive-green body coiling powerfully mid-strike. Thick as a tree trunk, 20+ feet visible. Mouth gaping open showing curved teeth. Water splashing and spraying. Swamp with submerged trees, hanging moss, lily pads. Misty, humid. Photorealistic, explosive action, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The anaconda wraps its massive coils around a large capybara, squeezing tighter. Muscles ripple along its enormous body. The coils tighten with terrifying power. Swamp water churns as the snake's body thrashes. Mud and vegetation fly. The constriction is visible — each coil contracting."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The anaconda slowly drags its prey beneath the murky swamp surface. Its massive green body slides through the water like a submarine, creating a wake. Only the dark patterned scales are visible gliding below the surface. The swamp goes eerily still. Bubbles rise. Terrifyingly powerful."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Talon Strike Canopy",
+      "itemToRemember": "Harpy Eagle — one of the largest eagles, talons as big as grizzly bear claws, hunts monkeys and sloths, flies 50 mph through dense forest",
+      "mnemonic": "An eagle with feet the size of grizzly bear paws that hunts monkeys at 50 mph through dense jungle — imagine dodging trees at highway speed with razor-sharp claws extended.",
+      "sceneDescription": "A massive harpy eagle diving through the rainforest canopy at incredible speed, wings folded back, enormous talons extended forward. The talons are terrifyingly large — each curved claw as long as a grizzly bear's. The eagle's slate-gray back feathers and white chest are streaked with motion. Its distinctive split crest feathers are blown back by the speed. Dense green canopy blurs past on either side as the eagle threads between branches at 50 mph. Below, a howler monkey scrambles desperately along a branch. Leaves and small branches shatter as the eagle punches through the canopy. Incredible speed and precision. Photorealistic, high-speed action, motion blur on background, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Massive harpy eagle diving through rainforest canopy at incredible speed, wings folded, enormous talons extended forward — claws as big as grizzly bear's. Slate-gray and white feathers streaked with motion. Crest blown back. Dense canopy blurring past. Leaves shattering. Photorealistic, high-speed action, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The harpy eagle's massive talons slam into a branch, gripping with bone-crushing force. Wood splinters and bark explodes. The eagle's wings snap open to brake, spanning nearly 7 feet. Feathers flare. Leaves cascade down from the impact. The sheer power of the grip cracks the thick branch."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The harpy eagle launches back into flight from the branch, powerful wingbeats sending leaves spiraling in a vortex. Its enormous talons clutch prey. It weaves between massive tree trunks with impossible agility for its size. The canopy shakes in its wake. Dominant and unstoppable."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Startle Eyes Perch",
+      "itemToRemember": "Red-Eyed Tree Frog — bright red eyes startle predators (startle coloration), vivid green body with blue-and-yellow striped sides, suction-cup toes",
+      "mnemonic": "A neon-green frog with blazing red eyes that flash open like alarm lights to scare predators — plus blue racing stripes on its sides and sticky suction-cup toes for climbing anything.",
+      "sceneDescription": "A red-eyed tree frog leaping between two bright green leaves in the rain, its vivid lime-green body stretched mid-jump with blue-and-yellow striped sides fully visible. Its enormous bulging crimson-red eyes are wide open, practically glowing. Bright orange suction-cup toes are spread wide, reaching for the next leaf. Raindrops streak through the air around the frog, some splashing off its smooth skin. The background is lush dark rainforest with out-of-focus tropical leaves in deep greens. A raindrop sits perfectly on the frog's head like a crystal crown. The colors are impossibly vivid — green, red, blue, yellow, orange — against the dark wet jungle. Photorealistic, macro action shot, vivid saturated colors, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Red-eyed tree frog mid-leap between bright green leaves in rain. Vivid lime-green body stretched out, blue-yellow striped sides visible. Enormous glowing crimson eyes wide open. Orange suction-cup toes spread reaching. Raindrops streaking past. Dark lush rainforest background. Photorealistic, macro action, vivid colors, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The tree frog lands on a wet leaf with its suction-cup toes gripping instantly. The leaf bobs under its weight, sending water droplets flying. Its red eyes blink once — the flash of crimson startles a nearby insect into flight. The frog's throat pulses. Rain continues falling on its vivid green skin."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The frog's long sticky tongue shoots out at lightning speed, snatching a moth from the air. The tongue retracts in an instant. The frog's red eyes bulge as it swallows. It repositions on the leaf, blue-and-yellow sides flashing. Another raindrop lands on its head. Vivid colors pop against the dark wet jungle."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ]
+    }
+  ]
+}
