@@ -324,18 +324,16 @@ async function main() {
     }
   }
 
-  // ---- Step 2: Gemini generates images (sequential) ----
-  const imageResults: boolean[] = [];
-  for (let i = 0; i < rooms.length; i++) {
-    const room = rooms[i];
-    const imgPath = path.join(outDir, `room-${i}.png`);
-    process.stdout.write(
-      `[generate-scenario] Gemini: Generating room ${i + 1}/${rooms.length} image...`,
-    );
-    const ok = await generateRoomImage(room.sceneDescription, imgPath, geminiModel);
-    imageResults.push(ok);
-    console.log(ok ? ' done \u2713' : ' FAILED');
-  }
+  // ---- Step 2: Gemini generates images (parallel) ----
+  log(`Gemini: Generating ${rooms.length} images in parallel...`);
+  const imageResults = await Promise.all(
+    rooms.map(async (room, i) => {
+      const imgPath = path.join(outDir, `room-${i}.png`);
+      const ok = await generateRoomImage(room.sceneDescription, imgPath, geminiModel);
+      log(`Gemini: Room ${i + 1}/${rooms.length} ${ok ? 'done \u2713' : 'FAILED'}`);
+      return ok;
+    }),
+  );
 
   // ---- Step 3: Odyssey simulate (parallel, one job per room) ----
   const videoPromises: Promise<boolean>[] = [];
