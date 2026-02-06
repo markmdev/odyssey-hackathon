@@ -113,6 +113,11 @@ interactBtn.addEventListener('click', async () => {
   }
 });
 
+// Clean up session on page close/refresh
+window.addEventListener('beforeunload', () => {
+  client?.disconnect();
+});
+
 // Submit on Enter
 promptInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') startBtn.click();
