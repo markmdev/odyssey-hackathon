@@ -167,17 +167,11 @@ export default function MemoryPalace() {
       // Store quiz questions from manifest
       setQuizQuestions(loadedQuiz);
 
-      // Enter palace with images only (no videos yet)
-      const roomsWithoutVideo = loadedRooms.map((r) => ({ ...r, videoUrl: undefined }));
-      setRooms(roomsWithoutVideo);
-      setCurrentRoom(0);
-      setVideosLoading(true);
-      setScreen('palace');
-
-      // After delay, reveal videos
-      await new Promise((r) => setTimeout(r, 2000));
+      // Enter palace immediately with videos
       setRooms(loadedRooms);
+      setCurrentRoom(0);
       setVideosLoading(false);
+      setScreen('palace');
     } catch (err) {
       console.error('Failed to load scenario:', err);
       setScreen('home');

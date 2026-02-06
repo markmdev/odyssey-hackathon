@@ -75,10 +75,12 @@ export default function PalaceViewer({
       {/* Mnemonic overlay */}
       <div className="absolute right-0 bottom-24 left-0 z-10 flex justify-center px-6">
         <div className="w-full max-w-2xl">
-          <p className="mb-2 text-center font-display text-xl italic text-white drop-shadow-lg">
-            {room.itemToRemember}
-          </p>
-          <div className="rounded-2xl border border-white/10 bg-black/50 px-6 py-4 text-center text-[15px] leading-relaxed text-white/80 backdrop-blur-md">
+          <div className="mb-3 rounded-2xl bg-black/70 px-6 py-3 text-center backdrop-blur-md">
+            <p className="font-display text-2xl italic leading-snug text-white">
+              {room.itemToRemember}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-black/70 px-6 py-4 text-center text-base leading-relaxed text-white/90 backdrop-blur-md">
             {room.mnemonic}
           </div>
         </div>
