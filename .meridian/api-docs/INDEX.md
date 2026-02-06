@@ -23,3 +23,11 @@ Knowledge docs for external tools, APIs, and libraries. Each doc contains everyt
 | Tool | Doc | Version |
 |------|-----|---------|
 | @odysseyml/odyssey | [odyssey-sdk.md](odyssey-sdk.md) | 1.0.0 |
+
+## Reference Material
+
+| Topic | Doc | Description |
+|-------|-----|-------------|
+| World Model | [odyssey-2-pro-overview.md](../odyssey-2-pro-overview.md) | What Odyssey-2 Pro is — action-conditioned world model, real-time frame prediction |
+| Prompting | [interaction-tips.md](../interaction-tips.md) | Prompt structure, styles, camera/framing, midstream tips, negative prompts, limitations |
+| Website Docs | [odyssey/](odyssey/) | Full official SDK docs (class, hook, recordings, simulate, types, examples) |

@@ -336,3 +336,9 @@ Plus re-exports of all recording/simulation types.
 - `portrait: true` = 704x1280, `portrait: false` = 1280x704 (resolution may vary by model)
 - The React hook manages `onStatusChange` internally — don't pass it in `handlers`
 - Simulate, recording, and listing methods work without an active WebRTC connection
+
+## Related Docs
+
+- [Odyssey-2 Pro Overview](../odyssey-2-pro-overview.md) — what the world model is and how it differs from traditional video models
+- [Interaction Tips](../interaction-tips.md) — prompt structure guide, style cues, midstream prompting best practices, known limitations
+- [Official Website Docs](odyssey/) — full SDK reference pages from documentation.api.odyssey.ml
