@@ -387,6 +387,7 @@ export default function MemoryPalace() {
           connectionStatus={connectionStatus}
           onInteract={handleInteract}
           onVideoEnded={() => startStreamForRoom(currentRoom)}
+          onExit={() => { disconnectOdyssey(); setScreen('home'); }}
         />
       )}
 

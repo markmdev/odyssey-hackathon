@@ -16,6 +16,7 @@ interface Props {
   connectionStatus: 'idle' | 'connecting' | 'connected' | 'failed';
   onInteract: (prompt: string) => Promise<void>;
   onVideoEnded: () => void;
+  onExit: () => void;
 }
 
 export default function PalaceViewer({
@@ -31,6 +32,7 @@ export default function PalaceViewer({
   connectionStatus,
   onInteract,
   onVideoEnded,
+  onExit,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoEnded, setVideoEnded] = useState(false);
@@ -80,7 +82,16 @@ export default function PalaceViewer({
     <div className="relative flex h-dvh flex-col bg-black">
       {/* Top bar */}
       <div className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between bg-black/60 px-6 py-4 pt-[env(safe-area-inset-top)]">
-        <span className="font-display text-xl italic text-white/90">{room.name}</span>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onExit}
+            aria-label="Back to home"
+            className="rounded-lg bg-white/10 px-2.5 py-1 text-sm text-white/70 transition-colors hover:bg-white/20"
+          >
+            ← Back
+          </button>
+          <span className="font-display text-xl italic text-white/90">{room.name}</span>
+        </div>
         <div className="flex items-center gap-3">
           {isStreaming && (
             <div className="flex items-center gap-1.5 rounded-full bg-red-500/20 px-2.5 py-1">

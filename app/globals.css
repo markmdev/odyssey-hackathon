@@ -7,9 +7,9 @@
   --color-surface-raised: rgba(255, 255, 255, 0.04);
   --color-surface-hover: rgba(255, 255, 255, 0.07);
   --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(139, 92, 246, 0.4);
-  --color-accent: #8b5cf6;
-  --color-accent-hover: #7c3aed;
+  --color-border-hover: rgba(16, 185, 129, 0.4);
+  --color-accent: #10b981;
+  --color-accent-hover: #059669;
 }
 
 body {
