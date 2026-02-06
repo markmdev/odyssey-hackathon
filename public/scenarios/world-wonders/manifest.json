@@ -1,0 +1,238 @@
+{
+  "name": "world-wonders",
+  "displayName": "World Wonders",
+  "gradeLevel": "4-6",
+  "inputText": "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth\nMachu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries\nColosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD\nGreat Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks\nTaj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build\nChichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
+  "rooms": [
+    {
+      "index": 0,
+      "name": "Endless Dragon Wall",
+      "itemToRemember": "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth",
+      "mnemonic": "A stone dragon snakes over mountain peaks for 13,000 miles — it took 2,000 years to build its body, brick by brick, and you can see it stretching to the horizon from any hilltop.",
+      "sceneDescription": "The Great Wall of China stretches dramatically across rugged green mountain ridges, snaking into the misty distance as far as the eye can see. The wall is shown in incredible detail — weathered gray stone and brick construction with watchtowers at regular intervals. The wall follows the dramatic contours of steep mountain terrain, climbing up and dipping down with the ridgeline. Lush green vegetation covers the mountains on either side. Morning mist swirls through the valleys below. Golden sunrise light illuminates the wall and mountains from the side, creating long dramatic shadows. The sheer scale and length is the focus — the wall disappears into hazy mountains on both horizons. Photorealistic, ultra-wide panoramic, cinematic golden hour.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Great Wall of China stretching across rugged green mountain ridges, snaking into misty distance. Weathered stone and brick with watchtowers. Steep terrain, lush vegetation. Morning mist in valleys. Golden sunrise, dramatic shadows. Ultra-wide panoramic, photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "Morning mist rises from the valleys and swirls around the Great Wall's watchtowers. Sunlight breaks through the mist, illuminating sections of the ancient stone wall in golden light while others remain in blue shadow. Birds fly along the wall's path."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Camera sweeps along the Great Wall as it climbs steeply up a mountain ridge. The wall's massive stone steps ascend at a dramatic angle. Weathered bricks and ancient mortar are visible in detail. The wall stretches endlessly in both directions across mountain peaks shrouded in mist."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-0.png",
+      "videoFile": "room-0.mp4"
+    },
+    {
+      "index": 1,
+      "name": "Cloud City Ruins",
+      "itemToRemember": "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+      "mnemonic": "A secret city hidden above the clouds on a mountain peak for 500 years — the Incas built it so high that clouds flowed through its stone streets like rivers.",
+      "sceneDescription": "Machu Picchu's iconic stone ruins sit dramatically atop a steep mountain ridge, surrounded by towering Andean peaks. The ancient Inca city is shown in full — terraced stone buildings, precisely cut stone walls without mortar, ceremonial plazas, and agricultural terraces stepping down the mountainside. The iconic Huayna Picchu peak rises sharply behind the ruins. Thick white clouds flow through the valleys below and between the mountain peaks, making the ruins appear to float above a sea of clouds. Lush green grass covers the terraces. Early morning golden light catches the stone walls. The scene conveys mystery, isolation, and ancient grandeur. Photorealistic, wide-angle, cinematic composition showing the full site and surrounding mountains.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Machu Picchu stone ruins atop steep mountain ridge, surrounded by Andean peaks. Terraced buildings, precisely cut walls, ceremonial plazas. Huayna Picchu behind. White clouds flowing through valleys below. Green grass on terraces. Golden morning light. Photorealistic, wide-angle, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "Clouds roll up from the valley and flow between the ancient stone buildings of Machu Picchu like a ghostly river. The mist swirls around the stone walls, partially obscuring and then revealing the ruins. Sunlight pierces through gaps in the clouds, creating dramatic god-rays."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The clouds part dramatically, revealing the full expanse of Machu Picchu bathed in warm golden sunlight. Every terrace, stone wall, and pathway is illuminated. Huayna Picchu towers behind, its peak catching the light. The ancient city glows against the deep green mountains. Breathtaking and majestic."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-1.png",
+      "videoFile": "room-1.mp4"
+    },
+    {
+      "index": 2,
+      "name": "Gladiator Arena",
+      "itemToRemember": "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
+      "mnemonic": "A massive stone donut in Rome with 50,000 screaming fans watching gladiators battle inside — built nearly 2,000 years ago and still standing, the world's first sports stadium.",
+      "sceneDescription": "The Roman Colosseum stands in full glory, partially ruined but still majestic, lit by dramatic golden-hour sunlight. The massive elliptical amphitheater is shown from a low angle that emphasizes its towering height — four stories of arched openings in travertine stone, each level with different column styles. The interior is partially visible through the broken walls, showing the underground hypogeum tunnels where gladiators and animals waited. The arena floor is sandy. Warm Roman sunlight casts long shadows through the arches, creating a pattern of light and shadow on the ancient stone. Blue sky with golden clouds above. Tourists provide scale, appearing tiny against the massive structure. Photorealistic, dramatic low-angle, cinematic golden hour.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Roman Colosseum in full glory, partially ruined, dramatic golden-hour sunlight. Massive elliptical amphitheater from low angle showing towering height. Four stories of arches, underground hypogeum visible. Sandy arena floor. Light and shadow through arches. Blue sky, golden clouds. Photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "Sunlight shifts and streams through the Colosseum's arched openings, moving beams of golden light across the ancient stone interior. Dust particles float in the light beams. Shadows of the arches create dramatic patterns on the sandy arena floor below."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Camera moves to look down into the Colosseum's exposed underground hypogeum — the network of tunnels and chambers beneath the arena floor. The cross-shaped corridors and holding cells are visible. Golden sunset light illuminates the ancient brick walls. The scale of the engineering is impressive."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-2.png",
+      "videoFile": "room-2.mp4"
+    },
+    {
+      "index": 3,
+      "name": "Desert Titan Tomb",
+      "itemToRemember": "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
+      "mnemonic": "A mountain made of 2.3 million stone blocks stacked 481 feet high in the desert — built 4,500 years ago without modern tools, and it's the ONLY ancient wonder still standing.",
+      "sceneDescription": "The Great Pyramid of Giza dominates the frame — an enormous golden limestone pyramid rising 481 feet against a deep blue desert sky. The pyramid is shown from a dramatic low angle that emphasizes its staggering height and the precision of its stone block construction. Individual limestone blocks are visible on the surface, each one massive. The Sphinx sits at the base in the foreground, its weathered face gazing forward. Golden desert sand surrounds everything. The pyramid's surface catches the warm afternoon sun, glowing with a honey-gold color. The two smaller companion pyramids are visible behind. The sky is deep blue with wispy clouds. A sense of ancient timelessness and monumental scale. Photorealistic, dramatic low-angle, cinematic.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Great Pyramid of Giza — enormous golden limestone pyramid rising 481 feet against deep blue sky. Dramatic low angle showing stone block construction. Sphinx at base. Golden desert sand. Honey-gold surface in afternoon sun. Companion pyramids behind. Photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "Wind sweeps across the desert, sending golden sand swirling around the base of the Great Pyramid. The sand catches the sunlight creating a shimmering haze. The pyramid's massive stone blocks cast sharp shadows. The Sphinx stands stoically as sand drifts past its paws."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "The sun descends toward the horizon, turning the Great Pyramid from gold to deep orange-amber. The pyramid's shadow stretches enormously across the desert sand. The sky transitions to dramatic oranges and purples. The ancient monument glows like a beacon against the darkening sky."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-3.png",
+      "videoFile": "room-3.mp4"
+    },
+    {
+      "index": 4,
+      "name": "Marble Mirror Palace",
+      "itemToRemember": "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
+      "mnemonic": "A palace made entirely of white marble that took 22 years to build — all because an emperor loved his wife so much he wanted her resting place to be the most beautiful building on Earth.",
+      "sceneDescription": "The Taj Mahal in full splendor — the iconic white marble mausoleum centered perfectly in the frame, reflected in the long rectangular pool in front of it. The building's symmetry is perfect — the central dome flanked by four smaller domes, four minarets at the corners. Intricate marble inlay work and carved geometric patterns are visible on the white surface. The marble glows with a soft pink-golden hue from sunrise light. Lush green gardens with cypress trees line the reflecting pool on both sides. The reflection in the still water creates a perfect mirror image. Morning mist adds a dreamlike quality. Blue sky transitioning to warm gold at the horizon. Photorealistic, symmetrical composition, cinematic golden hour.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "Taj Mahal in full splendor — white marble mausoleum centered, reflected in long rectangular pool. Perfect symmetry, central dome, four minarets. Intricate marble inlay. Soft pink-golden sunrise glow. Cypress trees, lush gardens. Perfect mirror reflection. Morning mist. Photorealistic, cinematic."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The rising sun paints the Taj Mahal's white marble in deepening shades of pink and gold. The reflection in the still pool shifts color in perfect symmetry. Light catches the precious stone inlays on the marble surface — lapis lazuli, jade, and coral sparkle. Morning mist slowly lifts."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "A gentle breeze ripples the reflecting pool, fragmenting the Taj Mahal's perfect mirror reflection into shimmering pieces of white and gold. Birds fly past the minarets. The marble dome catches full sunlight and blazes brilliant white against the blue sky. The gardens glow green."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-4.png",
+      "videoFile": "room-4.mp4"
+    },
+    {
+      "index": 5,
+      "name": "Serpent Stairway Temple",
+      "itemToRemember": "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
+      "mnemonic": "A pyramid calendar with exactly 365 steps — and twice a year on the equinox, the setting sun creates a shadow of a giant serpent slithering down the staircase, as if the pyramid comes alive.",
+      "sceneDescription": "El Castillo pyramid at Chichen Itza stands tall and geometric against a dramatic sky — the stepped Maya pyramid with its distinctive flat top temple and steep central staircase on each face. The pyramid's precisely carved limestone blocks show the mathematical precision of Maya architecture. The famous feathered serpent head sculpture sits at the base of the north staircase, mouth open. During equinox, triangular shadows along the staircase create the illusion of a serpent's body descending the pyramid — this shadow effect is visible on the balustrade. Lush green jungle surrounds the pyramid. Dramatic sunset light paints the limestone gold and orange. The sky is spectacular with orange, purple, and deep blue gradients. Photorealistic, dramatic lighting, cinematic wide-angle.",
+      "odysseyKeyframes": [
+        {
+          "timestamp_ms": 0,
+          "prompt": "El Castillo pyramid at Chichen Itza — stepped Maya pyramid with flat top temple and steep staircase. Carved limestone blocks. Feathered serpent head at staircase base. Serpent shadow on balustrade. Lush green jungle surrounds. Dramatic golden sunset. Photorealistic, cinematic wide-angle."
+        },
+        {
+          "timestamp_ms": 3000,
+          "prompt": "The setting sun shifts and the triangular serpent shadow on El Castillo's staircase becomes more defined — each triangle of shadow connects to create the body of a descending feathered serpent. The shadow reaches toward the stone serpent head at the base. Jungle birds scatter from nearby trees."
+        },
+        {
+          "timestamp_ms": 6000,
+          "prompt": "Dramatic sunset light blazes behind El Castillo, silhouetting the pyramid's geometric profile against a sky of deep orange, purple, and red. The serpent shadow is fully formed on the staircase. The ancient limestone glows warm amber. Jungle canopy frames the scene. Majestic and mysterious."
+        },
+        {
+          "timestamp_ms": 10000,
+          "end": true
+        }
+      ],
+      "imageFile": "room-5.png",
+      "videoFile": "room-5.mp4"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "roomIndex": 0,
+      "question": "What was in the \"Endless Dragon Wall\" room?",
+      "options": [
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
+        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth",
+        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "roomIndex": 1,
+      "question": "What was in the \"Cloud City Ruins\" room?",
+      "options": [
+        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
+        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+        "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "roomIndex": 2,
+      "question": "What was in the \"Gladiator Arena\" room?",
+      "options": [
+        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+        "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
+        "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
+        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "roomIndex": 3,
+      "question": "What was in the \"Desert Titan Tomb\" room?",
+      "options": [
+        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+        "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
+        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "roomIndex": 4,
+      "question": "What was in the \"Marble Mirror Palace\" room?",
+      "options": [
+        "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
+        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "roomIndex": 5,
+      "question": "What was in the \"Serpent Stairway Temple\" room?",
+      "options": [
+        "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
+        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
+        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth",
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox"
+      ],
+      "correctIndex": 3
+    }
+  ]
+}
