@@ -95,18 +95,13 @@ for (const [id, scenario] of Object.entries(scenarios)) {
 
 // -- Connect on load --
 
-async function init() {
-  const apiKey = import.meta.env.VITE_ODYSSEY_API_KEY;
-  if (!apiKey) {
-    menuStatus.textContent = 'Missing VITE_ODYSSEY_API_KEY in .env';
-    return;
-  }
+const MAX_CONNECT_RETRIES = 5;
+const RETRY_DELAY_MS = 3000;
 
-  client = new Odyssey({ apiKey });
-  menuStatus.textContent = 'Connecting...';
-
+async function connectWithRetry(attempt = 1): Promise<MediaStream> {
   try {
-    const stream = await client.connect({
+    client = new Odyssey({ apiKey: import.meta.env.VITE_ODYSSEY_API_KEY });
+    return await client.connect({
       onStatusChange: (s, msg) => {
         if (!playing) menuStatus.textContent = msg ?? s;
         else gameStatus.textContent = msg ?? s;
@@ -136,6 +131,28 @@ async function init() {
         menuStatus.textContent = 'Disconnected';
       },
     });
+  } catch (err) {
+    const msg = (err as Error).message;
+    if (msg.includes('concurrent sessions') && attempt < MAX_CONNECT_RETRIES) {
+      menuStatus.textContent = `Session still clearing... retrying (${attempt}/${MAX_CONNECT_RETRIES})`;
+      await new Promise((r) => setTimeout(r, RETRY_DELAY_MS));
+      return connectWithRetry(attempt + 1);
+    }
+    throw err;
+  }
+}
+
+async function init() {
+  const apiKey = import.meta.env.VITE_ODYSSEY_API_KEY;
+  if (!apiKey) {
+    menuStatus.textContent = 'Missing VITE_ODYSSEY_API_KEY in .env';
+    return;
+  }
+
+  menuStatus.textContent = 'Connecting...';
+
+  try {
+    const stream = await connectWithRetry();
     video.srcObject = stream;
     connected = true;
     playBtn.disabled = false;
