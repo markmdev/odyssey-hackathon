@@ -9,19 +9,19 @@
       "name": "Thunder Jaw Crater",
       "itemToRemember": "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite",
       "mnemonic": "A T-Rex stomps into a volcanic crater and tries to clap its ridiculously tiny arms — but its jaws crush a boulder instead, sending shockwaves across the ground.",
-      "sceneDescription": "A massive Tyrannosaurus Rex stands in the center of a volcanic crater at dusk, mouth open in a roar, revealing rows of enormous teeth. Its tiny arms hang comically small against its 40-foot body. Molten lava glows orange through cracks in the dark basalt floor around its feet. The sky is a dramatic gradient of deep purple and fiery orange. Steam rises around the dinosaur. The T-Rex is photorealistic, detailed scales and texture, lit dramatically from below by the lava glow. Cinematic composition, wide-angle.",
+      "sceneDescription": "A massive Tyrannosaurus Rex mid-charge across a volcanic crater, one enormous foot slamming down and cracking the basalt floor, sending lava splashing upward from fissures. Its 40-foot body lunges forward with terrifying momentum, jaws wide open revealing rows of bone-crushing teeth, tiny arms flailing uselessly at its sides. Molten lava glows orange through cracks all around its thundering feet. The ground shakes visibly from the impact. Steam and sparks explode where foot meets rock. The T-Rex's muscular legs propel it forward like a living battering ram. Fiery sunset sky of purple and orange behind. Photorealistic, mid-charge action, explosive impact, cinematic wide-angle.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "A massive Tyrannosaurus Rex stands in a volcanic crater at dusk, mouth open in a roar. Tiny arms visible against its huge body. Molten lava glows through cracks in dark basalt around its feet. Purple and orange sky. Steam rises. Photorealistic, cinematic, wide-angle lens."
+          "prompt": "Massive T-Rex mid-charge across volcanic crater, enormous foot slamming down cracking basalt, lava splashing upward from fissures. Jaws wide open, bone-crushing teeth, tiny arms flailing. 40-foot body lunging with terrifying momentum. Steam and sparks exploding at impact. Fiery sunset. Photorealistic, explosive action, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The T-Rex slams its massive foot down, cracking the basalt floor. Lava splashes upward from the cracks. The ground shakes. Its tiny arms twitch uselessly at its sides while its enormous head swings toward the camera."
+          "prompt": "The T-Rex lunges and its massive jaws clamp down on a boulder with a thunderous crack, shattering it into fragments. Shards of rock explode outward. The bite force is visible — the boulder disintegrates like glass. Its tiny arms twitch uselessly. Lava splashes around its feet from the ground-shaking impact."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "The T-Rex lunges forward and its massive jaws slam shut on a boulder with a thunderous crack, shattering it into pieces. Dust and sparks explode outward. Fragments of rock fly through the air. The shockwave ripples across the crater floor."
+          "prompt": "The T-Rex throws its head back and roars, fragments of crushed boulder falling from its jaws. The roar creates a visible shockwave that ripples across the crater floor, disturbing lava and sending steam spiraling. Its massive body silhouetted against the fiery orange sky. Pure apex predator dominance."
         },
         {
           "timestamp_ms": 10000,
@@ -36,19 +36,19 @@
       "name": "Crystal Horn Fortress",
       "itemToRemember": "Triceratops — three-horned dinosaur with a massive shield-like frill, plant eater",
       "mnemonic": "Three glowing crystal horns guard a fortress gate shaped like a giant frill — but instead of attacking, the Triceratops munches flowers growing from the castle walls.",
-      "sceneDescription": "A large Triceratops stands proudly in a lush meadow, facing the camera. Its three sharp horns are prominent — two long brow horns and one shorter nose horn. Its massive bony frill spreads wide like a shield behind its head, decorated with patterns. The Triceratops is peacefully eating from a bush of colorful tropical flowers. Warm golden afternoon light. Behind it, an ancient overgrown stone wall covered in flowering vines. The dinosaur's skin is textured with bumpy scales in earthy greens and browns. Photorealistic, detailed, cinematic wide-angle.",
+      "sceneDescription": "A Triceratops charging full-speed through a flowering meadow, head lowered like a battering ram, three sharp horns pointed forward and gleaming in golden afternoon light. Its massive bony frill is angled forward like a shield. Its heavy body thunders across the ground, kicking up flowers and dirt with every pounding stride. An ancient vine-covered stone wall looms ahead — the Triceratops is about to smash through it. Flower petals and grass fly up in its wake. Its powerful legs drive it forward with unstoppable momentum. Warm golden light catches the textured bumpy scales. The ground shakes. Photorealistic, full-speed charge, explosive momentum, cinematic wide-angle.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "A large Triceratops stands in a lush meadow facing the camera. Three sharp horns prominent, massive bony frill spread wide like a shield. Eating colorful flowers from a bush. Golden afternoon light. Ancient overgrown stone wall behind. Photorealistic, cinematic, wide-angle."
+          "prompt": "Triceratops charging full-speed through flowering meadow, head lowered, three sharp horns pointed forward gleaming in golden light. Massive frill angled like a shield. Heavy body thundering, kicking up flowers and dirt. Stone wall ahead. Flower petals flying in wake. Photorealistic, full-speed charge, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The Triceratops lifts its massive head from the flowers, chewing slowly. Flower petals fall from its mouth. Its three horns catch the golden sunlight and gleam. The frill tilts upward, revealing intricate scale patterns. It stamps one front foot."
+          "prompt": "The Triceratops slams into the ancient stone wall horns-first with devastating force. The wall explodes outward — stone blocks, vines, and flower petals erupt in all directions. Its three horns punch clean through. Dust and debris billow. The frill absorbs the impact like a battering ram shield. Raw unstoppable power."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "The Triceratops lowers its head and charges forward playfully, three horns pointed ahead. Flowers and grass fly up from its thundering feet. The ground shakes. Its massive frill acts like a battering ram as it smashes through a section of the vine-covered wall, scattering stone and petals everywhere."
+          "prompt": "The Triceratops emerges through the shattered wall, shaking rubble and flowers off its massive frill. Stone dust rains down. It calmly lowers its head to munch on colorful flowers growing from the remaining wall, completely peaceful after the destruction. Petals drift through the golden afternoon light. Gentle giant."
         },
         {
           "timestamp_ms": 10000,
@@ -63,19 +63,19 @@
       "name": "Solar Plate Ridge",
       "itemToRemember": "Stegosaurus — plates along its back and a spiked tail called a thagomizer, small brain",
       "mnemonic": "A row of golden dinner plates lines a mountain ridge like solar panels, and at the end, four enormous spikes swing like a medieval mace — the famous 'thagomizer' named after a cartoon caveman.",
-      "sceneDescription": "A Stegosaurus walks along a mountain ridge at sunrise, seen from the side. The row of large diamond-shaped bony plates along its back are catching the first golden rays of sunlight, glowing like solar panels. Its spiked tail — four sharp spikes at the tip, the famous thagomizer — is raised and visible. The dinosaur has a small head relative to its large body. Below in the valley, soft morning mist. The rocky terrain has ferns and prehistoric plants. Everything bathed in warm golden-hour light. The Stegosaurus is photorealistic with textured gray-green scales. Cinematic, dramatic composition.",
+      "sceneDescription": "A Stegosaurus swinging its spiked tail in a violent arc, the four thagomizer spikes smashing through a fallen tree trunk and sending wood splinters exploding in every direction. The dinosaur's powerful body twists with the swing, its row of diamond-shaped back plates catching the golden sunrise light and glowing like solar panels in sequence. The shattered tree trunk splinters mid-impact, frozen in the moment of destruction. Wood fragments and fern fronds fly through the air. Mountain ridge at sunrise, morning mist in the valley below. The small head looks around dully, contrasting with the devastating tail weapon. Photorealistic, mid-swing impact, explosive destruction, cinematic side view.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "A Stegosaurus walks along a mountain ridge at sunrise, seen from the side. Diamond-shaped plates along its back glow golden in sunlight. Four-spiked thagomizer tail raised. Small head, large body. Morning mist in valley below. Photorealistic, cinematic, wide-angle."
+          "prompt": "Stegosaurus swinging spiked thagomizer tail in violent arc, four spikes smashing through fallen tree trunk, wood splinters exploding everywhere. Body twisting with swing, diamond back plates glowing golden in sunrise. Shattered trunk frozen mid-impact. Mountain ridge, morning mist below. Photorealistic, mid-swing destruction, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The sun rises higher and each plate along the Stegosaurus's back catches the light in sequence, glowing intensely from front to back. The plates seem to pulse with solar energy. The dinosaur turns its tiny head slowly, looking around with a dull expression."
+          "prompt": "The Stegosaurus completes its tail swing and the destroyed tree collapses in pieces. It stomps forward aggressively, back plates flushing red as blood pumps through them — a threat display. Each plate glows from front to back in sequence. Its tiny head swings side to side, looking for more threats despite its small brain."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "The Stegosaurus swings its spiked tail in a powerful arc, the four thagomizer spikes whooshing through ferns and shattering a small rock formation with tremendous force. Debris and fern fronds fly outward. The spikes gleam dangerously in the morning sun."
+          "prompt": "The Stegosaurus rears slightly and slams its front feet down, shaking the mountain ridge. It swings the thagomizer again in a wide defensive arc — the four deadly spikes whoosh through the air at tremendous speed, shattering a rock formation. Sunrise blazes behind its row of glowing plates. Devastating weaponry on a gentle herbivore."
         },
         {
           "timestamp_ms": 10000,
@@ -90,19 +90,19 @@
       "name": "Feather Sprint Hollow",
       "itemToRemember": "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws",
       "mnemonic": "A pack of turkey-sized feathered raptors doing parkour through a jungle — each one flashing a single deadly curved claw like a switchblade as they leap between branches.",
-      "sceneDescription": "Three Velociraptors perched on jungle branches at different heights, alert and watching. They are turkey-sized with colorful iridescent feathers — blue, green, and copper plumage. Each one has a prominent curved sickle claw on its hind foot, raised and visible. Dense prehistoric jungle with shafts of green-filtered light cutting through the canopy. Deep claw marks score the tree trunks. The raptors look intelligent and dangerous despite their small size. Photorealistic feather detail, cinematic lighting through the jungle canopy, wide-angle composition.",
+      "sceneDescription": "Three Velociraptors mid-leap through a dense prehistoric jungle, caught in mid-air between branches at different heights. Their turkey-sized bodies are stretched out in full sprint, iridescent blue-green feathers flashing in the green-filtered light. Each one has a prominent curved sickle claw on its hind foot extended forward like a switchblade weapon. They move as a coordinated pack — one leaping left, one right, one straight ahead. Leaves and small branches shatter as they burst through the canopy. Their intelligent eyes are locked on prey. The pack moves like a single organism. Deep jungle with shafts of light cutting through. Photorealistic, mid-leap pack action, feathered detail, cinematic wide-angle.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "Three turkey-sized Velociraptors perched on jungle branches at different heights. Iridescent blue-green feathers, curved sickle claws raised on hind feet. Dense prehistoric jungle, green-filtered light through canopy. Claw marks on trees. Photorealistic, cinematic, wide-angle."
+          "prompt": "Three Velociraptors mid-leap through dense prehistoric jungle, caught in mid-air between branches. Turkey-sized bodies stretched in full sprint, iridescent blue-green feathers flashing. Curved sickle claws extended like switchblades. Leaves shattering as they burst through canopy. Coordinated pack. Photorealistic, mid-leap action, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The Velociraptors leap into action simultaneously, darting between branches with incredible speed. Iridescent feathers flash blue and green in the light. Leaves and small branches shake violently. Their movements are coordinated like a pack hunting together."
+          "prompt": "The lead Velociraptor lands on a branch and instantly launches again, bouncing between trunks like parkour. Its sickle claw slashes bark as it pushes off, leaving deep gashes. The other two raptors flank from different angles, feathers ruffling with speed. Leaves explode from branches. The pack converges on a single point."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "One Velociraptor lands on a branch directly in front of the camera, its curved sickle claw extended and gleaming like a switchblade. It tilts its feathered head, intelligent eyes locked on the viewer. Two more appear on either side, surrounding the camera. Feathers ruffle in the breeze."
+          "prompt": "All three Velociraptors land simultaneously on a large branch, surrounding the camera. Their intelligent eyes stare directly at the viewer. Sickle claws tap against the wood. Iridescent feathers settle. One tilts its head, studying. Another hisses, showing small sharp teeth. The pack has you surrounded. Terrifyingly smart predators."
         },
         {
           "timestamp_ms": 10000,
@@ -117,19 +117,19 @@
       "name": "Cloud Canopy Tower",
       "itemToRemember": "Brachiosaurus — towering long-necked herbivore, 85 feet long, could reach treetops",
       "mnemonic": "A living skyscraper with a giraffe-pattern neck stretches up through the clouds to munch on a floating garden — 85 feet of pure gentle giant.",
-      "sceneDescription": "An enormous Brachiosaurus towers over a prehistoric forest, its incredibly long neck reaching up into golden clouds above the treetops. The dinosaur is seen from below at ground level, emphasizing its staggering 85-foot height. Four pillar-like legs as thick as tree trunks support its massive body. Its skin is warm terracotta with darker giraffe-like patches. Tiny colorful birds perch along its neck. Its small head is partially hidden in the clouds, munching on high branches. Warm dappled sunlight filters through the forest. The scale is awe-inspiring — it dwarfs everything. Photorealistic, ultra-wide-angle, looking up.",
+      "sceneDescription": "An enormous Brachiosaurus crashing through a prehistoric forest, its pillar-like front legs mid-stride crushing fallen logs and undergrowth. Its incredibly long neck swings through the treetop canopy, branches snapping and leaves cascading down like a green waterfall. The 85-foot body moves like a living earthquake through the forest — trees sway and smaller ones topple as it passes. Its terracotta skin with darker giraffe-like patches catches dappled sunlight. Flocks of colorful birds erupt from the treetops as the neck sweeps through. The ground trembles with each step, dust rising around its massive feet. Seen from ground level looking up, emphasizing the staggering height. Photorealistic, mid-stride forest crash, massive scale, cinematic ultra-wide looking up.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "An enormous Brachiosaurus towers over a prehistoric forest, seen from below. Incredibly long neck reaching into golden clouds above treetops. Pillar-like legs, terracotta skin with giraffe patches. Birds on neck. Head munching branches in clouds. Photorealistic, ultra-wide-angle, looking up."
+          "prompt": "Enormous Brachiosaurus crashing through prehistoric forest, pillar legs mid-stride crushing logs. Long neck swinging through treetop canopy, branches snapping, leaves cascading like green waterfall. 85-foot body like a living earthquake. Trees swaying and toppling. Birds erupting from canopy. Ground level looking up. Photorealistic, mid-stride, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The Brachiosaurus's enormous head slowly descends through the cloud layer, bringing a cascade of leaves and flower petals. Its gentle face emerges — wide flat teeth visible as it chews peacefully. Clouds swirl around its head like a halo. Birds flutter nearby."
+          "prompt": "The Brachiosaurus's enormous head descends through the breaking canopy, pulling an entire tree branch down with its flat teeth. The branch snaps with a crack that echoes through the forest. Leaves, bark, and birds rain down. Its gentle eyes are visible — calm despite the destruction. Smaller dinosaurs scatter from its path below."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "The Brachiosaurus takes a slow earth-shaking step forward. The ground trembles. Ferns flatten under its enormous foot. Birds scatter from its neck in a colorful burst. Treetops sway as its massive body moves between them. Dust rises from the forest floor."
+          "prompt": "The Brachiosaurus takes another earth-shaking step, its massive foot landing and flattening a fern grove. The ground trembles, sending ripples through nearby puddles. Its neck rises back up above the canopy into golden clouds, disappearing into the sky. Dust and leaves swirl in its wake. An unstoppable gentle colossus moving through the world."
         },
         {
           "timestamp_ms": 10000,
@@ -144,19 +144,19 @@
       "name": "Wingspan Cliff",
       "itemToRemember": "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur",
       "mnemonic": "A hang-glider the size of a small airplane soars over ocean cliffs with a sign around its neck: 'NOT A DINOSAUR' — because Pteranodon was a flying reptile, not a true dinosaur.",
-      "sceneDescription": "A giant Pteranodon soars over a dramatic ocean cliff at golden hour, wings fully spread showing its incredible 20-foot wingspan. The flying reptile is seen from slightly below, its distinctive pointed head crest and long beak silhouetted against a spectacular sunset of orange, pink, and purple clouds. Its leathery wings are stretched taut, membranes visible against the light. Below, turquoise waves crash against jagged rocks. Seabirds scatter around it, looking tiny by comparison. Windswept grass and wildflowers on the cliff edge in the foreground. Photorealistic, cinematic, dramatic composition.",
+      "sceneDescription": "A giant Pteranodon diving at high speed toward the ocean surface, wings tucked back in a steep dive, its distinctive pointed head crest cutting through the air. The 20-foot wingspan is partially folded for speed, leathery membranes rippling in the wind. The ocean surface rushes up — turquoise water with visible fish below. The Pteranodon's long beak is open, ready to snatch a fish. Wind streaks and motion blur show the incredible diving speed. Spray from the ocean surface begins to part from the approaching pressure wave. Dramatic sunset sky of orange and purple behind. Jagged coastal cliffs frame the scene. Other Pteranodons circle in the distance. Photorealistic, high-speed dive, mid-action, cinematic.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "A giant Pteranodon soars over ocean cliffs at golden hour, wings fully spread showing 20-foot wingspan. Pointed head crest and long beak against spectacular sunset. Leathery wing membranes visible. Turquoise waves below. Seabirds scatter. Photorealistic, cinematic, wide-angle."
+          "prompt": "Giant Pteranodon diving at high speed toward ocean surface, wings tucked back, pointed head crest cutting through air. 20-foot wingspan partially folded, leathery membranes rippling. Ocean rushing up with visible fish. Long beak open ready to snatch. Motion blur showing speed. Sunset sky, coastal cliffs. Photorealistic, high-speed dive, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The Pteranodon banks sharply, tilting its enormous wings. Its shadow sweeps across the ocean surface and up the cliff face. The wingspan stretches impossibly wide against the sunset. Wind ripples across the water below."
+          "prompt": "The Pteranodon hits the water surface at speed — its beak spears through and snatches a large silver fish. An explosion of water spray erupts around it. Its enormous wings snap fully open to brake, stretching the full 20 feet. Water cascades off the leathery wing membranes. The fish thrashes in its beak."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "The Pteranodon swoops low directly overhead, its leathery wings stretched wide, wingtips nearly touching the cliff edges. Wind from its wings ripples through the grass and wildflowers. Its crested head turns, one eye visible, beak open. The sunset blazes behind it."
+          "prompt": "The Pteranodon launches back into the air with powerful wingbeats, the caught fish clamped in its beak. Water streams off its body. Its 20-foot wingspan catches the orange sunset light, the thin wing membranes glowing translucent. It soars along the cliff face, crest silhouetted against the blazing sky. Majestic and alien — not a dinosaur, a flying reptile."
         },
         {
           "timestamp_ms": 10000,
@@ -172,19 +172,19 @@
       "roomIndex": 0,
       "question": "What was in the \"Thunder Jaw Crater\" room?",
       "options": [
-        "Stegosaurus — plates along its back and a spiked tail called a thagomizer, small brain",
         "Triceratops — three-horned dinosaur with a massive shield-like frill, plant eater",
-        "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite",
-        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur"
+        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur",
+        "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws",
+        "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "roomIndex": 1,
       "question": "What was in the \"Crystal Horn Fortress\" room?",
       "options": [
         "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite",
-        "Stegosaurus — plates along its back and a spiked tail called a thagomizer, small brain",
+        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur",
         "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws",
         "Triceratops — three-horned dinosaur with a massive shield-like frill, plant eater"
       ],
@@ -194,45 +194,45 @@
       "roomIndex": 2,
       "question": "What was in the \"Solar Plate Ridge\" room?",
       "options": [
-        "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws",
-        "Stegosaurus — plates along its back and a spiked tail called a thagomizer, small brain",
-        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur",
-        "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "roomIndex": 3,
-      "question": "What was in the \"Feather Sprint Hollow\" room?",
-      "options": [
-        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur",
-        "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite",
-        "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws",
-        "Stegosaurus — plates along its back and a spiked tail called a thagomizer, small brain"
-      ],
-      "correctIndex": 2
-    },
-    {
-      "roomIndex": 4,
-      "question": "What was in the \"Cloud Canopy Tower\" room?",
-      "options": [
         "Stegosaurus — plates along its back and a spiked tail called a thagomizer, small brain",
         "Triceratops — three-horned dinosaur with a massive shield-like frill, plant eater",
         "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur",
         "Brachiosaurus — towering long-necked herbivore, 85 feet long, could reach treetops"
       ],
-      "correctIndex": 3
+      "correctIndex": 0
+    },
+    {
+      "roomIndex": 3,
+      "question": "What was in the \"Feather Sprint Hollow\" room?",
+      "options": [
+        "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws",
+        "Triceratops — three-horned dinosaur with a massive shield-like frill, plant eater",
+        "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite",
+        "Brachiosaurus — towering long-necked herbivore, 85 feet long, could reach treetops"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "roomIndex": 4,
+      "question": "What was in the \"Cloud Canopy Tower\" room?",
+      "options": [
+        "Brachiosaurus — towering long-necked herbivore, 85 feet long, could reach treetops",
+        "Triceratops — three-horned dinosaur with a massive shield-like frill, plant eater",
+        "Stegosaurus — plates along its back and a spiked tail called a thagomizer, small brain",
+        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur"
+      ],
+      "correctIndex": 0
     },
     {
       "roomIndex": 5,
       "question": "What was in the \"Wingspan Cliff\" room?",
       "options": [
         "Triceratops — three-horned dinosaur with a massive shield-like frill, plant eater",
+        "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws",
         "Tyrannosaurus Rex — largest land predator, 40 feet long, tiny arms, bone-crushing bite",
-        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur",
-        "Velociraptor — fast pack hunter, about the size of a turkey, feathered, sharp curved claws"
+        "Pteranodon — giant flying reptile with 20-foot wingspan, not actually a dinosaur"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     }
   ]
 }

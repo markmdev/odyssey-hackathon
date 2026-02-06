@@ -172,65 +172,65 @@
       "roomIndex": 0,
       "question": "What was in the \"Eruption Summit\" room?",
       "options": [
-        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
         "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
-        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis"
+        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "roomIndex": 1,
       "question": "What was in the \"Vortex Alley\" room?",
       "options": [
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
+        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
         "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
-        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
-        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land"
+        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis"
       ],
-      "correctIndex": 0
+      "correctIndex": 2
     },
     {
       "roomIndex": 2,
       "question": "What was in the \"Wave Wall Harbor\" room?",
       "options": [
-        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
         "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
         "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
-        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow"
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore"
       ],
-      "correctIndex": 0
+      "correctIndex": 3
     },
     {
       "roomIndex": 3,
       "question": "What was in the \"Fault Line Rift\" room?",
       "options": [
-        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
         "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
-        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
         "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "roomIndex": 4,
       "question": "What was in the \"White Thunder Slope\" room?",
       "options": [
+        "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
         "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
-        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
-        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore"
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore",
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "roomIndex": 5,
       "question": "What was in the \"Bolt Forge Sky\" room?",
       "options": [
         "Lightning Superstorm — 300 million volts, heats air to 54,000°F (5x hotter than the Sun's surface), thunder is expanding air",
-        "Tornado — rotating column of air up to 300 mph, forms from supercell thunderstorms, rated F0-F5 on Fujita scale",
-        "Earthquake — sudden energy release along fault lines, measured on Richter scale, P-waves travel fastest, triggers landslides and tsunamis",
-        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land"
+        "Volcano — magma erupts through Earth's crust, lava shoots 2,000 feet high, pyroclastic flows travel 450 mph, creates new land",
+        "Avalanche — massive snow slide reaching 200 mph, triggered by vibrations, carries 300,000 cubic yards of snow",
+        "Tsunami — ocean wave from underwater earthquake, travels 500 mph across open ocean, grows up to 100 feet tall near shore"
       ],
       "correctIndex": 0
     }

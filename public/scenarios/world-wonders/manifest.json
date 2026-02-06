@@ -9,19 +9,19 @@
       "name": "Endless Dragon Wall",
       "itemToRemember": "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth",
       "mnemonic": "A stone dragon snakes over mountain peaks for 13,000 miles — it took 2,000 years to build its body, brick by brick, and you can see it stretching to the horizon from any hilltop.",
-      "sceneDescription": "The Great Wall of China stretches dramatically across rugged green mountain ridges, snaking into the misty distance as far as the eye can see. The wall is shown in incredible detail — weathered gray stone and brick construction with watchtowers at regular intervals. The wall follows the dramatic contours of steep mountain terrain, climbing up and dipping down with the ridgeline. Lush green vegetation covers the mountains on either side. Morning mist swirls through the valleys below. Golden sunrise light illuminates the wall and mountains from the side, creating long dramatic shadows. The sheer scale and length is the focus — the wall disappears into hazy mountains on both horizons. Photorealistic, ultra-wide panoramic, cinematic golden hour.",
+      "sceneDescription": "An army of ancient Chinese soldiers charging along the top of the Great Wall at sunset, hundreds of warriors in bronze armor running along the stone walkway with spears and banners flying. The Great Wall stretches dramatically across rugged mountain ridges behind them, snaking endlessly into the distance. Red battle flags snap in the wind along the watchtowers. The soldiers' armor catches the fiery orange sunset light. Dust rises from hundreds of pounding feet on the ancient stone. The wall's massive brick-and-stone construction is visible — weathered, ancient, stretching 13,000 miles. Mountains and mist in the background. The scene is epic in scale — an army running along a structure that spans a continent. Photorealistic, charging army action, epic sunset, cinematic wide-angle.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "Great Wall of China stretching across rugged green mountain ridges, snaking into misty distance. Weathered stone and brick with watchtowers. Steep terrain, lush vegetation. Morning mist in valleys. Golden sunrise, dramatic shadows. Ultra-wide panoramic, photorealistic, cinematic."
+          "prompt": "Army of ancient Chinese soldiers charging along the Great Wall at sunset, hundreds of warriors in bronze armor running with spears and banners flying. Wall stretches across mountain ridges behind them. Red flags snap in wind. Armor catches fiery orange light. Dust rising. Photorealistic, epic action, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "Morning mist rises from the valleys and swirls around the Great Wall's watchtowers. Sunlight breaks through the mist, illuminating sections of the ancient stone wall in golden light while others remain in blue shadow. Birds fly along the wall's path."
+          "prompt": "The soldiers reach a watchtower and a signal fire erupts on top — flames and thick smoke billow into the sunset sky. The fire signal passes to the next watchtower in the distance, then the next, a chain of fire signals racing along the Great Wall across the mountains. The army surges forward."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "Camera sweeps along the Great Wall as it climbs steeply up a mountain ridge. The wall's massive stone steps ascend at a dramatic angle. Weathered bricks and ancient mortar are visible in detail. The wall stretches endlessly in both directions across mountain peaks shrouded in mist."
+          "prompt": "Arrows arc over the Great Wall from outside, clattering against the stone. The soldiers raise wooden shields and push forward along the wall. Banners wave frantically. Signal fires blaze on every watchtower, creating a line of fire stretching to the horizon. The wall is a fortress alive with action."
         },
         {
           "timestamp_ms": 10000,
@@ -36,19 +36,19 @@
       "name": "Cloud City Ruins",
       "itemToRemember": "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
       "mnemonic": "A secret city hidden above the clouds on a mountain peak for 500 years — the Incas built it so high that clouds flowed through its stone streets like rivers.",
-      "sceneDescription": "Machu Picchu's iconic stone ruins sit dramatically atop a steep mountain ridge, surrounded by towering Andean peaks. The ancient Inca city is shown in full — terraced stone buildings, precisely cut stone walls without mortar, ceremonial plazas, and agricultural terraces stepping down the mountainside. The iconic Huayna Picchu peak rises sharply behind the ruins. Thick white clouds flow through the valleys below and between the mountain peaks, making the ruins appear to float above a sea of clouds. Lush green grass covers the terraces. Early morning golden light catches the stone walls. The scene conveys mystery, isolation, and ancient grandeur. Photorealistic, wide-angle, cinematic composition showing the full site and surrounding mountains.",
+      "sceneDescription": "Thick clouds violently parting to reveal Machu Picchu for the first time — as if an explorer is breaking through the cloud layer, the ancient stone ruins suddenly emerging from the mist in a dramatic reveal. Wind whips the clouds apart. The stone terraces and buildings of the Inca city are partially overgrown with jungle vegetation — vines crawling over precisely cut stone walls, trees growing through roofless buildings. Huayna Picchu peak towers behind, half-shrouded in racing clouds. Sunlight breaks through a gap in the clouds, casting a single dramatic beam across the ruins. Condors soar on thermals above the mountain peaks. The clouds swirl and race through the stone streets like river rapids. Wild, untamed, rediscovered after 500 years of hiding. Photorealistic, dramatic cloud reveal, wind and motion, cinematic wide-angle.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "Machu Picchu stone ruins atop steep mountain ridge, surrounded by Andean peaks. Terraced buildings, precisely cut walls, ceremonial plazas. Huayna Picchu behind. White clouds flowing through valleys below. Green grass on terraces. Golden morning light. Photorealistic, wide-angle, cinematic."
+          "prompt": "Thick clouds violently parting to reveal Machu Picchu — ancient stone ruins suddenly emerging from swirling mist. Wind whipping clouds apart. Overgrown terraces, vines on stone walls. Huayna Picchu half-shrouded in racing clouds. Sunbeam breaking through. Condors soaring. Photorealistic, dramatic reveal, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "Clouds roll up from the valley and flow between the ancient stone buildings of Machu Picchu like a ghostly river. The mist swirls around the stone walls, partially obscuring and then revealing the ruins. Sunlight pierces through gaps in the clouds, creating dramatic god-rays."
+          "prompt": "The clouds continue to part, revealing more of Machu Picchu's sprawling layout — terrace after terrace of precision stonework emerging from the jungle. Wind drives clouds through the stone streets and doorways like rivers of mist. Golden light expands across the ruins. Condors circle closer."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "The clouds part dramatically, revealing the full expanse of Machu Picchu bathed in warm golden sunlight. Every terrace, stone wall, and pathway is illuminated. Huayna Picchu towers behind, its peak catching the light. The ancient city glows against the deep green mountains. Breathtaking and majestic."
+          "prompt": "A massive condor swoops low over Machu Picchu's main plaza, its 10-foot wingspan casting a shadow across the ancient stones. Clouds race past below the mountain, making the ruins appear to float. The entire Inca city is now revealed in golden light — breathtaking, ancient, reclaimed by nature. Huayna Picchu towers dramatically behind."
         },
         {
           "timestamp_ms": 10000,
@@ -63,19 +63,19 @@
       "name": "Gladiator Arena",
       "itemToRemember": "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
       "mnemonic": "A massive stone donut in Rome with 50,000 screaming fans watching gladiators battle inside — built nearly 2,000 years ago and still standing, the world's first sports stadium.",
-      "sceneDescription": "The Roman Colosseum stands in full glory, partially ruined but still majestic, lit by dramatic golden-hour sunlight. The massive elliptical amphitheater is shown from a low angle that emphasizes its towering height — four stories of arched openings in travertine stone, each level with different column styles. The interior is partially visible through the broken walls, showing the underground hypogeum tunnels where gladiators and animals waited. The arena floor is sandy. Warm Roman sunlight casts long shadows through the arches, creating a pattern of light and shadow on the ancient stone. Blue sky with golden clouds above. Tourists provide scale, appearing tiny against the massive structure. Photorealistic, dramatic low-angle, cinematic golden hour.",
+      "sceneDescription": "The Colosseum restored to its ancient glory, packed with 50,000 roaring spectators — a gladiator in bronze armor mid-swing with a sword, fighting a massive lion in the sandy arena below. The gladiator's muscular body twists as he strikes, sand kicking up from his feet. The lion lunges with claws extended. The crowd is on their feet, arms raised, cheering. The Colosseum's four stories of arched stone tiers are full of people in Roman togas. Red and gold banners hang from the arches. The sandy arena floor is scuffed with combat marks. Sunlight pours through the partially open velarium (canvas shade) above. The scale of the arena is enormous — 50,000 spectators surrounding the fighters. Photorealistic, mid-combat action, roaring crowd, cinematic wide-angle.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "Roman Colosseum in full glory, partially ruined, dramatic golden-hour sunlight. Massive elliptical amphitheater from low angle showing towering height. Four stories of arches, underground hypogeum visible. Sandy arena floor. Light and shadow through arches. Blue sky, golden clouds. Photorealistic, cinematic."
+          "prompt": "Ancient Colosseum packed with 50,000 roaring spectators — a gladiator in bronze armor mid-sword-swing fighting a massive lion in the sandy arena. Sand kicking up. Lion lunging with claws. Crowd on feet cheering. Four stories of arched tiers full of Romans in togas. Red banners. Photorealistic, mid-combat, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "Sunlight shifts and streams through the Colosseum's arched openings, moving beams of golden light across the ancient stone interior. Dust particles float in the light beams. Shadows of the arches create dramatic patterns on the sandy arena floor below."
+          "prompt": "The gladiator rolls under the lion's swipe and springs back to his feet, sand exploding around him. The crowd erupts. He raises his sword and shield. The lion circles, growling, kicking up arena dust. 50,000 spectators pound their feet on stone, creating a thunderous rhythm that shakes the Colosseum."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "Camera moves to look down into the Colosseum's exposed underground hypogeum — the network of tunnels and chambers beneath the arena floor. The cross-shaped corridors and holding cells are visible. Golden sunset light illuminates the ancient brick walls. The scale of the engineering is impressive."
+          "prompt": "The gladiator stands victorious, sword raised to the sky, the crowd going wild with cheers. Roman citizens throw flowers and laurel wreaths into the arena. The massive Colosseum reverberates with the roar of 50,000 voices. Sunlight pours down onto the victorious gladiator. Sand and flower petals swirl in the air."
         },
         {
           "timestamp_ms": 10000,
@@ -90,19 +90,19 @@
       "name": "Desert Titan Tomb",
       "itemToRemember": "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
       "mnemonic": "A mountain made of 2.3 million stone blocks stacked 481 feet high in the desert — built 4,500 years ago without modern tools, and it's the ONLY ancient wonder still standing.",
-      "sceneDescription": "The Great Pyramid of Giza dominates the frame — an enormous golden limestone pyramid rising 481 feet against a deep blue desert sky. The pyramid is shown from a dramatic low angle that emphasizes its staggering height and the precision of its stone block construction. Individual limestone blocks are visible on the surface, each one massive. The Sphinx sits at the base in the foreground, its weathered face gazing forward. Golden desert sand surrounds everything. The pyramid's surface catches the warm afternoon sun, glowing with a honey-gold color. The two smaller companion pyramids are visible behind. The sky is deep blue with wispy clouds. A sense of ancient timelessness and monumental scale. Photorealistic, dramatic low-angle, cinematic.",
+      "sceneDescription": "Thousands of ancient Egyptian workers hauling a massive limestone block up the side of the Great Pyramid under construction. The pyramid is half-built, with the smooth lower courses and the rough upper construction zone visible. Workers pull ropes attached to wooden sleds carrying blocks the size of cars. Overseers direct from scaffolding. The scale is staggering — thousands of people working like ants on the pyramid's face, with hundreds of stone blocks being moved simultaneously on different levels. The desert sun blazes overhead. Below, a long ramp extends outward with more blocks being dragged up. The Sphinx is partially carved in the foreground. Dust rises from the construction. Other pyramids in various stages of completion behind. Photorealistic, massive construction action, thousands of workers, cinematic wide-angle.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "Great Pyramid of Giza — enormous golden limestone pyramid rising 481 feet against deep blue sky. Dramatic low angle showing stone block construction. Sphinx at base. Golden desert sand. Honey-gold surface in afternoon sun. Companion pyramids behind. Photorealistic, cinematic."
+          "prompt": "Thousands of Egyptian workers hauling massive limestone blocks up the half-built Great Pyramid. Workers pulling ropes on wooden sleds carrying car-sized blocks. Thousands of people working like ants on the pyramid face. Desert sun blazing. Long ramp with more blocks. Sphinx being carved below. Photorealistic, massive construction, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "Wind sweeps across the desert, sending golden sand swirling around the base of the Great Pyramid. The sand catches the sunlight creating a shimmering haze. The pyramid's massive stone blocks cast sharp shadows. The Sphinx stands stoically as sand drifts past its paws."
+          "prompt": "A massive stone block reaches its position and workers lever it into place with wooden tools. It lands with a thundering boom, sending dust billowing. Hundreds of workers cheer and immediately begin hauling the next block. The pyramid grows before your eyes. Ropes strain, wooden rollers creak, overseers shout."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "The sun descends toward the horizon, turning the Great Pyramid from gold to deep orange-amber. The pyramid's shadow stretches enormously across the desert sand. The sky transitions to dramatic oranges and purples. The ancient monument glows like a beacon against the darkening sky."
+          "prompt": "Camera pulls back to reveal the full epic scale — the Great Pyramid rising 481 feet from the desert, surrounded by an entire city of workers, ramps, and supply routes. Boats on the nearby Nile carry more stone blocks. Tens of thousands of workers swarm the construction. The greatest building project in human history, mid-construction."
         },
         {
           "timestamp_ms": 10000,
@@ -117,19 +117,19 @@
       "name": "Marble Mirror Palace",
       "itemToRemember": "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
       "mnemonic": "A palace made entirely of white marble that took 22 years to build — all because an emperor loved his wife so much he wanted her resting place to be the most beautiful building on Earth.",
-      "sceneDescription": "The Taj Mahal in full splendor — the iconic white marble mausoleum centered perfectly in the frame, reflected in the long rectangular pool in front of it. The building's symmetry is perfect — the central dome flanked by four smaller domes, four minarets at the corners. Intricate marble inlay work and carved geometric patterns are visible on the white surface. The marble glows with a soft pink-golden hue from sunrise light. Lush green gardens with cypress trees line the reflecting pool on both sides. The reflection in the still water creates a perfect mirror image. Morning mist adds a dreamlike quality. Blue sky transitioning to warm gold at the horizon. Photorealistic, symmetrical composition, cinematic golden hour.",
+      "sceneDescription": "A spectacular fireworks display exploding over the Taj Mahal at night, brilliant bursts of gold, red, green, and white reflecting in the long pool below. The white marble mausoleum glows ethereally in the fireworks light, its dome and minarets illuminated in rapidly changing colors. Each firework burst creates a different colored reflection — the pool becomes a kaleidoscope of shimmering light. Sparks rain down like golden waterfalls. The marble surface catches and reflects every color, its intricate inlay work of precious stones glittering. The gardens are lit by thousands of oil lamps lining the pathways. Smoke from the fireworks drifts across the scene. The Taj Mahal's perfect symmetry doubles in the pool's reflection, creating a mirror world of light and color. Photorealistic, explosive fireworks action, vivid colors, night scene, cinematic.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "Taj Mahal in full splendor — white marble mausoleum centered, reflected in long rectangular pool. Perfect symmetry, central dome, four minarets. Intricate marble inlay. Soft pink-golden sunrise glow. Cypress trees, lush gardens. Perfect mirror reflection. Morning mist. Photorealistic, cinematic."
+          "prompt": "Spectacular fireworks exploding over the Taj Mahal at night — brilliant gold, red, green bursts reflecting in the long pool. White marble glowing in changing firework colors. Sparks raining down. Precious stone inlays glittering. Thousands of oil lamps. Perfect symmetry doubled in pool reflection. Photorealistic, explosive, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The rising sun paints the Taj Mahal's white marble in deepening shades of pink and gold. The reflection in the still pool shifts color in perfect symmetry. Light catches the precious stone inlays on the marble surface — lapis lazuli, jade, and coral sparkle. Morning mist slowly lifts."
+          "prompt": "A massive golden firework bursts directly above the Taj Mahal's dome, showering the white marble with cascading golden sparks. The entire building turns gold for a moment. The reflection in the pool shatters into a thousand golden fragments. More rockets streak upward trailing colored smoke."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "A gentle breeze ripples the reflecting pool, fragmenting the Taj Mahal's perfect mirror reflection into shimmering pieces of white and gold. Birds fly past the minarets. The marble dome catches full sunlight and blazes brilliant white against the blue sky. The gardens glow green."
+          "prompt": "The fireworks finale — dozens of fireworks explode simultaneously in every color, lighting the Taj Mahal in a psychedelic rainbow. The white marble becomes a canvas for projections of red, blue, gold, green light. The pool reflects an explosion of color. Sparks, smoke, and light fill the entire sky above the glowing white dome."
         },
         {
           "timestamp_ms": 10000,
@@ -144,19 +144,19 @@
       "name": "Serpent Stairway Temple",
       "itemToRemember": "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
       "mnemonic": "A pyramid calendar with exactly 365 steps — and twice a year on the equinox, the setting sun creates a shadow of a giant serpent slithering down the staircase, as if the pyramid comes alive.",
-      "sceneDescription": "El Castillo pyramid at Chichen Itza stands tall and geometric against a dramatic sky — the stepped Maya pyramid with its distinctive flat top temple and steep central staircase on each face. The pyramid's precisely carved limestone blocks show the mathematical precision of Maya architecture. The famous feathered serpent head sculpture sits at the base of the north staircase, mouth open. During equinox, triangular shadows along the staircase create the illusion of a serpent's body descending the pyramid — this shadow effect is visible on the balustrade. Lush green jungle surrounds the pyramid. Dramatic sunset light paints the limestone gold and orange. The sky is spectacular with orange, purple, and deep blue gradients. Photorealistic, dramatic lighting, cinematic wide-angle.",
+      "sceneDescription": "The equinox phenomenon at Chichen Itza — the serpent shadow actively forming on El Castillo's staircase as the sun sets. Triangular shadows of light and dark cascade down the pyramid's balustrade, creating the unmistakable body of the feathered serpent Kukulkan slithering down toward the carved serpent head at the base. The serpent shadow appears to move and undulate as the sun shifts. Hundreds of spectators watch in awe, arms raised and pointing. The pyramid's limestone steps glow warm amber in the equinox sunset. The sky blazes with deep oranges and reds. Maya dancers in elaborate feathered costumes and jade jewelry perform a ceremony at the base, their feathered headdresses swaying as they move. Drums pound. Torches blaze on the pyramid's upper temple. The shadow serpent reaches toward the stone head. Photorealistic, equinox event mid-happening, ceremony action, cinematic.",
       "odysseyKeyframes": [
         {
           "timestamp_ms": 0,
-          "prompt": "El Castillo pyramid at Chichen Itza — stepped Maya pyramid with flat top temple and steep staircase. Carved limestone blocks. Feathered serpent head at staircase base. Serpent shadow on balustrade. Lush green jungle surrounds. Dramatic golden sunset. Photorealistic, cinematic wide-angle."
+          "prompt": "Equinox at Chichen Itza — serpent shadow actively forming on El Castillo's staircase. Triangular light-and-dark shadows cascading down, creating Kukulkan serpent body. Hundreds of spectators watching. Limestone glowing amber. Blazing sunset sky. Maya dancers in feathered costumes performing at base. Torches on upper temple. Photorealistic, cinematic."
         },
         {
           "timestamp_ms": 3000,
-          "prompt": "The setting sun shifts and the triangular serpent shadow on El Castillo's staircase becomes more defined — each triangle of shadow connects to create the body of a descending feathered serpent. The shadow reaches toward the stone serpent head at the base. Jungle birds scatter from nearby trees."
+          "prompt": "The serpent shadow grows more defined as the sun drops — each triangle of shadow connects to the next, the serpent's body undulating down the pyramid. Maya dancers whirl faster, feathered headdresses spinning. Drums intensify. The crowd gasps as the shadow reaches further. Torchlight flickers on the ancient stone."
         },
         {
           "timestamp_ms": 6000,
-          "prompt": "Dramatic sunset light blazes behind El Castillo, silhouetting the pyramid's geometric profile against a sky of deep orange, purple, and red. The serpent shadow is fully formed on the staircase. The ancient limestone glows warm amber. Jungle canopy frames the scene. Majestic and mysterious."
+          "prompt": "The shadow serpent completes its descent, connecting to the carved stone serpent head at the base. The crowd erupts in cheers. Maya dancers raise their arms to the sky. Torches blaze brighter. The entire pyramid glows in the final rays of sunset — deep amber and orange. The ancient astronomical precision is breathtaking. Feathers and fire against the burning sky."
         },
         {
           "timestamp_ms": 10000,
@@ -172,10 +172,10 @@
       "roomIndex": 0,
       "question": "What was in the \"Endless Dragon Wall\" room?",
       "options": [
-        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
         "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+        "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
         "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth",
-        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build"
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox"
       ],
       "correctIndex": 2
     },
@@ -183,21 +183,21 @@
       "roomIndex": 1,
       "question": "What was in the \"Cloud City Ruins\" room?",
       "options": [
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
         "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
         "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
-        "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
-        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox"
+        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth"
       ],
-      "correctIndex": 1
+      "correctIndex": 2
     },
     {
       "roomIndex": 2,
       "question": "What was in the \"Gladiator Arena\" room?",
       "options": [
+        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth",
         "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
-        "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
         "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
-        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth"
+        "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox"
       ],
       "correctIndex": 2
     },
@@ -205,31 +205,31 @@
       "roomIndex": 3,
       "question": "What was in the \"Desert Titan Tomb\" room?",
       "options": [
-        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
         "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
+        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
         "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
-        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build"
+        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "roomIndex": 4,
       "question": "What was in the \"Marble Mirror Palace\" room?",
       "options": [
-        "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
+        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
         "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox",
-        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
-        "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build"
+        "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
+        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth"
       ],
-      "correctIndex": 3
+      "correctIndex": 0
     },
     {
       "roomIndex": 5,
       "question": "What was in the \"Serpent Stairway Temple\" room?",
       "options": [
-        "Colosseum — giant amphitheater in Rome, held 50,000 spectators, gladiator fights and public spectacles, built in 80 AD",
+        "Machu Picchu — ancient Inca city high in the Andes Mountains of Peru, built around 1450, abandoned and hidden for centuries",
+        "Great Pyramid of Giza — oldest of the Seven Wonders, built 4,500 years ago, 481 feet tall, 2.3 million stone blocks",
         "Taj Mahal — white marble mausoleum in India, built by emperor Shah Jahan for his wife, took 22 years to build",
-        "Great Wall of China — over 13,000 miles long, built over 2,000 years, visible from hilltops, made of stone, brick, and earth",
         "Chichen Itza — Maya pyramid temple in Mexico, El Castillo pyramid has 365 steps (one for each day), serpent shadow appears at equinox"
       ],
       "correctIndex": 3
