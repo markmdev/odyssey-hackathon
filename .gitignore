@@ -1,9 +1,11 @@
 .mcp.json
 CLAUDE.md
 .env
+.env.local
 node_modules/
 .claude/
 .meridian/
+.next/
 AGENTS.md
 IDENTITY.md
 MEMORY.md
