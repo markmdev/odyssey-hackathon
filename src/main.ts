@@ -11,6 +11,8 @@ const startBtn = document.getElementById('startBtn') as HTMLButtonElement;
 const endBtn = document.getElementById('endBtn') as HTMLButtonElement;
 const interactBtn = document.getElementById('interactBtn') as HTMLButtonElement;
 
+apiKeyInput.value = import.meta.env.VITE_ODYSSEY_API_KEY ?? '';
+
 let client: Odyssey | null = null;
 
 function setStatus(msg: string) {

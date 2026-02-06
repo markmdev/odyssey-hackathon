@@ -1,0 +1,6 @@
+.mcp.json
+CLAUDE.md
+.env
+node_modules/
+.claude/
+.meridian/
