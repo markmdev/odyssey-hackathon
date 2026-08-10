@@ -20,20 +20,26 @@
       }
 
       * { box-sizing: border-box; }
+
       html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+
       body {
         background: #060a0c;
         color: var(--ink);
         font-family: Manrope, system-ui, sans-serif;
       }
+
       button, input { font: inherit; }
+
       button { color: inherit; }
+
       button:focus-visible, input:focus-visible {
         outline: 2px solid #d9eee7;
         outline-offset: 3px;
       }
 
       .shell, .stage { position: relative; width: 100%; height: 100%; }
+
       .stage {
         overflow: hidden;
         background:
@@ -41,6 +47,7 @@
           linear-gradient(152deg, #263c42 0%, #111a1f 43%, #05080a 100%);
         isolation: isolate;
       }
+
       .stage::after {
         content: "";
         position: absolute;
@@ -59,7 +66,9 @@
         background: transparent;
         transition: opacity 600ms ease;
       }
+
       #worldVideo.idle { opacity: 0; }
+
       #holdOverlay {
         position: absolute;
         inset: 0;
@@ -67,6 +76,7 @@
         opacity: 0;
         pointer-events: none;
       }
+
       body:has(.hud:not(.hidden)) #holdOverlay { opacity: 1; }
 
       .stage-state {
@@ -78,7 +88,9 @@
         overflow: hidden;
         transition: opacity 500ms ease;
       }
+
       .stage-state.hidden { opacity: 0; pointer-events: none; }
+
       .stage-state::before {
         content: "";
         position: absolute;
@@ -93,6 +105,7 @@
         box-shadow: 0 0 90px rgba(95, 147, 133, 0.28);
         opacity: 0.85;
       }
+
       .stage-state::after {
         content: "";
         position: absolute;
@@ -103,6 +116,7 @@
         background: linear-gradient(#cdded7, #63847b);
         box-shadow: 0 0 20px rgba(220, 244, 235, 0.5);
       }
+
       .stage-state-card {
         position: relative;
         z-index: 1;
@@ -111,12 +125,14 @@
         text-align: center;
         text-shadow: 0 3px 24px #000;
       }
+
       #stageStateTitle {
         margin: 0 0 10px;
         font: 500 clamp(24px, 3vw, 44px)/1 "Archivo Narrow", sans-serif;
         letter-spacing: .12em;
         text-transform: uppercase;
       }
+
       #stageStateBody { margin: 0; color: #c8ceca; font-size: 13px; letter-spacing: .04em; }
 
       .masthead {
@@ -131,19 +147,23 @@
         padding: 22px 26px;
         pointer-events: none;
       }
+
       .brand { display: flex; align-items: center; gap: 12px; }
+
       .brand-mark {
         width: 8px;
         height: 34px;
         background: var(--signal);
         box-shadow: 0 0 24px rgba(229, 84, 56, .4);
       }
+
       .brand strong {
         display: block;
         font: 500 19px/1 "Archivo Narrow", sans-serif;
         letter-spacing: .13em;
         text-transform: uppercase;
       }
+
       .brand span, .location {
         display: block;
         margin-top: 5px;
@@ -152,6 +172,7 @@
         letter-spacing: .2em;
         text-transform: uppercase;
       }
+
       .location { text-align: right; line-height: 1.5; }
 
       .hud {
@@ -161,7 +182,9 @@
         pointer-events: none;
         transition: opacity 250ms ease;
       }
+
       .hud.hidden { opacity: 0; }
+
       .hud-top {
         position: absolute;
         top: 72px;
@@ -169,6 +192,7 @@
         display: flex;
         gap: 1px;
       }
+
       .pill {
         min-width: 90px;
         padding: 9px 12px;
@@ -179,7 +203,9 @@
         font: 500 18px/1 "Archivo Narrow", sans-serif;
         letter-spacing: .08em;
       }
+
       #timerDisplay.urgent { color: #ff8269; }
+
       #pauseBtn {
         pointer-events: auto;
         margin-left: 8px;
@@ -191,6 +217,7 @@
         font-size: 9px;
         cursor: pointer;
       }
+
       .hud-bottom {
         position: absolute;
         left: 26px;
@@ -200,7 +227,9 @@
         align-items: end;
         justify-content: space-between;
       }
+
       .limb-grid { display: flex; gap: 5px; }
+
       .limb-tag {
         min-width: 42px;
         padding: 6px 8px;
@@ -211,16 +240,22 @@
         font: 500 9px/1 "Archivo Narrow", sans-serif;
         letter-spacing: .08em;
       }
+
       .limb-tag.active { border-color: var(--jade); color: #eafff8; background: rgba(68, 111, 101, .58); }
+
       .state-panel { max-width: 370px; text-align: right; text-shadow: 0 2px 14px #000; }
+
       .state-label { color: #aeb6b1; font-size: 8px; letter-spacing: .2em; text-transform: uppercase; }
+
       #stabilityDisplay {
         margin: 4px 0;
         font: 500 22px/1 "Archivo Narrow", sans-serif;
         letter-spacing: .12em;
         text-transform: uppercase;
       }
+
       #stabilityDisplay.precarious, #stabilityDisplay.overextended, #stabilityDisplay.critical { color: #ff8b72; }
+
       #statusLine { color: #c4cbc6; font-size: 11px; line-height: 1.35; }
 
       .panel {
@@ -236,16 +271,22 @@
         box-shadow: var(--shadow);
         transition: opacity 250ms ease, transform 250ms ease;
       }
+
       body:has(.hud:not(.hidden)) .panel { opacity: 0; transform: translateY(12px); pointer-events: none; }
+
       .eyebrow { color: var(--signal); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; }
+
       .panel h1 {
         margin: 10px 0 4px;
         font: 500 clamp(38px, 5vw, 66px)/.82 "Archivo Narrow", sans-serif;
         letter-spacing: -.02em;
         text-transform: uppercase;
       }
+
       .panel h1 span { display: block; color: #9dc0b6; }
+
       .panel-sub { margin: 15px 0 20px; max-width: 370px; color: #b6bdb9; font-size: 12px; line-height: 1.55; }
+
       .tower-facts {
         display: flex;
         gap: 20px;
@@ -254,9 +295,13 @@
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
+
       .tower-facts strong { display: block; font: 500 20px/1 "Archivo Narrow"; }
+
       .tower-facts span { display: block; margin-top: 4px; color: #858e89; font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
+
       .preflight { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+
       .preflight input, #playerName {
         min-width: 0;
         border: 1px solid var(--line);
@@ -265,6 +310,7 @@
         padding: 10px 11px;
         font-size: 11px;
       }
+
       #connectBtn, #startRunBtn, .btn-main {
         border: 0;
         background: var(--signal);
@@ -276,10 +322,15 @@
         text-transform: uppercase;
         cursor: pointer;
       }
+
       #connectBtn:disabled, #startRunBtn:disabled { opacity: .45; cursor: not-allowed; }
+
       #connectionStatus { grid-column: 1 / -1; color: #aeb5b1; font-size: 9px; letter-spacing: .08em; }
+
       .run-setup { display: grid; gap: 10px; margin-top: 12px; }
+
       .mode-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
       .mode-pill {
         border: 1px solid var(--line);
         background: transparent;
@@ -287,12 +338,19 @@
         text-align: left;
         cursor: pointer;
       }
+
       .mode-pill.active { border-color: var(--jade); background: rgba(78, 122, 111, .16); }
+
       .mode-title { font: 500 12px "Archivo Narrow"; letter-spacing: .08em; text-transform: uppercase; }
+
       .mode-desc, .mini-help { color: #929b95; font-size: 9px; line-height: 1.5; }
+
       .start-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+
       #startRunBtn { padding: 12px 18px; }
+
       .utility { position: absolute; right: 16px; bottom: 12px; display: none; }
+
       #disconnectBtn, #restartBtn {
         border: 1px solid var(--line);
         background: transparent;
@@ -300,6 +358,7 @@
         color: #a7aeaa;
         font-size: 9px;
       }
+
       .visually-hidden {
         position: absolute !important;
         width: 1px !important;
@@ -322,12 +381,19 @@
         background: rgba(3, 7, 9, .77);
         backdrop-filter: blur(10px);
       }
+
       .overlay.hidden { display: none; }
+
       .overlay-card { width: min(460px, 100%); text-align: center; }
+
       .overlay h2 { margin: 0; font: 500 52px/.9 "Archivo Narrow"; letter-spacing: .04em; text-transform: uppercase; }
+
       .overlay p { color: #b4bcb7; font-size: 13px; line-height: 1.5; }
+
       .controls-row { display: flex; justify-content: center; gap: 8px; }
+
       .btn-sub { border: 1px solid var(--line); background: transparent; padding: 10px 16px; cursor: pointer; }
+
       #toast {
         position: absolute;
         z-index: 12;
@@ -344,7 +410,9 @@
         transition: 180ms ease;
         pointer-events: none;
       }
+
       #toast.visible { opacity: 1; transform: translate(-50%, 0); }
+
       .leaderboard { display: none; }
 
       @media (max-width: 650px) {
@@ -359,10 +427,12 @@
         .state-panel { margin-left: auto; }
         .stage-state::before { width: 68vw; left: 16vw; }
       }
+
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation: none !important; transition: none !important; }
       }
     </style>
+    <script type="module" crossorigin src="/assets/index-CwPGPUxh.js"></script>
   </head>
   <body>
     <main class="shell">
@@ -460,6 +530,5 @@
         <ul id="leaderboardList" class="leaderboard"></ul>
       </aside>
     </main>
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

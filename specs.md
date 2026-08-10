@@ -1,6 +1,6 @@
 # Skyscraper Live: The Game — Product Requirements Document
 
-**MVP Scope — Salesforce Tower, San Francisco**
+**Vertical Slice — Taipei 101, Taipei**
 
 | | |
 |---|---|
@@ -17,7 +17,7 @@
 2. [Product Vision](#2-product-vision)
 3. [Game Overview](#3-game-overview)
 4. [Climbing Mechanics (Cairn-Inspired)](#4-climbing-mechanics-cairn-inspired)
-5. [The Building: Salesforce Tower](#5-the-building-salesforce-tower)
+5. [The Building: Taipei 101](#5-the-building-taipei-101)
 6. [Technical Architecture](#6-technical-architecture)
 7. [User Experience](#7-user-experience)
 8. [Visual Direction](#8-visual-direction)
@@ -33,11 +33,11 @@
 
 ## 1. Executive Summary
 
-Skyscraper Live: The Game is a free-to-play, browser-based climbing game inspired by the Netflix special *Skyscraper Live*, in which Alex Honnold free-soloed Taipei 101 without ropes. Players take on the role of a free solo climber attempting to scale real-world skyscrapers under a time limit. The game's visuals are rendered entirely in real time by the **Odyssey 2-Pro world model**, producing cinematic, photorealistic third-person footage that responds dynamically to player input.
+Skyscraper Live: Taipei 101 is a browser-based climbing game in which players control an original, anonymous free-solo climber attempting to scale Taipei 101 without ropes. Visuals are rendered in real time by the **Odyssey world model**, producing cinematic third-person footage that responds to deterministic local gameplay state.
 
-The climbing mechanics draw from **Cairn** by The Game Bakers — adapted into a lightweight browser-native control scheme. Like Cairn, climbing is not a traversal mechanic; it *is* the game. Players control individual limbs, read the building facade to plan their route, manage balance and stamina, and make deliberate, consequential decisions with every move. Unlike Cairn's analog-stick-driven simulation, our version maps limb selection and placement to keyboard and mouse — simple inputs, deep gameplay.
+The default assisted-flow scheme maps directional intent to safe, deterministic limb placements: WASD traverses, Space lunges or mantles upward, Shift rests, and mouse drag controls the camera. A precision option preserves individual limb selection and placement for players who want it.
 
-The MVP focuses on a single skyscraper — **Salesforce Tower in San Francisco** (61 stories, 1,070 feet) — with a solo gameplay experience. The game mechanic "vibe" also draws from *Messenger* by Abeto: accessible, browser-native, immediate, and surprisingly immersive.
+The vertical slice focuses on **Taipei 101** (101 floors, 508 metres) and its blue-green glass, steel curtain wall, stacked bamboo-pagoda modules, crown, and spire.
 
 ---
 
@@ -70,13 +70,13 @@ Deliver the visceral thrill of free-solo skyscraper climbing to anyone with a we
 
 ### 3.1 Concept
 
-The player is a free solo climber at the base of Salesforce Tower. They must ascend the exterior of the building — navigating the obelisk-shaped glass-and-steel facade, its lattice of white aluminum fins, and its tapered crown — while a countdown timer ticks. The third-person camera, reminiscent of the drone and helicopter footage from the Netflix special, shows the climber against the building with the San Francisco skyline sprawling below.
+The player is a free solo climber at the Xinyi District plaza beneath Taipei 101. They ascend the glass-and-steel curtain wall, cross the projecting transitions between eight-floor bamboo modules, and finish on the exposed crown and spire while a countdown timer ticks. The third-person camera can orbit freely to keep Taipei and the 508 metre drop present.
 
 Climbing works like a lightweight Cairn: the player selects individual limbs, aims them at holds on the building's surface, and commits each placement. The building facade is an open surface — there is no single "correct" path. The player reads the architecture, picks their route, and manages their climber's balance and stamina. One bad position held too long, one reach to a holdless surface, and the climber falls. Game over. Try again.
 
 ### 3.2 Core Loop
 
-1. Start at the base of Salesforce Tower at street level.
+1. Start at the base of Taipei 101 at street level.
 2. Read the facade — identify the aluminum fins, window frame edges, sunshade brackets, and structural seams that serve as holds.
 3. Select a limb, aim it at a hold, and commit the placement. One limb moves at a time.
 4. Manage balance and stamina. Overextended positions drain stamina fast; compact, balanced positions let you rest.
@@ -107,32 +107,19 @@ Like Cairn and like real climbing, the player moves one limb at a time while the
 
 ### 4.2 Controls
 
+**Assisted Flow is the default.** It turns directional input into the nearest valid deterministic limb placement, preserving balance and stamina simulation while removing a separate target-and-confirm step.
+
 | Input | Action |
 |-------|--------|
-| **1** | Select left hand |
-| **2** | Select right hand |
-| **3** | Select left foot |
-| **4** | Select right foot |
-| **Mouse move** | Aim the selected limb — a subtle highlight/indicator shows reachable holds within range |
-| **Left click** | Commit the limb to the targeted hold |
-| **Mouse right-click + drag** | Orbit camera freely around the climber (look around, look down at the city) |
+| **W / A / S / D** | Flow to the nearest valid hold in that direction and commit the move |
+| **Space** | Assisted upward lunge or mantle to the best reachable hold |
+| **Shift / Q** | Rest and recover grip in a stable posture |
+| **Mouse drag** | Orbit camera freely around the climber |
 | **Scroll wheel** | Zoom camera in/out |
-| **Space** | Rest — the climber presses into the wall and recovers stamina (only works in stable positions) |
 | **R** | Quick restart from base |
-| **Esc** | Pause (pauses timer) |
+| **Esc** | Pause |
 
-**Why this maps well to Cairn's philosophy:** Cairn uses the left stick to aim a limb and Square to grab. Our version uses the mouse to aim (more precise, natural for browser) and click to grab. Limb selection via number keys replaces Cairn's trigger-based limb switching. The result is the same: simple inputs, deep simulation.
-
-**Alternative control scheme (WASD mode):** For players who prefer directional input, an alternative scheme is available:
-
-| Input | Action |
-|-------|--------|
-| **W / A / S / D** | Move the currently selected limb up / left / down / right toward the nearest valid hold in that direction |
-| **Tab** | Cycle through limbs (LH → RH → LF → RF) |
-| **E** | Commit / grab the highlighted hold |
-| **Q** | Rest |
-
-Players choose their preferred scheme on the title screen. Both are supported simultaneously.
+**Precision mode** remains available from preflight: 1–4 selects a limb, mouse aims, left click commits, right-drag orbits, and Space rests.
 
 ### 4.3 The Hold System
 
@@ -202,54 +189,54 @@ On failure, the Odyssey world model renders a dramatic falling sequence — the 
 
 | Parameter | MVP Value | Notes |
 |-----------|-----------|-------|
-| Time limit | 15 minutes | Tunable. Scaled from Honnold's 91-min Taipei 101 climb to 61 floors + game pacing. |
+| Time limit | 15 minutes | Tunable for a fast hackathon vertical slice. |
 | Hesitation timeout | 8 seconds | In a precarious position without input before grip fails. |
-| Building sections | 3 zones | Lower (floors 1–26), Taper (27–50), Crown (51–61+). |
+| Building sections | 3 zones | Lower modules (1–45), upper modules (46–91), crown and spire (92–101). |
 | Rest recovery rate | ~3 sec to recover from "Tired" to "Fresh" in a stable, compact position | Only in stable positions. |
 | Overextension penalty | 3x stamina drain on the stretched limb | Encourages compact climbing. |
 
 ---
 
-## 5. The Building: Salesforce Tower
+## 5. The Building: Taipei 101
 
 ### 5.1 Real-World Reference
 
 | Attribute | Detail |
 |-----------|--------|
-| **Location** | 415 Mission Street, SoMa, San Francisco |
-| **Height** | 1,070 ft (326 m) to crown; 901 ft to top occupied floor |
-| **Floors** | 61 above ground |
-| **Architect** | César Pelli / Pelli Clarke Pelli Architects |
-| **Form** | Obelisk-shaped; tapers above floor 26 with curved glass corners |
-| **Exterior** | Glass + steel curtain wall; white aluminum fin grid; perforated sunshades |
-| **Crown** | 9-story open latticework structure (Jim Campbell's "Day for Night" LED art installation) |
-| **Surroundings** | Adjacent to Salesforce Transit Center & Park; views of Bay Bridge, Transamerica Pyramid, Millennium Tower |
+| **Location** | Xinyi District, Taipei, Taiwan |
+| **Height** | 508 m to architectural top |
+| **Floors** | 101 above ground |
+| **Architect** | C. Y. Lee & Partners |
+| **Form** | Eight stacked, outward-flaring eight-floor modules inspired by bamboo and pagodas |
+| **Exterior** | Blue-green glass and steel curtain wall, stainless mullions, ruyi forms, projecting tier ledges |
+| **Crown** | Narrowing roof tiers, exposed maintenance steel, and needle spire |
+| **Surroundings** | Xinyi high-rises, Taipei basin, and surrounding green mountains |
 
 ### 5.2 Climbing Zones
 
-#### Zone 1: Lower Tower (Floors 1–26) — "The Grid"
+#### Zone 1: Lower Modules (Floors 1–45) — "The Grid"
 
-The building's full rectangular cross-section. The aluminum fin lattice provides a **dense, regular grid of holds** — predictable spacing, good grip quality. This is the learning zone where the player internalizes the limb-control rhythm and experiments with route-finding. Holds are plentiful and forgiving.
+The podium and early stacked modules provide a dense, regular grid of curtain-wall mullions, window frames, and projecting tier brackets. This is the learning zone where the player internalizes directional flow and camera movement.
 
-The city is close below — street noise, pedestrians visible, the Salesforce Transit Center park at eye level by floor 5. The Odyssey prompts emphasize proximity and warmth.
+The Xinyi plaza is close below. Scooters, buses, trees, and pedestrians establish scale while humid reflections move across the blue-green glass.
 
 **Difficulty:** Low. Generous hold density. Few dead zones. Teaches the player to read the fin grid and sunshade bracket pattern.
 
-#### Zone 2: Taper Zone (Floors 27–50) — "The Curve"
+#### Zone 2: Upper Modules (Floors 46–91) — "The Steps"
 
-Above floor 26, each elevation curves and tapers away from the street. The hold geometry **becomes irregular** — the fin grid is still present but spacing widens on the curved corners. The glass corners become increasingly smooth and holdless, forcing the player to route-find actively.
+Each eight-floor bamboo module ends in a dramatic projecting ledge and steps inward above it. Hold geometry becomes irregular at these transitions, with smooth sloped corner glass forcing traverses toward steel seams and central mullions.
 
 Wind begins to affect the climber — the Odyssey world model renders clothes fluttering, the climber bracing against gusts. Some surfaces become intermittently slippery (wind-driven moisture).
 
-The city below starts to look like a map. Cars become dots. The Bay comes into view. Fog may roll in below the climber.
+The city below starts to look like a map. Humid haze reveals the Taipei basin and mountains beyond the skyline.
 
 **Difficulty:** Medium. Narrowing viable surface. Route choices matter. Stamina management becomes critical as holds are more spread out, requiring longer reaches.
 
-#### Zone 3: The Crown (Floors 51–61+) — "The Lattice"
+#### Zone 3: Crown and Spire (Floors 92–101) — "The Needle"
 
-The final stretch transitions from enclosed glass to the **open latticework crown**. The climber is now fully exposed — wind from every direction, the open structure visible through to the other side. Hold type changes from architectural features to raw structural steel beams.
+The final stretch transitions from enclosed curtain wall to narrow roof tiers, maintenance rails, exposed steel outriggers, and the spire. The climber is fully exposed to wind from every direction.
 
-The hold pattern is **completely different** from the lower zones: wide-spaced, irregular steel members instead of the predictable fin grid. Players must re-learn their route-reading skills. The Jim Campbell LED art installation pulses around the climber, adding visual complexity.
+The hold pattern is completely different from the lower zones: wide-spaced, irregular steel members replace the predictable curtain-wall grid.
 
 Reaching the very top triggers the summit sequence.
 
@@ -266,7 +253,7 @@ The entire visual output of the game is rendered by Odyssey 2-Pro. The game clie
 #### 6.1.1 Connection Lifecycle
 
 1. On page load, the client instantiates an Odyssey connection and calls `connect()` to establish a WebRTC media stream.
-2. When the player starts a climb, the client calls `startStream()` with an initial prompt describing the scene at the base of Salesforce Tower.
+2. When the player starts a climb, the client calls `startStream()` with an initial prompt describing Taipei 101 from the Xinyi plaza.
 3. As the player places limbs and the game state changes, the client calls `interact()` with updated prompts reflecting the climber's position, posture, the active limb, camera angle, and environmental conditions.
 4. On failure or summit, the client sends a final `interact()` prompt for the cinematic sequence, then calls `endStream()`.
 5. The client calls `disconnect()` on page unload via `beforeunload` handler.
@@ -289,13 +276,13 @@ A critical component sits between the game logic and Odyssey: the **prompt engin
 
 **Example prompt sequence:**
 
-> *"Photorealistic third-person view, a solo climber in athletic wear grips the white aluminum fin grid on the exterior of Salesforce Tower at the 8th floor. Left hand on a horizontal fin edge, right hand on a window frame, both feet on sunshade brackets below. Stable, balanced posture. Daytime, clear sky. San Francisco street below with cars and pedestrians. Camera positioned slightly above and to the right."*
+> *"Ultra-photorealistic third-person IMAX documentary view of an original solo climber gripping the stainless mullion grid on Taipei 101 at the 8th floor. Three points anchored, stable posture. Xinyi plaza traffic establishes scale below."*
 
-> *"The climber reaches their right hand upward toward the next fin edge, 12th floor. Body is slightly stretched — right arm extended above head while left hand anchors below. Moderate strain visible. The glass reflects the sky. Camera orbits to show the Bay Bridge in the distance."*
+> *"The climber reaches upward toward the next blue-green glass frame. Weight transfers plausibly while three points stay anchored. The camera orbits to reveal Taipei and green mountains through humid haze."*
 
 > *"35th floor, taper zone. The climber is in a compact rest position, pressed against the wall. Four limbs close together on a cluster of holds. Body relaxed, catching breath. The building curves away on either side. Wind is visible in clothes. Fog below."*
 
-> *"55th floor, crown zone. The climber grips an exposed steel beam of the open latticework. Left foot dangles — searching for a hold on the next beam below. Precarious position. Limbs trembling. LED lights pulse purple and blue around the structure. The entire Bay Area is visible below. Camera pulls back to show the climber tiny against the open steel framework."*
+> *"98th floor, crown zone. The climber grips an exposed steel outrigger beneath the spire. One foot searches for a maintenance rail. Strong wind, visible tremor. Camera pulls back to show the climber tiny against the 508 metre tower."*
 
 #### 6.1.3 Odyssey SDK Usage
 
@@ -373,8 +360,8 @@ Because Odyssey streams video over WebRTC, there is inherent latency between pla
 
 ### 7.1 Flow
 
-1. **Landing page:** Title card ("Skyscraper Live: The Game"), hero shot of Salesforce Tower. Single CTA: "Climb." Control scheme selection (Precision / WASD).
-2. **Loading / connection:** Odyssey connection established. Animated status: "Connecting to Salesforce Tower..."
+1. **Landing page:** Full-screen title card ("Skyscraper Live: Taipei 101") over an intentional tower standby scene. Single primary CTA: "Begin ascent." Assisted Flow is selected by default.
+2. **Loading / connection:** Odyssey connection is automatic when an environment key is available; a compact key fallback remains in preflight.
 3. **Base camp:** The player sees their climber at the base of the tower, looking up. Brief tutorial overlay: "Select a limb (1–4). Aim with mouse. Click to grab. Space to rest." A few highlighted holds glow to guide the first moves.
 4. **Climbing:** Full-screen video with minimal HUD. The player is in the core loop — select, aim, commit, manage, repeat.
 5. **Fall:** Dramatic falling sequence (~3 seconds). Screen fades to black. "You fell from floor 34 — 547 ft. Try again?" with time elapsed and floor reached.
@@ -404,7 +391,7 @@ On the player's first attempt, the base camp phase includes a brief guided seque
 4. "Now press **4** for your right foot. Aim and click."
 5. "Good. You're climbing. Keep your limbs close together — if you overextend, you'll tire fast."
 6. "Press **Space** to rest when you find a stable position."
-7. "The clock starts now. Reach the top of Salesforce Tower. Good luck."
+7. "The clock starts now. Reach the 508 metre summit."
 
 The tutorial is skippable on subsequent runs.
 
@@ -434,7 +421,7 @@ Cairn communicates game state through the **climber's body**, not UI. The Odysse
 - **Street level:** Warm, grounded. Close-up of the building's base architecture. Pedestrians below. The tower looming above.
 - **Mid-climb (Zone 1):** The city starts to recede. The fin grid fills the frame. Rhythm of metal and glass.
 - **Taper zone (Zone 2):** The building curves away. The sky opens up. The Bay and bridges come into view. Fog rolling in below.
-- **Crown (Zone 3):** Fully exposed. Open steel lattice. Wind visible in everything. LED art pulses. The entire Bay Area panorama.
+- **Crown (Zone 3):** Fully exposed roof tiers, steel outriggers, maintenance rails, and spire. Wind visible in everything. The Taipei basin fills the panorama.
 - **Fall:** Camera follows briefly, building facade rushes past in a blur. Cut to black.
 - **Summit:** Golden hour light. Cinematic orbit. The climber silhouetted against the skyline. The city 1,070 feet below.
 
@@ -499,7 +486,7 @@ The MVP is entirely **free-to-play** with no ads, paywalls, or microtransactions
 | **Odyssey can't render diegetic stamina cues (trembling, breathing) reliably** | High | Fallback: add minimal, optional UI stamina indicator. Audio cues (breathing SFX) are client-controlled and don't depend on Odyssey. |
 | **Limb-control mechanic feels too complex for casual browser audience** | Medium | The WASD alternative scheme simplifies to directional input. Tutorial is gentle. Zone 1 is forgiving. Messenger-style "just jump in" ethos. |
 | **Odyssey session limit (max 1 concurrent) blocks scaling** | High | Coordinate with Odyssey team on enterprise limits. Implement queue system for peak traffic. |
-| **Building IP / trademark concerns from Salesforce** | Medium | Seek licensing or promotional partnership. Fallback: genericize to "SF-inspired" tower. |
+| **Landmark depiction and trademark concerns** | Medium | Keep the project clearly fictional and verify public-depiction requirements before commercial release. |
 | **Player motion sickness from AI-generated video** | Medium | Limit auto camera movement. Sensitivity settings. Warning on load. |
 | **Hold map authoring is labor-intensive** | Medium | Build tooling for hold placement. The regular fin grid of the lower tower can be procedurally generated; only the taper and crown need hand-placement. |
 
@@ -536,13 +523,13 @@ Premium building packs, cosmetic skins, optional Netflix subscriber perks. No pa
 ## 15. Open Questions
 
 1. **Odyssey prompt frequency:** What is the achievable `interact()` call rate without degrading visual quality? Each limb placement needs a visual update — target is 1–3 calls/sec.
-2. **Visual consistency over long sessions:** Can Odyssey maintain a consistent depiction of Salesforce Tower across hundreds of sequential `interact()` calls over a 15-minute session, or will the scene drift?
+2. **Visual consistency over long sessions:** Can Odyssey preserve Taipei 101's stacked modules, climber identity, and route continuity across a 15-minute session?
 3. **Diegetic cue fidelity:** Can Odyssey reliably render subtle body language differences (trembling vs. steady, relaxed vs. strained) from prompt descriptions alone? This determines whether the Cairn-style zero-UI approach is viable or if we need fallback indicators.
 4. **Enterprise concurrency:** What are Odyssey's multi-session limits? The 1-session-per-key constraint is a hard blocker for any meaningful player base.
-5. **Hold map tooling:** What's the most efficient way to author the hold map? Can we derive hold positions from architectural drawings of Salesforce Tower, or do we need to hand-place them?
+5. **Hold map tooling:** What's the most efficient way to validate the deterministic hold map against Taipei 101's architectural modules?
 6. **Fall animation content:** Should the fall be explicit (full fall to street) or cut-away (brief fall then fade to black)? Content rating implications.
 7. **Cairn licensing/attribution:** Do we need any formal arrangement with The Game Bakers for the "inspired by Cairn" positioning, or is this purely a design influence?
-8. **Salesforce partnership:** Is Salesforce open to a promotional tie-in, or do we need to genericize the tower?
+8. **Landmark approvals:** What depiction and naming clearances are needed for a public commercial release?
 
 ---
 

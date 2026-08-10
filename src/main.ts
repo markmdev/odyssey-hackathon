@@ -94,13 +94,14 @@ interface Point {
 }
 
 const TIME_LIMIT_MS = 15 * 60 * 1000;
-const TOTAL_FLOORS = 61;
+const TOTAL_FLOORS = 101;
+const TOWER_HEIGHT_METERS = 508;
 const HESITATION_TIMEOUT_MS = 8000;
 const REST_DURATION_MS = 3000;
 const PROMPT_MIN_INTERVAL_MS = 400;
-const LEADERBOARD_KEY = 'skyscraper_live_leaderboard_v1';
-const PLAYER_NAME_KEY = 'skyscraper_live_name_v1';
-const TUTORIAL_SEEN_KEY = 'skyscraper_live_tutorial_seen_v1';
+const LEADERBOARD_KEY = 'skyscraper_live_taipei_leaderboard_v1';
+const PLAYER_NAME_KEY = 'skyscraper_live_taipei_name_v1';
+const TUTORIAL_SEEN_KEY = 'skyscraper_live_taipei_tutorial_seen_v1';
 const LIMBS: LimbId[] = ['lh', 'rh', 'lf', 'rf'];
 const LIMB_LABEL: Record<LimbId, string> = {
   lh: 'left hand',
@@ -194,7 +195,7 @@ let lastVideoProgressMs = 0;
 
 const initialState = (): GameState => ({
   phase: 'MENU',
-  mode: 'precision',
+  mode: 'wasd',
   selectedLimb: 'lh',
   limbs: { ...baseHolds },
   posture: 'stable',
@@ -217,20 +218,22 @@ const initialState = (): GameState => ({
     staminaState: 'fresh',
     zone: 'lower',
   },
-  statusLine: 'Connect to Odyssey, then start your climb.',
+  statusLine: 'Link Odyssey, then begin the Taipei 101 ascent.',
   tutorialQueue: [],
   tutorialRunning: false,
 });
 
 const state: GameState = initialState();
 
-apiKeyInput.value = import.meta.env.VITE_ODYSSEY_API_KEY ?? '';
+apiKeyInput.value = import.meta.env.VITE_ODYSSEY_API_KEY
+  ?? import.meta.env.NEXT_PUBLIC_ODYSSEY_API_KEY
+  ?? '';
 playerNameInput.value = localStorage.getItem(PLAYER_NAME_KEY) ?? '';
 
 bindVideoEvents();
 bindEvents();
 renderLeaderboard();
-setMode('precision', false);
+setMode('wasd', false);
 setHudVisible(false);
 updateConnectionStatus('Disconnected');
 updateControlsState();
@@ -238,9 +241,13 @@ resizeCanvas();
 refreshDerivedState();
 computeAimTarget();
 render();
-showToast('Enter Odyssey API key to connect and begin the run.');
+showToast(apiKeyInput.value ? 'Odyssey key detected. Linking live world simulation…' : 'Add an Odyssey key to link the live world simulation.');
 
 rafId = requestAnimationFrame(loop);
+
+if (apiKeyInput.value) {
+  void connectOdyssey();
+}
 
 window.addEventListener('beforeunload', () => {
   stopPromptQueue();
@@ -426,7 +433,7 @@ async function connectOdyssey(): Promise<void> {
     state.phase = 'MENU';
     updateConnectionStatus('Connected · ready to climb');
     updateControlsState();
-    showToast('Odyssey connected. Start your climb when ready.');
+    showToast('Odyssey linked. Taipei 101 is ready.');
   } catch (error) {
     connected = false;
     streamActive = false;
@@ -628,14 +635,14 @@ async function startRun(force = false): Promise<void> {
     state.phase = 'CLIMBING';
     state.runStartedAt = performance.now();
     state.lastActionMs = performance.now();
-    state.statusLine = 'Find a compact route and keep your center of gravity over support holds.';
+    state.statusLine = 'Move with the facade. Keep three points anchored through every reach.';
     updateConnectionStatus('Connected · stream live');
     updateControlsState();
     refreshDerivedState();
     computeAimTarget();
     maybeRunTutorial();
     armVisualWatchdog();
-    showToast('Climb started. Reach floor 61 before the timer expires.');
+    showToast('Ascent live. Reach the 508 metre summit before time expires.');
   } catch (error) {
     streamStartPrompt = null;
     state.phase = 'MENU';
@@ -692,7 +699,7 @@ function resetRunState(): void {
     staminaState: 'fresh',
     zone: 'lower',
   };
-  state.statusLine = 'Base camp ready. Select a limb and place your first move.';
+  state.statusLine = 'Street level. Find the first stainless-steel mullion and move.';
   state.tutorialQueue = [];
   state.tutorialRunning = false;
 
@@ -760,7 +767,7 @@ function bindEvents(): void {
   });
 
   stage.addEventListener('mousedown', (event) => {
-    if (event.button === 2) {
+    if (event.button === 2 || (event.button === 0 && state.mode === 'wasd')) {
       draggingCamera = true;
       lastPointer = { x: event.clientX, y: event.clientY };
       event.preventDefault();
@@ -780,7 +787,7 @@ function bindEvents(): void {
   });
 
   stage.addEventListener('mouseup', (event) => {
-    if (event.button === 2) {
+    if (event.button === 2 || event.button === 0) {
       draggingCamera = false;
     }
   });
@@ -849,27 +856,33 @@ function bindEvents(): void {
 
     if (state.mode === 'wasd') {
       const lower = event.key.toLowerCase();
+      if (event.repeat) {
+        return;
+      }
+
       if (event.key === 'Tab') {
         event.preventDefault();
         cycleLimb();
         return;
       }
 
-      if (lower === 'q' || event.key === ' ') {
+      if (event.key === 'Shift' || lower === 'q') {
         event.preventDefault();
         performRest();
         return;
       }
 
-      if (lower === 'e') {
+      if (event.key === ' ') {
         event.preventDefault();
-        attemptCommit(directionalTargetHoldId, 'wasd');
+        performUpwardLunge();
         return;
       }
 
       if (lower === 'w' || lower === 'a' || lower === 's' || lower === 'd') {
         event.preventDefault();
         nudgeDirectionalTarget(lower);
+        attemptCommit(directionalTargetHoldId, 'wasd');
+        cycleLimb();
       }
     }
   });
@@ -1094,14 +1107,14 @@ function setMode(mode: GameMode, announce = true): void {
   });
 
   controlsHelp.innerHTML = mode === 'precision'
-    ? '<div>1/2/3/4 select limb, mouse to aim, click to commit</div><div>Right-drag orbit camera, scroll zoom</div><div>Space rest, Esc pause, R quick restart</div>'
-    : '<div>Tab cycles limbs, WASD picks direction to nearest hold</div><div>E commits highlighted hold, Q rests in stable posture</div><div>Right-drag orbit camera, Esc pause, R quick restart</div>';
+    ? '1–4 selects a limb · mouse aims · click commits · right-drag looks · Space rests · Esc pauses'
+    : 'WASD climbs to the nearest safe hold · Space mantles upward · Shift recovers grip · drag to look · Esc pauses';
 
   directionalTargetHoldId = null;
   computeAimTarget();
 
   if (announce) {
-    showToast(mode === 'precision' ? 'Precision mode active.' : 'WASD mode active.');
+    showToast(mode === 'precision' ? 'Precision climbing active.' : 'Assisted flow active.');
   }
 }
 
@@ -1209,8 +1222,35 @@ function performRest(): void {
 
   state.lastActionMs = performance.now();
   state.restRemainingMs = REST_DURATION_MS;
-  state.statusLine = 'Resting against the wall to recover stamina.';
+  state.statusLine = 'Pressed into the curtain wall. Breathing. Grip recovering.';
   queuePrompt(compilePrompt('rest'));
+}
+
+function performUpwardLunge(): void {
+  if (!isRunActive()) {
+    return;
+  }
+
+  const current = holdById.get(state.limbs[state.selectedLimb]);
+  const candidates = computeReachable(state.selectedLimb)
+    .filter((hold) => !current || hold.y > current.y + 0.008)
+    .sort((a, b) => {
+      const heightAdvantage = b.y - a.y;
+      const gripAdvantage = holdRankBias(a) - holdRankBias(b);
+      const centerAdvantage = Math.abs(a.x - 0.5) - Math.abs(b.x - 0.5);
+      return (heightAdvantage * 5) + gripAdvantage + centerAdvantage;
+    });
+
+  const target = candidates[0];
+  if (!target) {
+    showToast('No clean mantle above. Traverse with A or D.');
+    return;
+  }
+
+  directionalTargetHoldId = target.id;
+  state.targetHoldId = target.id;
+  attemptCommit(target.id, 'wasd');
+  cycleLimb();
 }
 
 function setSelectedLimb(limb: LimbId): void {
@@ -1235,6 +1275,7 @@ function nudgeDirectionalTarget(key: string): void {
     return;
   }
 
+  directionalTargetHoldId = null;
   const reachable = computeReachable(state.selectedLimb);
   if (!reachable.length) {
     directionalTargetHoldId = null;
@@ -1482,10 +1523,11 @@ function compilePrompt(reason: RenderPromptReason): string {
   const atmosphere = `${state.atmosphere.light}, ${state.atmosphere.weather}, ${state.atmosphere.haze}.`;
 
   return [
-    'Photorealistic cinematic third-person drone footage of a single free-solo climber on the exterior of Salesforce Tower, San Francisco.',
-    'Keep the same climber appearance and wardrobe continuity throughout the run.',
+    'Ultra-photorealistic cinematic third-person IMAX documentary footage of one anonymous elite free-solo climber ascending the exterior of Taipei 101 in Taipei, Taiwan.',
+    'The building must remain recognizably Taipei 101: blue-green glass and steel, stacked eight-floor bamboo-pagoda modules, projecting ruyi forms, huge tier ledges, narrowing crown, and a needle spire.',
+    'Keep the same original climber appearance and wardrobe continuity throughout the run. Do not depict a celebrity or known real person.',
     `Outfit: ${state.atmosphere.outfit}.`,
-    `Current position: floor ${state.floor} of 61 in the ${state.zone} zone.`,
+    `Current position: floor ${state.floor} of 101, approximately ${Math.round((state.floor / TOTAL_FLOORS) * TOWER_HEIGHT_METERS)} metres above street level, in the ${state.zone} zone.`,
     zoneLine,
     `Limb placements: ${limbSummary}.`,
     activeLimbLine,
@@ -1494,16 +1536,16 @@ function compilePrompt(reason: RenderPromptReason): string {
     `Atmosphere: ${atmosphere}`,
     cameraLine,
     eventLine,
-    'No HUD text, no subtitles, no overlays; only cinematic world footage.',
+    'Emphasize physically plausible contact, weight transfer, vertigo, wind pressure, glass reflections, and enormous scale. No ropes, no safety gear, no HUD text, no subtitles, no overlays; only cinematic world footage.',
   ].join(' ');
 }
 
 function reasonDescription(reason: RenderPromptReason): string {
   if (reason === 'start') {
-    return 'Scene starts at street-level base camp, climber looks upward before first move.';
+    return 'Scene starts at the Xinyi District plaza at street level, camera tilts up the full 508 metres as the climber touches the first steel mullion.';
   }
   if (reason === 'placement') {
-    return 'The climber commits one deliberate limb placement while three limbs stay anchored.';
+    return 'The climber makes a fast, fluid parkour-like reach and weight transfer while three points stay securely anchored; motion is athletic, controlled, and physically realistic.';
   }
   if (reason === 'rest') {
     return 'The climber presses into the wall in a compact rest posture, deep breathing visible.';
@@ -1518,29 +1560,29 @@ function reasonDescription(reason: RenderPromptReason): string {
     return 'Climb resumes with subtle body motion and continuous environmental continuity.';
   }
   if (reason === 'summit') {
-    return 'Cinematic summit orbit around the climber at the crown with sweeping Bay Area panorama.';
+    return 'Cinematic summit orbit at the 508 metre spire with Taipei and the mountains spread far below in humid atmospheric perspective.';
   }
   return 'The climber loses grip and falls past the facade; brief follow shot then fade to black.';
 }
 
 function describeHold(hold: Hold): string {
   if (hold.type === 'fin') {
-    return 'white aluminum fin edge';
+    return 'vertical stainless-steel curtain-wall mullion';
   }
   if (hold.type === 'frame') {
-    return 'window frame edge';
+    return 'blue-green glass window frame';
   }
   if (hold.type === 'bracket') {
-    return 'sunshade bracket';
+    return 'projecting bamboo-tier ledge bracket';
   }
   if (hold.type === 'seam') {
-    return 'narrow facade seam';
+    return 'narrow steel panel seam';
   }
   if (hold.type === 'lattice') {
-    return 'crown lattice steel beam';
+    return 'crown steel outrigger';
   }
   if (hold.type === 'corner') {
-    return 'curved glass corner';
+    return 'sloped pagoda-module corner glass';
   }
   return 'flat glass panel';
 }
@@ -1566,24 +1608,24 @@ function postureDescription(posture: Posture, staminaState: StaminaState): strin
 
 function zoneDescription(zone: Zone): string {
   if (zone === 'lower') {
-    return 'Lower tower fin grid is dense and regular; city streets and transit center still feel close below.';
+    return 'Lower Taipei 101 podium and early bamboo modules form a dense regular grid of blue-green curtain wall, steel mullions, ruyi ornaments, and broad tier ledges; Xinyi streets remain close below.';
   }
   if (zone === 'taper') {
-    return 'Taper zone geometry narrows with curved glass corners and wider hold spacing; Bay Bridge emerges in the distance.';
+    return 'The stacked eight-floor bamboo-pagoda modules step inward at dramatic architectural transitions; tier corners slope away and hold spacing widens above the Taipei skyline.';
   }
-  return 'Crown zone exposes open lattice steel with sparse irregular beams and full skyline drop beneath.';
+  return 'The crown transitions into sparse steel outriggers, narrow maintenance rails, sloped roof planes, and the exposed spire with the full Xinyi District drop beneath.';
 }
 
 function windDescription(zone: Zone, staminaState: StaminaState): string {
   if (zone === 'lower') {
-    return 'Wind is light; urban ambient motion remains grounded near street level.';
+    return 'Wind is light and humid; scooters, buses, trees, and pedestrians establish real scale near street level.';
   }
   if (zone === 'taper') {
     return staminaState === 'critical'
       ? 'Medium gusts push clothing and pull the climber off-axis.'
-      : 'Moderate wind brushes clothing as fog hangs below portions of the city.';
+      : 'Moderate monsoon wind brushes clothing as humid haze hangs between Taipei and the surrounding green mountains.';
   }
-  return 'Strong multidirectional wind roars around open crown beams; atmosphere is exposed and high-altitude.';
+  return 'Strong multidirectional wind roars around the exposed crown and spire; low clouds race past below and the altitude feels severe.';
 }
 
 function queuePrompt(prompt: string, force = false): void {
@@ -1657,11 +1699,15 @@ function maybeRunTutorial(): void {
   }
 
   state.tutorialQueue = [
-    'Press 1-4 to select limbs. Move one limb at a time.',
-    'In Precision mode, mouse aims and left-click commits.',
-    'Compact stances recover faster. Overextension drains stamina quickly.',
-    'Space (or Q in WASD mode) rests only in stable posture.',
-    'Esc pauses. R restarts the run from street level.',
+    state.mode === 'wasd'
+      ? 'WASD flows to nearby holds. Space makes an assisted upward mantle.'
+      : 'Press 1–4 to select limbs. Mouse aims and left-click commits.',
+    'Drag across the wall to orbit the camera. Scroll changes distance.',
+    'Compact stances recover faster. Overextension burns grip.',
+    state.mode === 'wasd'
+      ? 'Hold Shift in a stable stance to recover.'
+      : 'Space rests in a stable stance.',
+    'Escape pauses. R restarts from the Xinyi plaza.',
   ];
 
   state.tutorialRunning = true;
@@ -1734,19 +1780,19 @@ function updateStageStateUI(nowMs: number): void {
   updateVideoFlowState(nowMs);
 
   if (state.phase === 'CONNECTING') {
-    setStageState('Connecting To Odyssey', 'Creating a real-time WebRTC session. This can take a few seconds.');
+    setStageState('Opening Taipei Airspace', 'Negotiating the real-time Odyssey visual link. This can take a few seconds.');
     video.classList.add('idle');
     return;
   }
 
   if (!connected) {
-    setStageState('Odyssey Disconnected', 'Enter your API key and connect to open a live rendering session.');
+    setStageState('Taipei 101 // Base', 'The 508 metre route is staged. Link Odyssey to wake the live world simulation.');
     video.classList.add('idle');
     return;
   }
 
   if (!streamActive) {
-    setStageState('Connection Ready', 'Press Start Climb to request Odyssey world-model visuals.');
+    setStageState('Expedition Ready', 'Odyssey is linked. Begin the ascent when your grip is dry.');
     video.classList.add('idle');
     return;
   }
@@ -1755,7 +1801,7 @@ function updateStageStateUI(nowMs: number): void {
     const recoveryHint = streamRecoveryAttempted
       ? 'If this persists, press Restart (R) or reconnect.'
       : 'Waiting for the first rendered frames from Odyssey.';
-    setStageState('Warming Up Visual Stream', recoveryHint);
+    setStageState('Building Taipei', recoveryHint);
     video.classList.add('idle');
     return;
   }
@@ -1771,7 +1817,8 @@ function render(): void {
   const elapsed = state.runStartedAt > 0 ? TIME_LIMIT_MS - state.timerMs : 0;
   const timerValue = state.phase === 'MENU' ? formatTime(TIME_LIMIT_MS) : formatTime(state.timerMs);
   timerDisplay.textContent = timerValue;
-  floorDisplay.textContent = `F${state.floor}`;
+  const elevation = Math.round((state.floor / TOTAL_FLOORS) * TOWER_HEIGHT_METERS);
+  floorDisplay.textContent = `F${state.floor.toString().padStart(2, '0')} · ${elevation.toString().padStart(3, '0')}M`;
 
   timerDisplay.classList.toggle('urgent', state.phase === 'CLIMBING' && state.timerMs <= 2 * 60 * 1000);
 
@@ -1787,8 +1834,8 @@ function render(): void {
 
   if (state.phase === 'MENU') {
     statusLine.textContent = connected
-      ? 'Connected. Start a climb to begin.'
-      : 'Disconnected. Connect to Odyssey to begin.';
+      ? 'Odyssey linked. Taipei 101 is waiting.'
+      : 'Odyssey link offline.';
   }
 
   if (state.phase === 'SUMMIT') {
@@ -1938,7 +1985,7 @@ function updateConnectionStatus(text: string): void {
 }
 
 function updateControlsState(): void {
-  connectBtn.disabled = connected;
+  connectBtn.disabled = connected || state.phase === 'CONNECTING';
   disconnectBtn.disabled = !connected;
   apiKeyInput.disabled = connected;
   startRunBtn.disabled = !connected || state.phase === 'CONNECTING' || state.phase === 'CLIMBING' || state.phase === 'PAUSED';
@@ -2032,6 +2079,7 @@ function createHoldMap(): Hold[] {
     const zone = zoneForFloor(floor);
 
     if (zone === 'lower') {
+      const moduleFloor = (floor - 1) % 8;
       const offset = Math.sin(floor * 0.45) * 0.008;
       const xs = [0.24, 0.34, 0.46, 0.56, 0.68, 0.78];
       for (let i = 0; i < xs.length; i += 1) {
@@ -2048,13 +2096,18 @@ function createHoldMap(): Hold[] {
         }
       }
 
+      if (moduleFloor === 0 || moduleFloor === 7) {
+        push(0.4, floor, { type: 'bracket', grip: 'good' });
+        push(0.6, floor, { type: 'bracket', grip: 'good' });
+      }
+
       push(0.14, floor, { type: 'glass', grip: 'poor', dead: true, slipperiness: 0.5 });
       push(0.88, floor, { type: 'glass', grip: 'poor', dead: true, slipperiness: 0.5 });
       continue;
     }
 
     if (zone === 'taper') {
-      const t = (floor - 27) / (50 - 27);
+      const t = (floor - 46) / (91 - 46);
       const halfWidth = lerp(0.29, 0.2, t);
       const center = 0.5 + (Math.sin(floor * 0.33) * 0.012);
       const xs = [center - halfWidth, center - halfWidth * 0.35, center + halfWidth * 0.22, center + halfWidth];
@@ -2168,10 +2221,10 @@ function floorToY(floor: number): number {
 }
 
 function zoneForFloor(floor: number): Zone {
-  if (floor <= 26) {
+  if (floor <= 45) {
     return 'lower';
   }
-  if (floor <= 50) {
+  if (floor <= 91) {
     return 'taper';
   }
   return 'crown';
@@ -2181,20 +2234,20 @@ function pickAtmosphere(): RunAtmosphere {
   const palette: RunAtmosphere[] = [
     {
       light: 'clear late-afternoon light',
-      weather: 'dry wind over downtown San Francisco',
-      haze: 'mild marine haze toward the bay',
+      weather: 'humid summer wind over Taipei',
+      haze: 'layered atmospheric haze toward the green mountains',
       outfit: 'graphite shell jacket, slate climbing pants, amber chalk bag',
     },
     {
       light: 'cool bright midday light',
-      weather: 'crisp air with gusts around the taper zone',
-      haze: 'soft fog bank in distant neighborhoods',
+      weather: 'post-rain air with gusts around the stacked modules',
+      haze: 'low cloud fragments drifting above the Xinyi District',
       outfit: 'charcoal technical top, matte black pants, rust chalk bag',
     },
     {
       light: 'golden-hour sidelight',
-      weather: 'warmer updrafts against the facade',
-      haze: 'thin fog layer below the high floors',
+      weather: 'warm updrafts against the blue-green glass facade',
+      haze: 'golden humidity across the Taipei basin',
       outfit: 'dark navy wind shell, basalt pants, burnt-orange chalk bag',
     },
   ];
